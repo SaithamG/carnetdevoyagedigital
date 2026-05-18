@@ -1430,7 +1430,7 @@ const App = () => {
     setAiError(null);
     setAiResponse('');
 
-    const apiKey = '';
+    const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
 
     const currentDays = itineraryData[activeRegion]?.days || [];
     const sanitizedContext = currentDays.map((day) => ({
