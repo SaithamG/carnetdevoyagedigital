@@ -1430,7 +1430,7 @@ const App = () => {
     setAiError(null);
     setAiResponse('');
 
-    const apiKey = process.env.REACT_APP_JAPON_GEMINI_KEY;
+    const apiKey = process.env.REACT_APP_JAPON_GEMINI_KEY; 
 
     const currentDays = itineraryData[activeRegion]?.days || [];
     const sanitizedContext = currentDays.map((day) => ({
