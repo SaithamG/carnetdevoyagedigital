@@ -2428,7 +2428,7 @@ const App = () => {
       </main>
 
       {/* FOOTER WIDGET : CONVERTISSEUR FLASH */}
-      <div className="fixed bottom-6 right-4 md:right-8 bg-slate-900/90 backdrop-blur-md border border-slate-700 p-4 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-50 w-56 transform transition-transform hover:scale-105 hidden md:block">
+      <div className="fixed bottom-20 right-4 md:right-8 bg-slate-900/90 backdrop-blur-md border border-slate-700 p-4 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-50 w-56 transform transition-transform hover:scale-105 block">
         <div className="flex justify-between items-center mb-3">
           <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 flex items-center gap-1">
             <Calculator size={12} /> Convertisseur
