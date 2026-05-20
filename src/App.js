@@ -1446,12 +1446,10 @@ const App = () => {
 
     const regionContext = JSON.stringify(sanitizedContext);
 
-    const systemInstruction = `Tu es un guide touristique professionnel basé au Japon, expert et immersif.
-  Tu connais l'itinéraire de Mathias et tu adaptes tes conseils à son profil (sportif, joueur de volley, amateur de viande et de formules à volonté 'Tabehoudai').
-  Utilise ce programme pour contextualiser tes réponses : ${regionContext}.
-
-  Tu réponds toujours de manière structurée, concise et directement ciblée sur sa demande exacte. Évite les mises en scène imaginaires ou les scénarios hors-sujet : donne-lui des faits, des informations utiles et des bons plans concrets.
-  Ne mentionne jamais le mot JSON. Réponds en français de manière hyper concise et pertinente. Formate le texte avec des astérisques pour le gras.`;
+    const systemInstruction = `Tu es un guide local au Japon, expert, amical et très direct. 
+Tu t'adresses à Mathias, un grand sportif (Volley) qui a très faim (Niveau 0 en cuisine, il adore la viande et les formules à volonté 'Tabehoudai').
+Utilise ce programme pour contextualiser tes réponses : ${regionContext}. 
+Ne mentionne pas le JSON. Réponds en français de manière hyper concise et pertinente. Formate le texte avec des astérisques pour le gras.`;
 
     const payload = {
       contents: [{ parts: [{ text: queryToUse }] }],
@@ -1459,7 +1457,7 @@ const App = () => {
     };
 
     try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
       const data = await fetchWithRetry(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1512,7 +1510,7 @@ const App = () => {
           {/* TABS NAVIGATION */}
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2">
             {[
-              { id: 'overview', icon: <Map size={16} />, label: 'Dashboard' },
+              { id: 'overview', icon: <Map size={16} />, label: 'Vue d'ensemble' },
               {
                 id: 'finance',
                 icon: <Wallet size={16} />,
@@ -1521,7 +1519,7 @@ const App = () => {
               {
                 id: 'roadbook',
                 icon: <Calendar size={16} />,
-                label: 'Roadbook V_MAX',
+                label: 'Itinéraire complet',
               },
               {
                 id: 'transport',
@@ -1546,7 +1544,7 @@ const App = () => {
               {
                 id: 'runbook',
                 icon: <ListChecks size={16} />,
-                label: 'Alertes & Runbook',
+                label: 'Rappels & Résas',
               },
               { id: 'ai', icon: <Sparkles size={16} />, label: 'Coach IA' },
             ].map((tab) => (
@@ -1588,7 +1586,7 @@ const App = () => {
               </div>
               <div className="bg-slate-900 p-6 rounded-[2rem] border border-slate-800 flex flex-col justify-center">
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2">
-                  Hardware Status
+                  Statut suivi
                 </p>
                 <div className="flex items-center gap-3 bg-blue-950/30 p-3 rounded-xl border border-blue-900/50">
                   <Plane size={18} className="text-blue-500" />
@@ -1606,7 +1604,7 @@ const App = () => {
 
             <div className="bg-slate-900 p-6 rounded-[2rem] border border-slate-800 space-y-4">
               <h3 className="font-black italic text-white flex items-center gap-2 border-b border-slate-800 pb-3">
-                <Activity className="text-emerald-500" /> Profiling Voyageur
+                <Activity className="text-emerald-500" /> Profil Voyageur
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                 <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex items-start gap-4">
@@ -2228,7 +2226,7 @@ const App = () => {
               <Bell className="absolute -right-4 -top-4 w-32 h-32 text-slate-800 opacity-20" />
               <div className="relative z-10">
                 <h2 className="text-xl font-black italic text-white mb-2">
-                  Les "Cron Jobs" du Voyage
+                  Calendrier des Réservations
                 </h2>
                 <p className="text-xs text-slate-400 max-w-lg leading-relaxed">
                   Le Japon demande une rigueur d'ingénieur. Les places partent
@@ -2428,7 +2426,7 @@ const App = () => {
       </main>
 
       {/* FOOTER WIDGET : CONVERTISSEUR FLASH */}
-      <div className="fixed bottom-20 right-4 md:right-8 bg-slate-900/90 backdrop-blur-md border border-slate-700 p-4 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-50 w-56 transform transition-transform hover:scale-105 block">
+      <div className="fixed bottom-6 right-4 md:right-8 bg-slate-900/90 backdrop-blur-md border border-slate-700 p-4 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-50 w-56 transform transition-transform hover:scale-105 hidden md:block">
         <div className="flex justify-between items-center mb-3">
           <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 flex items-center gap-1">
             <Calculator size={12} /> Convertisseur
