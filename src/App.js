@@ -1510,7 +1510,7 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
           {/* TABS NAVIGATION */}
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2">
             {[
-              { id: 'overview', icon: <Map size={16} />, label: 'Vue d'ensemble' },
+           { id: 'overview', icon: <Map size={16}/>, label: "Vue d'ensemble" },
               {
                 id: 'finance',
                 icon: <Wallet size={16} />,
