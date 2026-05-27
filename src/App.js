@@ -1534,26 +1534,26 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                   <Activity size={12} className="text-emerald-400" /> Release : Japon 2026
                 </p>
 
-                {/* Compte à rebours - Style "Premium Dashboard Block" */}
+          
                 {/* Compte à rebours - Style Premium & Clean */}
-                <div className="mt-4 flex items-center gap-3 px-3 py-1.5 bg-slate-800/40 border border-slate-700/50 rounded-lg w-fit shadow-sm">
+                <div className="mt-4 flex items-center gap-3 px-3 py-1.5 bg-slate-850/40 border border-slate-700/50 rounded-lg w-fit shadow-sm">
                   <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
                     COMPTE À REBOURS :
                   </span>
-                  <div className="flex items-baseline gap-1 font-mono text-sm font-bold text-slate-200">
+                  <div className="flex items-baseline gap-1.5 font-mono text-sm font-bold text-slate-200">
                     <span className="text-blue-400 font-black text-base">{timeLeft.jours}</span>
-                    <span className="text-[10px] font-sans text-slate-500 mr-1">j</span>
+                    <span className="text-[9px] font-sans font-black text-slate-500 tracking-wider">J</span>
                     
-                    <span className="text-slate-600 font-sans font-normal">|</span>
+                    <span className="text-slate-700 font-sans font-normal mx-0.5">|</span>
                     
-                    <span className="ml-1">{timeLeft.heures}</span>
-                    <span className="text-[10px] font-sans text-slate-500 mr-1">h</span>
+                    <span>{timeLeft.heures}</span>
+                    <span className="text-[9px] font-sans font-black text-slate-500 tracking-wider">H</span>
                     
                     <span>{timeLeft.minutes}</span>
-                    <span className="text-[10px] font-sans text-slate-500 mr-1">m</span>
+                    <span className="text-[9px] font-sans font-black text-slate-500 tracking-wider">M</span>
                     
                     <span className="text-red-400 animate-pulse ml-0.5">{timeLeft.secondes}</span>
-                    <span className="text-[10px] font-sans text-red-500/70">s</span>
+                    <span className="text-[9px] font-sans font-black text-red-500/70 tracking-wider">S</span>
                   </div>
                 </div>
                 </div> 
