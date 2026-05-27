@@ -1521,43 +1521,64 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
     <div className="min-h-screen bg-slate-950 font-sans text-slate-200 pb-24 selection:bg-blue-500/30">
       {/* HEADER MASTER */}
       <header className="bg-slate-900 border-b border-slate-800 p-6 sticky top-0 z-50 shadow-xl relative overflow-hidden">
-        <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
-            <div>
-              <h1 className="text-2xl font-black italic tracking-tighter flex items-center gap-2 text-white">
-                <Globe className="text-blue-500" /> CARNET DE VOYAGE DIGITAL
-              </h1>
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1 flex items-center gap-1">
-                <Activity size={12} className="text-emerald-400" /> Release :
-                Japon 2026
-              </p>
-            {/* Compte à rebours épuré style Carnet */}
-<div className="mt-2.5 flex items-baseline gap-1 font-mono text-xs text-slate-400">
-  <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-slate-600 mr-1">Départ dans :</span>
-  <span className="text-blue-400 font-black text-sm">{timeLeft.jours}</span>
-  <span className="text-[10px] font-sans text-slate-500 lowercase mr-1">j</span>
-  <span className="text-blue-400 font-black text-sm">{timeLeft.heures}</span>
-  <span className="text-[10px] font-sans text-slate-500 lowercase mr-1">h</span>
-  <span className="text-blue-400 font-black text-sm">{timeLeft.minutes}</span>
-  <span className="text-[10px] font-sans text-slate-500 lowercase mr-1">m</span>
-  <span className="text-red-400 font-black text-sm animate-pulse">{timeLeft.secondes}</span>
-  <span className="text-[10px] font-sans text-slate-500 lowercase">s</span>
-</div>
-            </div>
-            <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl">
-              <CheckCircle2 size={16} className="text-emerald-500" />
-              <div>
-                <p className="text-[10px] font-black text-emerald-500 uppercase">
-                  Vol Garanti
+          <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="max-w-5xl mx-auto relative z-10">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-4">
+              
+              {/* PARTIE GAUCHE : Titre + Compte à rebours */}
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-black italic tracking-tighter flex items-center gap-2 text-white">
+                  <Globe className="text-blue-500" /> CARNET DE VOYAGE DIGITAL
+                </h1>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1 flex items-center gap-1">
+                  <Activity size={12} className="text-emerald-400" /> Release : Japon 2026
                 </p>
-                <p className="text-xs font-bold text-emerald-100">
-                  3/4 Payé ✅
-                </p>
-              </div>
-            </div>
-          </div>
 
+                {/* Compte à rebours - Style "Premium Dashboard Block" */}
+                <div className="mt-5 flex flex-col items-start gap-2.5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-700">
+                    Hype_System.jp v3.0
+                  </span>
+                  <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl w-full max-w-sm flex items-center justify-between gap-3 shadow-inner shadow-slate-950/20 backdrop-blur-sm">
+                    <div className="flex flex-col items-center flex-1">
+                      <span className="text-4xl font-black text-blue-400 font-mono tracking-tighter">{timeLeft.jours}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">jours</span>
+                    </div>
+                    <div className="w-px h-10 bg-slate-800"></div>
+                    <div className="flex items-end gap-3 flex-2 text-center">
+                      <div className="flex flex-col items-center">
+                        <span className="text-2xl font-extrabold text-slate-200 font-mono tracking-tighter">{timeLeft.heures}</span>
+                        <span className="text-[9px] font-semibold uppercase text-slate-600">hr</span>
+                      </div>
+                      <div className="text-xl font-bold text-slate-700 pb-1">:</div>
+                      <div className="flex flex-col items-center">
+                        <span className="text-2xl font-extrabold text-slate-200 font-mono tracking-tighter">{timeLeft.minutes}</span>
+                        <span className="text-[9px] font-semibold uppercase text-slate-600">min</span>
+                      </div>
+                      <div className="text-xl font-bold text-slate-700 pb-1">:</div>
+                      <div className="flex flex-col items-center">
+                        <span className="text-2xl font-extrabold text-red-400 font-mono tracking-tighter animate-pulse">{timeLeft.secondes}</span>
+                        <span className="text-[9px] font-semibold uppercase text-red-600">sec</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* PARTIE DROITE : Badge Vol Garanti */}
+              <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl h-fit mt-2 md:mt-0">
+                <CheckCircle2 size={16} className="text-emerald-500" />
+                <div>
+                  <p className="text-[10px] font-black text-emerald-500 uppercase">
+                    Vol Garanti
+                  </p>
+                  <p className="text-xs font-bold text-emerald-100 flex items-center gap-1">
+                    3/4 Payé <Check size={14} />
+                  </p>
+                </div>
+              </div>
+              
+            </div>
           {/* TABS NAVIGATION */}
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2">
             {[
