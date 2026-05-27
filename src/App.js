@@ -1552,7 +1552,7 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                     {/* Jours */}
                     <div className="flex items-baseline gap-0.5">
                       <span className="text-blue-400 text-base">{timeLeft.jours}</span>
-                      <span className="text-[10px] font-sans font-bold text-slate-600 uppercase ml-0.5">J</span>
+                      <span className="text-[10px] font-mono font-black text-slate-500 ml-0.5">J</span>
                     </div>
 
                     <span className="text-slate-700 font-sans mx-0.5">|</span>
@@ -1560,7 +1560,7 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                     {/* Heures */}
                     <div className="flex items-baseline gap-0.5">
                       <span className="text-slate-200">{timeLeft.heures}</span>
-                      <span className="text-[10px] font-sans font-bold text-slate-600 uppercase ml-0.5">H</span>
+                      <span className="text-[10px] font-mono font-black text-slate-500 ml-0.5">H</span>
                     </div>
 
                     <span className="text-slate-800">:</span>
@@ -1568,7 +1568,7 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                     {/* Minutes */}
                     <div className="flex items-baseline gap-0.5">
                       <span className="text-slate-200">{timeLeft.minutes}</span>
-                      <span className="text-[10px] font-sans font-bold text-slate-600 uppercase ml-0.5">M</span>
+                      <span className="text-[10px] font-mono font-black text-slate-500 ml-0.5">M</span>
                     </div>
 
                     <span className="text-slate-800">:</span>
@@ -1576,7 +1576,7 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                     {/* Secondes */}
                     <div className="flex items-baseline gap-0.5">
                       <span className="text-red-400 animate-pulse">{timeLeft.secondes}</span>
-                      <span className="text-[10px] font-sans font-bold text-red-500/60 uppercase ml-0.5">S</span>
+                      <span className="text-[10px] font-mono font-black text-red-500/70 ml-0.5">S</span>
                     </div>
                   </div>
                 </div>
