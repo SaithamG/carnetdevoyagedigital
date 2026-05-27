@@ -1535,36 +1535,28 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                 </p>
 
                 {/* Compte à rebours - Style "Premium Dashboard Block" */}
-                <div className="mt-5 flex flex-col items-start gap-2.5">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-700">
-                    Hype_System.jp v3.0
+                {/* Compte à rebours - Style Premium & Clean */}
+                <div className="mt-4 flex items-center gap-3 px-3 py-1.5 bg-slate-800/40 border border-slate-700/50 rounded-lg w-fit shadow-sm">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    COMPTE À REBOURS :
                   </span>
-                  <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl w-full max-w-sm flex items-center justify-between gap-3 shadow-inner shadow-slate-950/20 backdrop-blur-sm">
-                    <div className="flex flex-col items-center flex-1">
-                      <span className="text-4xl font-black text-blue-400 font-mono tracking-tighter">{timeLeft.jours}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">jours</span>
-                    </div>
-                    <div className="w-px h-10 bg-slate-800"></div>
-                    <div className="flex items-end gap-3 flex-2 text-center">
-                      <div className="flex flex-col items-center">
-                        <span className="text-2xl font-extrabold text-slate-200 font-mono tracking-tighter">{timeLeft.heures}</span>
-                        <span className="text-[9px] font-semibold uppercase text-slate-600">hr</span>
-                      </div>
-                      <div className="text-xl font-bold text-slate-700 pb-1">:</div>
-                      <div className="flex flex-col items-center">
-                        <span className="text-2xl font-extrabold text-slate-200 font-mono tracking-tighter">{timeLeft.minutes}</span>
-                        <span className="text-[9px] font-semibold uppercase text-slate-600">min</span>
-                      </div>
-                      <div className="text-xl font-bold text-slate-700 pb-1">:</div>
-                      <div className="flex flex-col items-center">
-                        <span className="text-2xl font-extrabold text-red-400 font-mono tracking-tighter animate-pulse">{timeLeft.secondes}</span>
-                        <span className="text-[9px] font-semibold uppercase text-red-600">sec</span>
-                      </div>
-                    </div>
+                  <div className="flex items-baseline gap-1 font-mono text-sm font-bold text-slate-200">
+                    <span className="text-blue-400 font-black text-base">{timeLeft.jours}</span>
+                    <span className="text-[10px] font-sans text-slate-500 mr-1">j</span>
+                    
+                    <span className="text-slate-600 font-sans font-normal">|</span>
+                    
+                    <span className="ml-1">{timeLeft.heures}</span>
+                    <span className="text-[10px] font-sans text-slate-500 mr-1">h</span>
+                    
+                    <span>{timeLeft.minutes}</span>
+                    <span className="text-[10px] font-sans text-slate-500 mr-1">m</span>
+                    
+                    <span className="text-red-400 animate-pulse ml-0.5">{timeLeft.secondes}</span>
+                    <span className="text-[10px] font-sans text-red-500/70">s</span>
                   </div>
                 </div>
-              </div>
-
+                </div> 
               {/* PARTIE DROITE : Badge Vol Garanti */}
               <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl h-fit mt-2 md:mt-0">
                 <CheckCircle2 size={16} className="text-emerald-500" />
