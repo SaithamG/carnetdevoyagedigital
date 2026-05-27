@@ -1464,7 +1464,7 @@ useEffect(() => {
   const askGemini = async (customQuery = null) => {
     const queryToUse = customQuery || aiQuery;
     if (!queryToUse.trim()) return;
-
+    if (isAiLoading) return; 
     setIsAiLoading(true);
     setAiError(null);
     setAiResponse('');
