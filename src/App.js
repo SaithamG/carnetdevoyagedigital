@@ -92,6 +92,37 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('sauvegardeChecklist', JSON.stringify(checkedItems));
   }, [checkedItems]);
+
+  // 1. Fonction qui calcule le temps restant jusqu'au 8 novembre 2026
+const calculerTempsRestant = () => {
+  const difference = +new Date('2026-11-08T00:00:00') - +new Date();
+  let tempsRestant = {};
+
+  if (difference > 0) {
+    tempsRestant = {
+      jours: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      heures: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      secondes: Math.floor((difference / 1000) % 60)
+    };
+  } else {
+    tempsRestant = { jours: 0, heures: 0, minutes: 0, secondes: 0 };
+  }
+  return tempsRestant;
+};
+
+// 2. State pour stocker ce temps dans React
+const [timeLeft, setTimeLeft] = useState(calculerTempsRestant());
+
+// 3. Un timer qui recalcule le temps TOUTES les secondes (1000 ms)
+useEffect(() => {
+  const timer = setInterval(() => {
+    setTimeLeft(calculerTempsRestant());
+  }, 1000);
+
+  // Nettoyage du timer si on quitte la page
+  return () => clearInterval(timer);
+}, []);
   // --- DATA : VÉRITÉ MATHÉMATIQUE CORRIGÉE ---
   const startingBalance = 971;
   const surplusFinal = 2701;
@@ -1501,6 +1532,14 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                 <Activity size={12} className="text-emerald-400" /> Release :
                 Japon 2026
               </p>
+              {/* Compte à rebours Japon */}
+<div className="mt-3 flex items-center gap-2 text-xs font-mono bg-slate-950/60 border border-slate-800 px-3 py-1.5 rounded-xl text-slate-300 w-fit shadow-inner">
+  <span className="text-blue-400">⏱️ J-</span>
+  <span className="text-blue-400 font-black text-sm">{timeLeft.jours}j</span>
+  <span className="text-blue-400 font-black text-sm">{timeLeft.heures}h</span>
+  <span className="text-blue-400 font-black text-sm">{timeLeft.minutes}m</span>
+  <span className="text-blue-500/70 font-bold">{timeLeft.secondes}s</span>
+</div>
             </div>
             <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl">
               <CheckCircle2 size={16} className="text-emerald-500" />
