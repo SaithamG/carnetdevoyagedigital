@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ShieldCheck,
   Map,
@@ -78,12 +78,20 @@ const App = () => {
   const EXCHANGE_RATE = 185;
 
   // States Checklist
-  const [checkedItems, setCheckedItems] = useState({});
+  const [checkedItems, setCheckedItems] = useState(() => {
+    const memoire = localStorage.getItem('sauvegardeChecklist');
+    if (memoire) {
+      return JSON.parse(memoire);
+    }
+    return {};
+  });
 
   const toggleCheck = (id) => {
     setCheckedItems((prev) => ({ ...prev, [id]: !prev[id] }));
   };
-
+  useEffect(() => {
+    localStorage.setItem('sauvegardeChecklist', JSON.stringify(checkedItems));
+  }, [checkedItems]);
   // --- DATA : VÉRITÉ MATHÉMATIQUE CORRIGÉE ---
   const startingBalance = 971;
   const surplusFinal = 2701;
