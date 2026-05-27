@@ -1536,24 +1536,48 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
 
           
                 {/* Compte à rebours - Style Premium & Clean */}
-                <div className="mt-4 flex items-center gap-3 px-3 py-1.5 bg-slate-850/40 border border-slate-700/50 rounded-lg w-fit shadow-sm">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
-                    COMPTE À REBOURS :
-                  </span>
-                  <div className="flex items-baseline gap-1.5 font-mono text-sm font-bold text-slate-200">
-                    <span className="text-blue-400 font-black text-base">{timeLeft.jours}</span>
-                    <span className="text-[9px] font-sans font-black text-slate-500 tracking-wider">J</span>
-                    
-                    <span className="text-slate-700 font-sans font-normal mx-0.5">|</span>
-                    
-                    <span>{timeLeft.heures}</span>
-                    <span className="text-[9px] font-sans font-black text-slate-500 tracking-wider">H</span>
-                    
-                    <span>{timeLeft.minutes}</span>
-                    <span className="text-[9px] font-sans font-black text-slate-500 tracking-wider">M</span>
-                    
-                    <span className="text-red-400 animate-pulse ml-0.5">{timeLeft.secondes}</span>
-                    <span className="text-[9px] font-sans font-black text-red-500/70 tracking-wider">S</span>
+                <div className="mt-4 flex items-center gap-4 px-4 py-2 bg-slate-900/80 border border-slate-800 rounded-xl w-fit shadow-lg backdrop-blur-sm">
+                  <div className="flex flex-col">
+                    <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-500 line-height-none">
+                      COMPTE À REBOURS
+                    </span>
+                    <span className="text-[11px] font-bold text-blue-500 uppercase tracking-wider mt-0.5">
+                      JAPON 2026
+                    </span>
+                  </div>
+
+                  <div className="w-px h-6 bg-slate-800"></div>
+
+                  <div className="flex items-center gap-2 font-mono text-sm font-black tracking-tight">
+                    {/* Jours */}
+                    <div className="flex items-baseline gap-0.5">
+                      <span className="text-blue-400 text-base">{timeLeft.jours}</span>
+                      <span className="text-[10px] font-sans font-bold text-slate-600 uppercase ml-0.5">J</span>
+                    </div>
+
+                    <span className="text-slate-700 font-sans mx-0.5">|</span>
+
+                    {/* Heures */}
+                    <div className="flex items-baseline gap-0.5">
+                      <span className="text-slate-200">{timeLeft.heures}</span>
+                      <span className="text-[10px] font-sans font-bold text-slate-600 uppercase ml-0.5">H</span>
+                    </div>
+
+                    <span className="text-slate-800">:</span>
+
+                    {/* Minutes */}
+                    <div className="flex items-baseline gap-0.5">
+                      <span className="text-slate-200">{timeLeft.minutes}</span>
+                      <span className="text-[10px] font-sans font-bold text-slate-600 uppercase ml-0.5">M</span>
+                    </div>
+
+                    <span className="text-slate-800">:</span>
+
+                    {/* Secondes */}
+                    <div className="flex items-baseline gap-0.5">
+                      <span className="text-red-400 animate-pulse">{timeLeft.secondes}</span>
+                      <span className="text-[10px] font-sans font-bold text-red-500/60 uppercase ml-0.5">S</span>
+                    </div>
                   </div>
                 </div>
                 </div> 
