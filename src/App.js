@@ -1532,13 +1532,17 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
                 <Activity size={12} className="text-emerald-400" /> Release :
                 Japon 2026
               </p>
-              {/* Compte à rebours Japon */}
-<div className="mt-3 flex items-center gap-2 text-xs font-mono bg-slate-950/60 border border-slate-800 px-3 py-1.5 rounded-xl text-slate-300 w-fit shadow-inner">
-  <span className="text-blue-400">⏱️ J-</span>
-  <span className="text-blue-400 font-black text-sm">{timeLeft.jours}j</span>
-  <span className="text-blue-400 font-black text-sm">{timeLeft.heures}h</span>
-  <span className="text-blue-400 font-black text-sm">{timeLeft.minutes}m</span>
-  <span className="text-blue-500/70 font-bold">{timeLeft.secondes}s</span>
+            {/* Compte à rebours épuré style Carnet */}
+<div className="mt-2.5 flex items-baseline gap-1 font-mono text-xs text-slate-400">
+  <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-slate-600 mr-1">Départ dans :</span>
+  <span className="text-blue-400 font-black text-sm">{timeLeft.jours}</span>
+  <span className="text-[10px] font-sans text-slate-500 lowercase mr-1">j</span>
+  <span className="text-blue-400 font-black text-sm">{timeLeft.heures}</span>
+  <span className="text-[10px] font-sans text-slate-500 lowercase mr-1">h</span>
+  <span className="text-blue-400 font-black text-sm">{timeLeft.minutes}</span>
+  <span className="text-[10px] font-sans text-slate-500 lowercase mr-1">m</span>
+  <span className="text-red-400 font-black text-sm animate-pulse">{timeLeft.secondes}</span>
+  <span className="text-[10px] font-sans text-slate-500 lowercase">s</span>
 </div>
             </div>
             <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl">
