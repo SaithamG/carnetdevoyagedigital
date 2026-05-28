@@ -4,6 +4,7 @@ import { Globe } from 'lucide-react';
 import Header from './components/Header';
 import Overview from './components/Overview';
 import Finance from './components/Finance';
+import SuiviDepenses from './components/SuiviDepenses';
 import Itinerary from './components/Itinerary';
 import Transport from './components/Transport';
 import Converter from './components/Converter';
@@ -11,6 +12,7 @@ import ConverterWidget from './components/ConverterWidget';
 import Checklist from './components/Checklist';
 import Lexique from './components/Lexique';
 import Runbook from './components/Runbook';
+import Urgences from './components/Urgences';
 import CoachIA from './components/CoachIA';
 
 const calculerTempsRestant = () => {
@@ -27,11 +29,13 @@ const calculerTempsRestant = () => {
 const TAB_COMPONENTS = {
   overview: Overview,
   finance: Finance,
+  expenses: SuiviDepenses,
   transport: Transport,
   conversion: Converter,
   checklist: Checklist,
   lexique: Lexique,
   runbook: Runbook,
+  urgences: Urgences,
 };
 
 const App = () => {

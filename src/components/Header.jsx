@@ -2,18 +2,20 @@ import React from 'react';
 import {
   Globe, Activity, CheckCircle2, Check,
   Map, Wallet, Calendar, TrainFront, Calculator,
-  CheckSquare, Languages, ListChecks, Sparkles,
+  CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert,
 } from 'lucide-react';
 
 const TABS = [
   { id: 'overview', icon: <Map size={16} />, label: "Vue d'ensemble" },
   { id: 'finance', icon: <Wallet size={16} />, label: 'Finance & Budget' },
+  { id: 'expenses', icon: <Receipt size={16} />, label: 'Suivi Dépenses' },
   { id: 'roadbook', icon: <Calendar size={16} />, label: 'Itinéraire complet' },
   { id: 'transport', icon: <TrainFront size={16} />, label: 'Trajets & Transports' },
   { id: 'conversion', icon: <Calculator size={16} />, label: 'Convertisseur' },
-  { id: 'checklist', icon: <CheckSquare size={16} />, label: 'Logistique & Départ' },
+  { id: 'checklist', icon: <CheckSquare size={16} />, label: 'Logistique & Valise' },
   { id: 'lexique', icon: <Languages size={16} />, label: 'Lexique Survie' },
   { id: 'runbook', icon: <ListChecks size={16} />, label: 'Rappels & Résas' },
+  { id: 'urgences', icon: <ShieldAlert size={16} />, label: 'Urgences 🚨' },
   { id: 'ai', icon: <Sparkles size={16} />, label: 'Coach IA' },
 ];
 

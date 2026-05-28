@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CloudRain, Umbrella, BookOpen, CheckCircle2, MapPinned, AlertCircle } from 'lucide-react';
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
@@ -6,6 +6,19 @@ import { planBData } from '../data/planBData';
 
 const Itinerary = ({ activeRegion, setActiveRegion }) => {
   const [isRaining, setIsRaining] = useState(false);
+
+  const [dailyNotes, setDailyNotes] = useState(() => {
+    const saved = localStorage.getItem('japan_dailynotes');
+    return saved ? JSON.parse(saved) : {};
+  });
+
+  useEffect(() => {
+    localStorage.setItem('japan_dailynotes', JSON.stringify(dailyNotes));
+  }, [dailyNotes]);
+
+  const handleNoteChange = (date, text) => {
+    setDailyNotes((prev) => ({ ...prev, [date]: text }));
+  };
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
@@ -77,7 +90,10 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
           if (visibleSteps.length === 0) return null;
 
           return (
-            <div key={idx} className="bg-slate-900 rounded-[2.5rem] border border-slate-800 shadow-xl overflow-hidden relative group hover:border-slate-700 transition-colors">
+            <div
+              key={idx}
+              className="bg-slate-900 rounded-[2.5rem] border border-slate-800 shadow-xl overflow-hidden relative group hover:border-slate-700 transition-colors"
+            >
               <div className="bg-slate-800/80 p-5 border-b border-slate-700/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <span className="bg-blue-600 text-white text-[11px] font-black px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-md">
@@ -139,6 +155,21 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                     </div>
                   </div>
                 )}
+
+                {/* JOURNAL DE BORD */}
+                <div className="mt-6 pt-6 border-t border-slate-800">
+                  <div className="bg-slate-950/50 p-4 rounded-2xl border border-slate-800/80">
+                    <h4 className="text-xs font-black text-blue-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                      <BookOpen size={14} /> Journal de bord ({day.date})
+                    </h4>
+                    <textarea
+                      value={dailyNotes[day.date] || ''}
+                      onChange={(e) => handleNoteChange(day.date, e.target.value)}
+                      placeholder="Note ici tes adresses préférées, souvenirs du jour ou dépenses en yens..."
+                      className="w-full bg-slate-900/50 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 transition-colors placeholder:text-slate-600 min-h-[80px] resize-y"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           );
