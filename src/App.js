@@ -13,6 +13,8 @@ import Checklist from './components/Checklist';
 import Lexique from './components/Lexique';
 import Runbook from './components/Runbook';
 import Urgences from './components/Urgences';
+import ModeVoyage from './components/ModeVoyage';
+import ChronoTabehoudai from './components/ChronoTabehoudai';
 import CoachIA from './components/CoachIA';
 
 const calculerTempsRestant = () => {
@@ -27,6 +29,7 @@ const calculerTempsRestant = () => {
 };
 
 const TAB_COMPONENTS = {
+  voyage: ModeVoyage,
   overview: Overview,
   finance: Finance,
   expenses: SuiviDepenses,
@@ -68,6 +71,7 @@ const App = () => {
       </main>
 
       <ConverterWidget />
+      <ChronoTabehoudai />
 
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-slate-900 text-white p-4 rounded-3xl shadow-2xl flex justify-between items-center border border-slate-800 hidden md:flex">
         <div className="flex items-center gap-3">

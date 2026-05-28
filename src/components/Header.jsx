@@ -2,13 +2,22 @@ import React from 'react';
 import {
   Globe, CheckCircle2, Check,
   Map, Wallet, Calendar, TrainFront, Calculator,
-  CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert,
+  CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert, Navigation,
 } from 'lucide-react';
 
 const EXCHANGE_RATE = 185;
 const TOTAL_BUDGET_YEN = 1296 * EXCHANGE_RATE;
 
+const TRIP_START = new Date(2026, 10, 9);
+const TRIP_END   = new Date(2026, 10, 30);
+
+const isTripActive = () => {
+  const today = new Date();
+  return today >= TRIP_START && today <= TRIP_END;
+};
+
 const TABS = [
+  { id: 'voyage', icon: <Navigation size={16} />, label: 'Mode Voyage', special: true },
   { id: 'overview', icon: <Map size={16} />, label: "Vue d'ensemble" },
   { id: 'finance', icon: <Wallet size={16} />, label: 'Finance & Budget' },
   { id: 'expenses', icon: <Receipt size={16} />, label: 'Suivi Dépenses' },
@@ -91,19 +100,28 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
       </div>
 
       <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2">
-        {TABS.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
-              activeTab === tab.id
-                ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40 border border-blue-500'
-                : 'bg-slate-900 border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
-            }`}
-          >
-            {tab.icon} {tab.label}
-          </button>
-        ))}
+        {TABS.map((tab) => {
+          const active = activeTab === tab.id;
+          const tripLive = tab.special && isTripActive();
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap relative ${
+                active
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40 border border-blue-500'
+                  : tab.special
+                  ? 'bg-emerald-900/30 border border-emerald-700/50 text-emerald-400 hover:bg-emerald-900/50'
+                  : 'bg-slate-900 border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+              }`}
+            >
+              {tab.icon} {tab.label}
+              {tripLive && (
+                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse border border-slate-900" />
+              )}
+            </button>
+          );
+        })}
       </div>
     </div>
   </header>

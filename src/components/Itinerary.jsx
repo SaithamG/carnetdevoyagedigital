@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CloudRain, Umbrella, BookOpen, CheckCircle2, MapPinned, AlertCircle } from 'lucide-react';
+import { CloudRain, Umbrella, BookOpen, CheckCircle2, MapPinned, AlertCircle, Check } from 'lucide-react';
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { planBData } from '../data/planBData';
@@ -12,12 +12,26 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
     return saved ? JSON.parse(saved) : {};
   });
 
+  const [visitedSteps, setVisitedSteps] = useState(() => {
+    const saved = localStorage.getItem('japan_visited_steps');
+    return saved ? JSON.parse(saved) : {};
+  });
+
   useEffect(() => {
     localStorage.setItem('japan_dailynotes', JSON.stringify(dailyNotes));
   }, [dailyNotes]);
 
+  useEffect(() => {
+    localStorage.setItem('japan_visited_steps', JSON.stringify(visitedSteps));
+  }, [visitedSteps]);
+
   const handleNoteChange = (date, text) => {
     setDailyNotes((prev) => ({ ...prev, [date]: text }));
+  };
+
+  const toggleVisited = (dayDate, stepTime) => {
+    const key = `${dayDate}_${stepTime}`;
+    setVisitedSteps((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
@@ -101,6 +115,15 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                   </span>
                   <h3 className="font-black text-white italic text-xl">{day.title}</h3>
                 </div>
+                {/* Progression des étapes visitées */}
+                {(() => {
+                  const done = day.steps.filter(s => visitedSteps[`${day.date}_${s.time}`]).length;
+                  return done > 0 ? (
+                    <span className="text-[10px] font-black text-emerald-400 bg-emerald-950/30 border border-emerald-900/40 px-2 py-1 rounded-lg shrink-0">
+                      {done}/{day.steps.length} faites
+                    </span>
+                  ) : null;
+                })()}
               </div>
 
               <div className="p-6 md:p-8">
@@ -116,23 +139,47 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                           </span>
                         </div>
 
-                        <div className="flex-1 p-5 rounded-3xl border border-slate-800/80 bg-slate-950/80 flex flex-col md:flex-row gap-5 items-start transition-colors w-full relative">
+                        <div
+                          onClick={() => toggleVisited(day.date, step.time)}
+                          className={`flex-1 p-5 rounded-3xl border flex flex-col md:flex-row gap-5 items-start transition-all w-full relative cursor-pointer ${
+                            visitedSteps[`${day.date}_${step.time}`]
+                              ? 'border-emerald-900/50 bg-emerald-950/10'
+                              : 'border-slate-800/80 bg-slate-950/80 hover:border-slate-700'
+                          }`}
+                        >
+                          {/* Bouton G-Maps */}
                           {step.mapUrl && (
                             <a
                               href={step.mapUrl}
                               target="_blank"
                               rel="noreferrer"
+                              onClick={(e) => e.stopPropagation()}
                               className="absolute top-4 right-4 bg-blue-600/20 hover:bg-blue-600 text-blue-400 hover:text-white p-2 rounded-xl transition-colors border border-blue-500/30 flex items-center gap-1 text-[10px] font-bold"
                             >
                               <MapPinned size={14} /> G-Maps
                             </a>
                           )}
 
-                          <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 border border-slate-800 shadow-sm text-blue-400">
+                          {/* Checkmark visitée */}
+                          {visitedSteps[`${day.date}_${step.time}`] && (
+                            <div className="absolute top-4 left-4 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
+                              <Check size={11} className="text-white" />
+                            </div>
+                          )}
+
+                          <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 border shadow-sm ${
+                            visitedSteps[`${day.date}_${step.time}`]
+                              ? 'bg-emerald-950/30 border-emerald-800/50 text-emerald-400'
+                              : 'bg-slate-900 border-slate-800 text-blue-400'
+                          }`}>
                             {step.icon}
                           </div>
                           <div className="flex-1 pr-12">
-                            <h4 className="text-base font-bold text-slate-100 mb-2 flex items-center gap-2">
+                            <h4 className={`text-base font-bold mb-2 flex items-center gap-2 ${
+                              visitedSteps[`${day.date}_${step.time}`]
+                                ? 'text-emerald-400/70 line-through'
+                                : 'text-slate-100'
+                            }`}>
                               {step.title}
                               {step.isOutdoor && (
                                 <CloudRain size={12} className="text-slate-500" title="Activité en extérieur" />
