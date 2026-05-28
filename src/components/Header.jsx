@@ -78,11 +78,11 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 bg-rose-500/10 border border-rose-500/20 px-4 py-2 rounded-xl h-fit">
-            <Receipt size={16} className="text-rose-400" />
+          <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl h-fit">
+            <Receipt size={16} className="text-blue-400" />
             <div>
-              <p className="text-[10px] font-black text-rose-500 uppercase">Dépenses</p>
-              <p className="text-xs font-bold text-rose-100">
+              <p className="text-[10px] font-black text-blue-400 uppercase">Dépenses</p>
+              <p className="text-xs font-bold text-blue-100">
                 {totalSpentYen.toLocaleString('fr-FR')}¥ / {TOTAL_BUDGET_YEN.toLocaleString('fr-FR')}¥
               </p>
             </div>
