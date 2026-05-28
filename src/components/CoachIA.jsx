@@ -76,7 +76,7 @@ Ne mentionne pas le JSON. Réponds en français de manière hyper concise et per
         <div className="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
           <Sparkles className="text-emerald-400 w-6 h-6" />
           <div>
-            <h3 className="font-black italic text-white text-lg">Assistant IA (Context-Aware)</h3>
+            <h3 className="font-black italic text-white text-lg">Assistant IA</h3>
             <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Alimenté par Gemini API</p>
           </div>
         </div>

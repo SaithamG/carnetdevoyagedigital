@@ -1,9 +1,12 @@
 import React from 'react';
 import {
-  Globe, Activity, CheckCircle2, Check,
+  Globe, CheckCircle2, Check,
   Map, Wallet, Calendar, TrainFront, Calculator,
   CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert,
 } from 'lucide-react';
+
+const EXCHANGE_RATE = 185;
+const TOTAL_BUDGET_YEN = 1296 * EXCHANGE_RATE;
 
 const TABS = [
   { id: 'overview', icon: <Map size={16} />, label: "Vue d'ensemble" },
@@ -19,7 +22,11 @@ const TABS = [
   { id: 'ai', icon: <Sparkles size={16} />, label: 'Coach IA' },
 ];
 
-const Header = ({ activeTab, setActiveTab, timeLeft }) => (
+const Header = ({ activeTab, setActiveTab, timeLeft }) => {
+  const expenses = JSON.parse(localStorage.getItem('japan_expenses') || '[]');
+  const totalSpentYen = expenses.reduce((acc, curr) => acc + curr.amountYen, 0);
+
+  return (
   <header className="bg-slate-900 border-b border-slate-800 p-6 sticky top-0 z-50 shadow-xl relative overflow-hidden">
     <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
     <div className="max-w-5xl mx-auto relative z-10">
@@ -29,9 +36,6 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => (
           <h1 className="text-2xl font-black italic tracking-tighter flex items-center gap-2 text-white">
             <Globe className="text-blue-500" /> CARNET DE VOYAGE DIGITAL
           </h1>
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1 flex items-center gap-1">
-            <Activity size={12} className="text-emerald-400" /> Release : Japon 2026
-          </p>
 
           <div className="mt-4 flex items-center gap-4 px-4 py-2 bg-slate-900/80 border border-slate-800 rounded-xl w-fit shadow-lg backdrop-blur-sm">
             <div className="flex flex-col">
@@ -63,13 +67,25 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => (
           </div>
         </div>
 
-        <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl h-fit mt-2 md:mt-0">
-          <CheckCircle2 size={16} className="text-emerald-500" />
-          <div>
-            <p className="text-[10px] font-black text-emerald-500 uppercase">Vol Garanti</p>
-            <p className="text-xs font-bold text-emerald-100 flex items-center gap-1">
-              3/4 Payé <Check size={14} />
-            </p>
+        <div className="flex flex-row md:flex-col gap-2 shrink-0 mt-2 md:mt-0">
+          <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl h-fit">
+            <CheckCircle2 size={16} className="text-emerald-500" />
+            <div>
+              <p className="text-[10px] font-black text-emerald-500 uppercase">Vol Garanti</p>
+              <p className="text-xs font-bold text-emerald-100 flex items-center gap-1">
+                3/4 Payé <Check size={14} />
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 bg-rose-500/10 border border-rose-500/20 px-4 py-2 rounded-xl h-fit">
+            <Receipt size={16} className="text-rose-400" />
+            <div>
+              <p className="text-[10px] font-black text-rose-500 uppercase">Dépenses</p>
+              <p className="text-xs font-bold text-rose-100">
+                {totalSpentYen.toLocaleString('fr-FR')}¥ / {TOTAL_BUDGET_YEN.toLocaleString('fr-FR')}¥
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -91,6 +107,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => (
       </div>
     </div>
   </header>
-);
+  );
+};
 
 export default Header;
