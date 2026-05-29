@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Globe, CheckCircle2, Check,
   Map, Wallet, Calendar, TrainFront, Calculator,
-  CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert, Navigation,
+  CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert, Navigation, MapPin,
 } from 'lucide-react';
 
 const EXCHANGE_RATE = 185;
@@ -16,24 +16,43 @@ const isTripActive = () => {
   return today >= TRIP_START && today <= TRIP_END;
 };
 
-const TABS = [
-  { id: 'voyage', icon: <Navigation size={16} />, label: 'Mode Voyage', special: true },
-  { id: 'overview', icon: <Map size={16} />, label: "Vue d'ensemble" },
-  { id: 'finance', icon: <Wallet size={16} />, label: 'Finance & Budget' },
-  { id: 'expenses', icon: <Receipt size={16} />, label: 'Suivi Dépenses' },
-  { id: 'roadbook', icon: <Calendar size={16} />, label: 'Itinéraire complet' },
-  { id: 'transport', icon: <TrainFront size={16} />, label: 'Trajets & Transports' },
-  { id: 'conversion', icon: <Calculator size={16} />, label: 'Convertisseur' },
-  { id: 'checklist', icon: <CheckSquare size={16} />, label: 'Logistique & Valise' },
-  { id: 'lexique', icon: <Languages size={16} />, label: 'Lexique Survie' },
-  { id: 'runbook', icon: <ListChecks size={16} />, label: 'Rappels & Résas' },
-  { id: 'urgences', icon: <ShieldAlert size={16} />, label: 'Urgences 🚨' },
-  { id: 'ai', icon: <Sparkles size={16} />, label: 'Coach IA' },
+const TAB_META = {
+  voyage:     { icon: <Navigation size={16} />,  label: 'Mode Voyage' },
+  overview:   { icon: <Map size={16} />,         label: "Vue d'ensemble" },
+  finance:    { icon: <Wallet size={16} />,      label: 'Finance & Budget' },
+  checklist:  { icon: <CheckSquare size={16} />, label: 'Logistique & Valise' },
+  runbook:    { icon: <ListChecks size={16} />,  label: 'Rappels & Résas' },
+  roadbook:   { icon: <Calendar size={16} />,    label: 'Itinéraire' },
+  carte:      { icon: <MapPin size={16} />,      label: 'Carte' },
+  transport:  { icon: <TrainFront size={16} />,  label: 'Trajets & Transports' },
+  expenses:   { icon: <Receipt size={16} />,     label: 'Suivi Dépenses' },
+  conversion: { icon: <Calculator size={16} />,  label: 'Convertisseur' },
+  lexique:    { icon: <Languages size={16} />,   label: 'Lexique Survie' },
+  ai:         { icon: <Sparkles size={16} />,    label: 'Coach IA' },
+  urgences:   { icon: <ShieldAlert size={16} />, label: 'Urgences 🚨' },
+};
+
+const NAV_GROUPS = [
+  { id: 'prepare',  label: 'Préparer',  tabs: ['overview', 'finance', 'checklist', 'runbook'] },
+  { id: 'surplace', label: 'Sur place', tabs: ['roadbook', 'transport'] },
+  { id: 'outils',   label: 'Outils',    tabs: ['expenses', 'conversion', 'lexique', 'ai'] },
 ];
+
+const groupOfTab = (tabId) => NAV_GROUPS.find((g) => g.tabs.includes(tabId))?.id;
 
 const Header = ({ activeTab, setActiveTab, timeLeft }) => {
   const expenses = JSON.parse(localStorage.getItem('japan_expenses') || '[]');
   const totalSpentYen = expenses.reduce((acc, curr) => acc + curr.amountYen, 0);
+
+  const [openGroup, setOpenGroup] = useState(() => groupOfTab(activeTab) || 'prepare');
+
+  useEffect(() => {
+    const g = groupOfTab(activeTab);
+    if (g) setOpenGroup(g);
+  }, [activeTab]);
+
+  const tripLive = isTripActive();
+  const activeGroupTabs = NAV_GROUPS.find((g) => g.id === openGroup)?.tabs || [];
 
   return (
   <header className="bg-slate-900 border-b border-slate-800 p-6 sticky top-0 z-50 shadow-xl relative overflow-hidden">
@@ -99,26 +118,72 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
         </div>
       </div>
 
-      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2">
-        {TABS.map((tab) => {
-          const active = activeTab === tab.id;
-          const tripLive = tab.special && isTripActive();
+      {/* NAV NIVEAU 1 : raccourcis + groupes */}
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2 items-center">
+        <button
+          onClick={() => setActiveTab('voyage')}
+          className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+            activeTab === 'voyage'
+              ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/40 border border-emerald-500'
+              : 'bg-emerald-900/30 border border-emerald-700/50 text-emerald-400 hover:bg-emerald-900/50'
+          }`}
+        >
+          {TAB_META.voyage.icon} {TAB_META.voyage.label}
+          {tripLive && (
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse border border-slate-900" />
+          )}
+        </button>
+
+        <div className="w-px h-7 bg-slate-800 shrink-0" />
+
+        {NAV_GROUPS.map((group) => {
+          const isOpen = openGroup === group.id;
+          const hasActive = group.tabs.includes(activeTab);
           return (
             <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap relative ${
-                active
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40 border border-blue-500'
-                  : tab.special
-                  ? 'bg-emerald-900/30 border border-emerald-700/50 text-emerald-400 hover:bg-emerald-900/50'
-                  : 'bg-slate-900 border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+              key={group.id}
+              onClick={() => setOpenGroup(group.id)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                isOpen
+                  ? 'bg-slate-800 border-slate-600 text-white'
+                  : 'bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
               }`}
             >
-              {tab.icon} {tab.label}
-              {tripLive && (
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse border border-slate-900" />
-              )}
+              {group.label}
+              {hasActive && <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />}
+            </button>
+          );
+        })}
+
+        <div className="w-px h-7 bg-slate-800 shrink-0" />
+
+        <button
+          onClick={() => setActiveTab('urgences')}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+            activeTab === 'urgences'
+              ? 'bg-red-600 text-white shadow-lg shadow-red-900/40 border-red-500'
+              : 'bg-red-950/30 border-red-900/50 text-red-400 hover:bg-red-900/40'
+          }`}
+        >
+          {TAB_META.urgences.icon} {TAB_META.urgences.label}
+        </button>
+      </div>
+
+      {/* NAV NIVEAU 2 : sous-onglets du groupe ouvert */}
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 pt-2 mt-1 border-t border-slate-800/60">
+        {activeGroupTabs.map((tabId) => {
+          const active = activeTab === tabId;
+          return (
+            <button
+              key={tabId}
+              onClick={() => setActiveTab(tabId)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                active
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40 border-blue-500'
+                  : 'bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+              }`}
+            >
+              {TAB_META[tabId].icon} {TAB_META[tabId].label}
             </button>
           );
         })}
