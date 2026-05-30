@@ -97,3 +97,17 @@ export const geoByMapUrl = {
 };
 
 export const getGeo = (mapUrl) => geoByMapUrl[mapUrl];
+
+// Slug déterministe dérivé du mapUrl (même logique que le script de sourcing
+// des images). Sert à retrouver le fichier image local d'un lieu.
+export const slugForMapUrl = (mapUrl = '') => {
+  const q = (mapUrl.split('q=')[1] || '').replace(/\+/g, ' ');
+  return decodeURIComponent(q)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+};
+
+export const imageForMapUrl = (mapUrl) => `/images/itinerary/${slugForMapUrl(mapUrl)}.jpg`;

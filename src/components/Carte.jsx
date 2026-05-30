@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import { MapPinned, CheckCircle2 } from 'lucide-react';
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
-import { getGeo } from '../data/itineraryGeo';
+import { getGeo, imageForMapUrl } from '../data/itineraryGeo';
 
 const makeIcon = (color) =>
   L.divIcon({
@@ -132,6 +132,13 @@ const Carte = () => {
             <Marker key={m.mapUrl} position={m.coords} icon={m.visited ? ICON_VISITED : ICON_DEFAULT}>
               <Popup>
                 <div className="min-w-[180px]">
+                  <img
+                    src={imageForMapUrl(m.mapUrl)}
+                    alt={m.title}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                    className="w-full h-24 object-cover rounded-lg mb-2"
+                  />
                   <p className="font-black text-slate-900 text-sm mb-1">{m.title}</p>
                   <p className="text-[11px] text-slate-600 leading-snug mb-2">{m.desc}</p>
                   <div className="flex flex-wrap gap-1 mb-2">

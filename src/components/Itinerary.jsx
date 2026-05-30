@@ -3,6 +3,7 @@ import { CloudRain, Umbrella, BookOpen, CheckCircle2, MapPinned, AlertCircle, Ch
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { planBData } from '../data/planBData';
+import { imageForMapUrl } from '../data/itineraryGeo';
 
 const Itinerary = ({ activeRegion, setActiveRegion }) => {
   const [isRaining, setIsRaining] = useState(false);
@@ -141,7 +142,7 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
 
                         <div
                           onClick={() => toggleVisited(day.date, step.time)}
-                          className={`flex-1 p-5 rounded-3xl border flex flex-col md:flex-row gap-5 items-start transition-all w-full relative cursor-pointer ${
+                          className={`flex-1 p-5 rounded-3xl border flex flex-col gap-4 transition-all w-full relative cursor-pointer ${
                             visitedSteps[`${day.date}_${step.time}`]
                               ? 'border-emerald-900/50 bg-emerald-950/10'
                               : 'border-slate-800/80 bg-slate-950/80 hover:border-slate-700'
@@ -167,6 +168,21 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                             </div>
                           )}
 
+                          {step.mapUrl && (
+                            <img
+                              src={imageForMapUrl(step.mapUrl)}
+                              alt={step.title}
+                              loading="lazy"
+                              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                              className={`w-full h-44 object-cover rounded-2xl border ${
+                                visitedSteps[`${day.date}_${step.time}`]
+                                  ? 'border-emerald-900/40 opacity-80'
+                                  : 'border-slate-800'
+                              }`}
+                            />
+                          )}
+
+                          <div className="flex gap-4 items-start">
                           <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 border shadow-sm ${
                             visitedSteps[`${day.date}_${step.time}`]
                               ? 'bg-emerald-950/30 border-emerald-800/50 text-emerald-400'
@@ -186,6 +202,7 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                               )}
                             </h4>
                             <p className="text-[13px] text-slate-400 leading-relaxed font-medium">{step.desc}</p>
+                          </div>
                           </div>
                         </div>
                       </div>
