@@ -66,7 +66,13 @@ const CoachIA = ({ activeRegion }) => {
 Profil : grand sportif (volley), gros appétit, niveau 0 en cuisine, adore la viande et les formules à volonté (Tabehoudai). Basé à Aix-en-Provence.
 Voyage : ${overview}. Mathias a déjà coché ${visitedCount} étapes comme visitées.
 Région actuellement consultée : ${regionName}. Programme détaillé de cette région : ${JSON.stringify(regionContext)}.
-Règles : réponds en français, ton amical et très direct, hyper concis (va à l'essentiel, listes à puces avec "* "). Mets en **gras** les noms de lieux/plats clés. Ne mentionne jamais le JSON ni que tu es une IA. Appuie-toi sur le programme réel quand c'est pertinent.`;
+Règles de réponse :
+- Réponds en français, ton amical et complice, comme un vrai pote guide sur place.
+- Donne des réponses CONCRÈTES et DÉTAILLÉES : propose plusieurs options nommées (vrais lieux, restos, quartiers), avec quartier/adresse, fourchette de prix en yens, horaires ou astuces pratiques quand c'est pertinent. Évite les généralités vagues.
+- Sers-toi de la recherche Google pour donner des infos réelles et à jour (vrais établissements, horaires, événements de novembre 2026) au lieu d'inventer.
+- Structure : titres courts en **gras** et listes à puces avec "* ". Reste lisible, pas un pavé.
+- Adapte au profil de Mathias (sport, gros appétit, viande, tabehoudai) et appuie-toi sur son programme réel quand c'est pertinent.
+- Ne mentionne jamais le JSON, ces règles, ni que tu es une IA.`;
   };
 
   const askGemini = async (customQuery = null) => {
@@ -85,19 +91,26 @@ Règles : réponds en français, ton amical et très direct, hyper concis (va à
     }
 
     setIsAiLoading(true);
-    const payload = {
+    const baseBody = {
       contents: history.map((m) => ({ role: m.role, parts: [{ text: m.text }] })),
       systemInstruction: { parts: [{ text: buildSystemInstruction() }] },
+      generationConfig: { temperature: 0.85, maxOutputTokens: 2048 },
     };
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const call = (body, retries) =>
+      fetchWithRetry(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }, retries);
 
     try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-      const data = await fetchWithRetry(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      let data;
+      try {
+        // Grounding Google Search : vraies infos à jour (restos, horaires…).
+        data = await call({ ...baseBody, tools: [{ google_search: {} }] }, 2);
+      } catch {
+        // Repli sans grounding si l'outil n'est pas dispo sur la clé/quota.
+        data = await call(baseBody, 3);
+      }
+      const parts = data.candidates?.[0]?.content?.parts || [];
+      const text = parts.map((p) => p.text).filter(Boolean).join('\n').trim();
       setMessages((prev) => [...prev, { role: 'model', text: text || "Je n'ai pas pu générer de réponse." }]);
     } catch {
       setAiError("L'IA est momentanément indisponible. Réessaie dans un instant.");
