@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MapPinned, CheckCircle2 } from 'lucide-react';
@@ -81,6 +81,28 @@ const Carte = () => {
   const points = useMemo(() => markers.map((m) => m.coords), [markers]);
   const visitedCount = markers.filter((m) => m.visited).length;
 
+  // Trajet : coordonnées dans l'ordre chronologique de l'itinéraire (lignes
+  // reliant les lieux). On saute les points consécutifs identiques.
+  const routeCoords = useMemo(() => {
+    const regionIds = activeRegion === 'all' ? regions.map((r) => r.id) : [activeRegion];
+    const pts = [];
+    regionIds.forEach((regionId) => {
+      const region = itineraryData[regionId];
+      if (!region) return;
+      region.days.forEach((day) => {
+        day.steps.forEach((step) => {
+          const geo = getGeo(step.mapUrl);
+          if (!geo) return;
+          const last = pts[pts.length - 1];
+          if (!last || last[0] !== geo.coords[0] || last[1] !== geo.coords[1]) {
+            pts.push(geo.coords);
+          }
+        });
+      });
+    });
+    return pts;
+  }, [activeRegion]);
+
   const filters = [{ id: 'all', name: 'Tout le voyage' }, ...regions];
 
   return (
@@ -115,8 +137,8 @@ const Carte = () => {
         </span>
       </div>
 
-      {/* Carte */}
-      <div className="rounded-[2rem] overflow-hidden border border-slate-800 shadow-xl">
+      {/* Carte — relative z-0 isole le z-index élevé de Leaflet sous le header */}
+      <div className="relative z-0 rounded-[2rem] overflow-hidden border border-slate-800 shadow-xl">
         <MapContainer
           center={[35.0, 137.0]}
           zoom={6}
@@ -124,9 +146,16 @@ const Carte = () => {
           style={{ height: '70vh', width: '100%', background: '#0f172a' }}
         >
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            subdomains="abcd"
           />
+          {routeCoords.length > 1 && (
+            <Polyline
+              positions={routeCoords}
+              pathOptions={{ color: '#60a5fa', weight: 3, opacity: 0.5, dashArray: '6 8' }}
+            />
+          )}
           <FitBounds points={points} />
           {markers.map((m) => (
             <Marker key={m.mapUrl} position={m.coords} icon={m.visited ? ICON_VISITED : ICON_DEFAULT}>

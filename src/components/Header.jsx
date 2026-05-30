@@ -33,7 +33,7 @@ const TAB_META = {
 };
 
 const NAV_GROUPS = [
-  { id: 'prepare',  label: 'Préparer',  tabs: ['overview', 'finance', 'checklist', 'runbook'] },
+  { id: 'prepare',  label: 'Avant le départ',  tabs: ['overview', 'finance', 'checklist', 'runbook'] },
   { id: 'surplace', label: 'Sur place', tabs: ['roadbook', 'carte', 'transport'] },
   { id: 'outils',   label: 'Outils',    tabs: ['expenses', 'conversion', 'lexique', 'ai'] },
 ];
