@@ -6,6 +6,7 @@ import Overview from './components/Overview';
 import Finance from './components/Finance';
 import SuiviDepenses from './components/SuiviDepenses';
 import Itinerary from './components/Itinerary';
+import Carte from './components/Carte';
 import Transport from './components/Transport';
 import Converter from './components/Converter';
 import ConverterWidget from './components/ConverterWidget';
@@ -33,6 +34,7 @@ const TAB_COMPONENTS = {
   overview: Overview,
   finance: Finance,
   expenses: SuiviDepenses,
+  carte: Carte,
   transport: Transport,
   conversion: Converter,
   checklist: Checklist,
