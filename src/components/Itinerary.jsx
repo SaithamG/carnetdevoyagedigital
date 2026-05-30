@@ -4,6 +4,7 @@ import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { planBData } from '../data/planBData';
 import PlaceImage from './PlaceImage';
+import StepJournal from './StepJournal';
 
 const Itinerary = ({ activeRegion, setActiveRegion }) => {
   const [isRaining, setIsRaining] = useState(false);
@@ -200,6 +201,7 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                               )}
                             </h4>
                             <p className="text-[13px] text-slate-400 leading-relaxed font-medium">{step.desc}</p>
+                            <StepJournal stepKey={`${day.date}_${step.time}`} />
                           </div>
                           </div>
                         </div>
