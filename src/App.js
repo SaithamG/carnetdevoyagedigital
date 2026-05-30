@@ -17,6 +17,7 @@ import Urgences from './components/Urgences';
 import ModeVoyage from './components/ModeVoyage';
 import ChronoTabehoudai from './components/ChronoTabehoudai';
 import CoachIA from './components/CoachIA';
+import ExportCarnet from './components/ExportCarnet';
 
 const calculerTempsRestant = () => {
   const difference = +new Date('2026-11-08T00:00:00') - +new Date();
@@ -41,6 +42,7 @@ const TAB_COMPONENTS = {
   lexique: Lexique,
   runbook: Runbook,
   urgences: Urgences,
+  carnet: ExportCarnet,
 };
 
 const App = () => {

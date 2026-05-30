@@ -3,7 +3,7 @@ import {
   Globe, CheckCircle2, Check,
   Map, Wallet, Calendar, TrainFront, Calculator,
   CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert, Navigation, MapPin,
-  Luggage, Compass, Wrench,
+  Luggage, Compass, Wrench, BookHeart,
 } from 'lucide-react';
 
 const EXCHANGE_RATE = 185;
@@ -30,13 +30,14 @@ const TAB_META = {
   conversion: { icon: <Calculator size={16} />,  label: 'Convertisseur' },
   lexique:    { icon: <Languages size={16} />,   label: 'Lexique Survie' },
   ai:         { icon: <Sparkles size={16} />,    label: 'Coach IA' },
+  carnet:     { icon: <BookHeart size={16} />,   label: 'Mon Carnet' },
   urgences:   { icon: <ShieldAlert size={16} />, label: 'Urgences 🚨' },
 };
 
 const NAV_GROUPS = [
   { id: 'prepare',  label: 'Avant de partir', icon: <Luggage size={16} />, tabs: ['overview', 'finance', 'checklist', 'runbook'] },
   { id: 'surplace', label: 'Explorer',        icon: <Compass size={16} />, tabs: ['roadbook', 'carte', 'transport'] },
-  { id: 'outils',   label: 'Outils',          icon: <Wrench size={16} />,  tabs: ['expenses', 'conversion', 'lexique', 'ai'] },
+  { id: 'outils',   label: 'Outils',          icon: <Wrench size={16} />,  tabs: ['expenses', 'conversion', 'lexique', 'ai', 'carnet'] },
 ];
 
 const groupOfTab = (tabId) => NAV_GROUPS.find((g) => g.tabs.includes(tabId))?.id;
