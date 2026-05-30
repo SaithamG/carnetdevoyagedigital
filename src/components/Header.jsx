@@ -3,6 +3,7 @@ import {
   Globe, CheckCircle2, Check,
   Map, Wallet, Calendar, TrainFront, Calculator,
   CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert, Navigation, MapPin,
+  Luggage, Compass, Wrench,
 } from 'lucide-react';
 
 const EXCHANGE_RATE = 185;
@@ -33,9 +34,9 @@ const TAB_META = {
 };
 
 const NAV_GROUPS = [
-  { id: 'prepare',  label: 'Avant le départ',  tabs: ['overview', 'finance', 'checklist', 'runbook'] },
-  { id: 'surplace', label: 'Sur place', tabs: ['roadbook', 'carte', 'transport'] },
-  { id: 'outils',   label: 'Outils',    tabs: ['expenses', 'conversion', 'lexique', 'ai'] },
+  { id: 'prepare',  label: 'Avant de partir', icon: <Luggage size={16} />, tabs: ['overview', 'finance', 'checklist', 'runbook'] },
+  { id: 'surplace', label: 'Explorer',        icon: <Compass size={16} />, tabs: ['roadbook', 'carte', 'transport'] },
+  { id: 'outils',   label: 'Outils',          icon: <Wrench size={16} />,  tabs: ['expenses', 'conversion', 'lexique', 'ai'] },
 ];
 
 const groupOfTab = (tabId) => NAV_GROUPS.find((g) => g.tabs.includes(tabId))?.id;
@@ -149,7 +150,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
                   : 'bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
               }`}
             >
-              {group.label}
+              {group.icon} {group.label}
               {hasActive && <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />}
             </button>
           );
