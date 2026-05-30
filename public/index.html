@@ -14,6 +14,25 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Masque les barres de défilement des rangées d'onglets (utilisé partout). */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Tooltips de la carte en thème sombre (noms de lieux en latin). */
+      .leaflet-tooltip.carte-tip {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        color: #e2e8f0;
+        font: 700 11px/1.2 system-ui, sans-serif;
+        padding: 3px 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        white-space: nowrap;
+      }
+      .leaflet-tooltip.carte-tip::before { border-top-color: #1e293b; }
+    </style>
   </head>
   <body class="bg-slate-950">
     <div id="root"></div>
