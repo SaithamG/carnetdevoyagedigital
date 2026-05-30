@@ -3,7 +3,7 @@ import { CloudRain, Umbrella, BookOpen, CheckCircle2, MapPinned, AlertCircle, Ch
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { planBData } from '../data/planBData';
-import { imageForMapUrl } from '../data/itineraryGeo';
+import PlaceImage from './PlaceImage';
 
 const Itinerary = ({ activeRegion, setActiveRegion }) => {
   const [isRaining, setIsRaining] = useState(false);
@@ -169,11 +169,9 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                           )}
 
                           {step.mapUrl && (
-                            <img
-                              src={imageForMapUrl(step.mapUrl)}
-                              alt={step.title}
-                              loading="lazy"
-                              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                            <PlaceImage
+                              mapUrl={step.mapUrl}
+                              title={step.title}
                               className={`w-full h-44 object-cover rounded-2xl border ${
                                 visitedSteps[`${day.date}_${step.time}`]
                                   ? 'border-emerald-900/40 opacity-80'
