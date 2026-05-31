@@ -5,6 +5,7 @@ import {
   CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert, Navigation, MapPin,
   Luggage, Compass, Wrench, BookHeart,
 } from 'lucide-react';
+import SettingsPanel from './SettingsPanel';
 
 const EXCHANGE_RATE = 185;
 const TOTAL_BUDGET_YEN = 1296 * EXCHANGE_RATE;
@@ -98,6 +99,9 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
         </div>
 
         <div className="flex flex-row md:flex-col gap-2 shrink-0 mt-2 md:mt-0">
+          <div className="flex items-center gap-2">
+            <SettingsPanel />
+          </div>
           <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl h-fit">
             <CheckCircle2 size={16} className="text-emerald-500" />
             <div>
