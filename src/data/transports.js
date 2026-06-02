@@ -16,9 +16,9 @@ export const transports = [
   {
     from: 'Nagano',
     to: 'Togakushi',
-    type: 'Bus Alpico (ligne Togakushi)',
-    cost: '~9€',
-    desc: 'Depuis la gare de Nagano, ~1h de montée dans la montagne jusqu\'aux sanctuaires. Aller-retour dans la journée.',
+    type: 'Bus Alpico (ligne Nagano–Togakushi)',
+    cost: '~13€ l\'aller',
+    desc: 'Bus express depuis l\'arrêt n°7 (sortie Zenko-ji de la gare de Nagano), ~1h de montée jusqu\'aux sanctuaires. 2000¥ l\'aller, réservation conseillée. Aller-retour dans la journée.',
   },
   {
     from: 'Nagano',
@@ -53,6 +53,6 @@ export const transports = [
     to: 'Aéroport (retour)',
     type: 'Train express (selon aéroport)',
     cost: '~15€',
-    desc: 'Trajet du dernier jour vers l\'aéroport de départ (Haneda ou Narita, à confirmer selon le vol retour).',
+    desc: 'Trajet du dernier jour vers l\'aéroport de départ (aéroport à confirmer selon le vol retour).',
   },
 ];

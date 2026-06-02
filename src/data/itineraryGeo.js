@@ -10,13 +10,10 @@ export const geoByMapUrl = {
   'https://maps.google.com/?q=First+Cabin+Kansai+Airport': { coords: [34.4329, 135.2335] },
   'https://maps.google.com/?q=Kyoto+Station': { coords: [34.9858, 135.7588] },
   'https://maps.google.com/?q=Airbnb+Kyoto+Station': { coords: [34.9870, 135.7560] },
-  'https://maps.google.com/?q=Kyoto+Tower': { coords: [34.9876, 135.7592] },
   'https://maps.google.com/?q=Kyoto+Railway+Museum': { coords: [34.9875, 135.7415] },
   'https://maps.google.com/?q=Sannenzaka': { coords: [34.9963, 135.7806] },
   'https://maps.google.com/?q=Kiyomizu-dera': { coords: [34.9949, 135.7851] },
   'https://maps.google.com/?q=Nintendo+Museum': { coords: [34.9099, 135.7717] },
-  'https://maps.google.com/?q=Byodo-in': { coords: [34.8893, 135.8076] },
-  'https://maps.google.com/?q=Uji+Matcha+Street': { coords: [34.8910, 135.8060] },
 
   // --- Nagano & alentours ---
   'https://maps.google.com/?q=Umeda+Station': { coords: [34.7025, 135.4959] },
@@ -24,7 +21,6 @@ export const geoByMapUrl = {
   'https://maps.google.com/?q=Zenko-ji+Guesthouse': { coords: [36.6600, 138.1885] },
   'https://maps.google.com/?q=Zenko-ji+Temple': { coords: [36.6614, 138.1872] },
   'https://maps.google.com/?q=Togakushi+Shrine+Okusha': { coords: [36.7607, 138.0790] },
-  'https://maps.google.com/?q=Togakushi+Soba': { coords: [36.7438, 138.0762] },
   'https://maps.google.com/?q=Togakushi+Chusha': { coords: [36.7430, 138.0770] },
   'https://maps.google.com/?q=Obuse+Station': { coords: [36.6985, 138.3120] },
   'https://maps.google.com/?q=Hokusai+Museum+Obuse': { coords: [36.6957, 138.3106] },
@@ -56,12 +52,10 @@ export const geoByMapUrl = {
   'https://maps.google.com/?q=Harajuku+Takeshita+Street': { coords: [35.6716, 139.7050] },
   'https://maps.google.com/?q=Shibuya+Crossing': { coords: [35.6595, 139.7004] },
   'https://maps.google.com/?q=Meiji+Jingu': { coords: [35.6764, 139.6993] },
-  'https://maps.google.com/?q=Yoyogi+Park': { coords: [35.6720, 139.6950] },
   'https://maps.google.com/?q=Omotesando': { coords: [35.6660, 139.7120] },
   'https://maps.google.com/?q=Shinjuku+Shopping': { coords: [35.6915, 139.7036] },
   'https://maps.google.com/?q=Akihabara': { coords: [35.7022, 139.7745] },
   'https://maps.google.com/?q=Omoide+Yokocho': { coords: [35.6936, 139.6992] },
-  'https://maps.google.com/?q=Tokyo+Haneda+Airport': { coords: [35.5494, 139.7798] },
 };
 
 export const getGeo = (mapUrl) => geoByMapUrl[mapUrl];

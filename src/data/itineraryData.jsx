@@ -51,8 +51,7 @@ export const itineraryData = {
             time: '18h00',
             icon: <Coffee size={20} className="text-orange-400" />,
             title: 'Konbini & repos',
-            desc: "Balade légère selon la forme autour de Kyoto Tower, plateau-repas au konbini et dodo tôt.",
-            mapUrl: 'https://maps.google.com/?q=Kyoto+Tower',
+            desc: "Balade légère selon la forme, plateau-repas au konbini et dodo tôt.",
             isOutdoor: true,
           },
         ],
@@ -60,7 +59,7 @@ export const itineraryData = {
       {
         date: 'Dim 18 Oct',
         title: 'Kyoto, en douceur',
-        simplissime: 'Vous connaissez déjà le Japon : pas de course. Le Railway Museum le matin, les ruelles de Higashiyama l\'aprem à votre rythme.',
+        simplissime: 'Pas de course : Kyoto en douceur. Le Railway Museum le matin, les ruelles de Higashiyama l\'aprem à votre rythme.',
         steps: [
           {
             time: '10h00',
@@ -99,7 +98,7 @@ export const itineraryData = {
       {
         date: 'Lun 19 Oct',
         title: 'Uji & Nintendo Museum',
-        simplissime: 'Tout dépend du tirage au sort du Nintendo Museum. Billet en poche → on file à Uji. Sinon, journée libre tranquille dans Kyoto.',
+        simplissime: 'Tout dépend du tirage au sort du Nintendo Museum. Billet en poche → direction Uji. Sinon, journée libre tranquille à Kyoto.',
         steps: [
           {
             time: '10h00',
@@ -110,19 +109,10 @@ export const itineraryData = {
             isOutdoor: false,
           },
           {
-            time: '13h00',
-            icon: <Landmark size={20} className="text-yellow-500" />,
-            title: 'Byodo-in',
-            desc: "Le pavillon du Phénix posé sur son étang, celui de la pièce de 10 yens. Cadre paisible, parfait à la mi-journée.",
-            mapUrl: 'https://maps.google.com/?q=Byodo-in',
-            isOutdoor: true,
-          },
-          {
-            time: '15h00',
+            time: 'Sinon',
             icon: <Coffee size={20} className="text-emerald-400" />,
-            title: "Thé matcha à Uji",
-            desc: "Uji, c'est LA capitale du thé vert. Matcha et glaces sur la rue marchande le long de la rivière. Repli idéal si le musée n'a pas été tiré au sort.",
-            mapUrl: 'https://maps.google.com/?q=Uji+Matcha+Street',
+            title: 'Journée libre à Kyoto',
+            desc: "Si le tirage au sort n'a pas donné de billet : journée libre et tranquille à Kyoto, au gré des envies.",
             isOutdoor: true,
           },
         ],
@@ -193,14 +183,6 @@ export const itineraryData = {
             desc: "L'image carte postale de Togakushi : une allée de cèdres géants vieux de 400 ans menant au sanctuaire Okusha. Magique sous la lumière d'automne.",
             mapUrl: 'https://maps.google.com/?q=Togakushi+Shrine+Okusha',
             isOutdoor: true,
-          },
-          {
-            time: '13h00',
-            icon: <Utensils size={20} className="text-red-400" />,
-            title: 'Soba de Togakushi',
-            desc: "Togakushi est réputé pour ses soba. Pause déjeuner bien méritée après la marche.",
-            mapUrl: 'https://maps.google.com/?q=Togakushi+Soba',
-            isOutdoor: false,
           },
           {
             time: '14h30',
@@ -288,10 +270,10 @@ export const itineraryData = {
             isOutdoor: false,
           },
           {
-            time: '16h50',
+            time: '16h30',
             icon: <Sun size={20} className="text-amber-400" />,
             title: 'Alternative : Tokyo Tower au coucher du soleil',
-            desc: "Si vous préférez de la hauteur, la Tokyo Tower vers 16h50 offre un coucher de soleil superbe. À choisir selon l'envie du jour.",
+            desc: "Option du soir : arrivée vers 16h30 à la Tokyo Tower pour le coucher de soleil vers 16h50. À choisir selon l'envie du jour, à la place du projection mapping.",
             mapUrl: 'https://maps.google.com/?q=Tokyo+Tower',
             isOutdoor: false,
           },
@@ -555,14 +537,6 @@ export const itineraryData = {
             isOutdoor: true,
           },
           {
-            time: '16h50',
-            icon: <Sun size={20} className="text-amber-400" />,
-            title: 'Coucher de soleil à Yoyogi',
-            desc: "Juste à côté, le parc Yoyogi pour un coucher de soleil tranquille avant la soirée.",
-            mapUrl: 'https://maps.google.com/?q=Yoyogi+Park',
-            isOutdoor: true,
-          },
-          {
             time: '18h00',
             icon: <Moon size={20} className="text-indigo-400" />,
             title: 'Omotesando',
@@ -628,8 +602,7 @@ export const itineraryData = {
             time: '10h00',
             icon: <Train size={20} className="text-blue-400" />,
             title: "Trajet vers l'aéroport",
-            desc: "Direction l'aéroport pour le vol retour (horaire à confirmer).",
-            mapUrl: 'https://maps.google.com/?q=Tokyo+Haneda+Airport',
+            desc: "Direction l'aéroport de départ pour le vol retour (aéroport et horaire à confirmer).",
             isOutdoor: false,
           },
           {
@@ -637,7 +610,6 @@ export const itineraryData = {
             icon: <PlaneTakeoff size={20} className="text-indigo-400" />,
             title: 'Vol retour',
             desc: "Embarquement et décollage. Fin du voyage — la tête pleine de couleurs d'automne.",
-            mapUrl: 'https://maps.google.com/?q=Tokyo+Haneda+Airport',
             isOutdoor: false,
           },
         ],
