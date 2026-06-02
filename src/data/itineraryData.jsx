@@ -537,6 +537,13 @@ export const itineraryData = {
             isOutdoor: true,
           },
           {
+            time: '16h50',
+            icon: <Sun size={20} className="text-amber-400" />,
+            title: 'Coucher de soleil',
+            desc: "Pause coucher de soleil en sortant de Meiji Jingu, avant de rejoindre Omotesando pour la soirée.",
+            isOutdoor: true,
+          },
+          {
             time: '18h00',
             icon: <Moon size={20} className="text-indigo-400" />,
             title: 'Omotesando',
