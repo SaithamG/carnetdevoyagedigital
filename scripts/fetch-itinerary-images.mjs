@@ -99,6 +99,32 @@ const EXACT = {
   'https://maps.google.com/?q=Yanaka+Ginza': 'Yanaka, Tokyo',
   'https://maps.google.com/?q=Akihabara': 'Akihabara',
   'https://maps.google.com/?q=Keisei-Ueno+Station': 'Keisei Ueno Station',
+
+  // --- Voyage Alban (Kyoto · Nagano · Tokyo) ---
+  'https://maps.google.com/?q=Kansai+International+Airport': 'Kansai International Airport',
+  'https://maps.google.com/?q=Kyoto+Railway+Museum': 'Kyoto Railway Museum',
+  'https://maps.google.com/?q=Sannenzaka': 'Sannen-zaka',
+  'https://maps.google.com/?q=Nintendo+Museum': 'Nintendo Museum',
+  'https://maps.google.com/?q=Umeda+Station': 'Umeda Station',
+  'https://maps.google.com/?q=Nagano+Station': 'Nagano Station',
+  'https://maps.google.com/?q=Zenko-ji+Temple': 'Zenkō-ji',
+  'https://maps.google.com/?q=Togakushi+Shrine+Okusha': 'Togakushi Shrine',
+  'https://maps.google.com/?q=Togakushi+Chusha': 'Togakushi Shrine',
+  'https://maps.google.com/?q=Hokusai+Museum+Obuse': 'Hokusai-kan',
+  'https://maps.google.com/?q=Obuse+Town': 'Obuse, Nagano',
+  'https://maps.google.com/?q=Obuse+Station': 'Obuse Station',
+  'https://maps.google.com/?q=Tokyo+Tower': 'Tokyo Tower',
+  'https://maps.google.com/?q=Yotsugi+Station': 'Yotsugi Station',
+  'https://maps.google.com/?q=Edo-Tokyo+Museum': 'Edo-Tokyo Museum',
+  'https://maps.google.com/?q=Imperial+Palace+East+Gardens': 'Tokyo Imperial Palace',
+  'https://maps.google.com/?q=Ginza': 'Ginza',
+  'https://maps.google.com/?q=Shonan+Monorail': 'Shōnan Monorail',
+  'https://maps.google.com/?q=Enoshima+Shrine': 'Enoshima Shrine',
+  'https://maps.google.com/?q=Enoshima+Iwaya+Caves': 'Enoshima',
+  'https://maps.google.com/?q=Katase-Enoshima+Station': 'Katase-Enoshima Station',
+  'https://maps.google.com/?q=Tokyo+DisneySea': 'Tokyo DisneySea',
+  'https://maps.google.com/?q=Harajuku+Takeshita+Street': 'Takeshita Street',
+  'https://maps.google.com/?q=Omotesando': 'Omotesandō',
 };
 
 const headers = { 'User-Agent': UA, Accept: 'application/json' };
