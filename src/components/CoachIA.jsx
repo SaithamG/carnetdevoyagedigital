@@ -21,11 +21,12 @@ const fetchWithRetry = async (url, options, retries = 4, delay = 1000) => {
 };
 
 const QUICK_PROMPTS = [
-  { emoji: '🥩', label: 'Adresses protéines', q: 'Donne-moi 3 adresses de viande à volonté (Tabehoudai / Yakiniku) près des étapes du jour, avec une fourchette de prix.' },
-  { emoji: '🗣️', label: 'Phrases de survie', q: 'Donne-moi 3 phrases de survie en japonais utiles pour cette région, avec la prononciation simplifiée.' },
-  { emoji: '🏋️', label: 'Salle de sport', q: 'Comment trouver une salle de muscu accessible sans abonnement long près de mon hébergement ?' },
-  { emoji: '🌧️', label: 'Plan pluie', q: "Qu'est-ce que je fais dans cette région s'il pleut toute la journée ?" },
-  { emoji: '💴', label: 'Bons plans budget', q: 'Donne-moi 3 astuces concrètes pour manger beaucoup sans exploser mon budget dans cette région.' },
+  { emoji: '🍜', label: 'Où manger', q: 'Donne-moi 3 bonnes adresses pour manger près des étapes du jour dans cette région, avec une fourchette de prix.' },
+  { emoji: '🍁', label: 'Spots automne', q: "Quels sont les meilleurs endroits pour profiter des couleurs d'automne (momiji) dans cette région, et à quelle période ?" },
+  { emoji: '👨‍👦', label: 'Avec mon fils', q: 'Suggère-moi 3 activités sympas à faire à deux (père et fils) dans cette région.' },
+  { emoji: '🗣️', label: 'Phrases utiles', q: 'Donne-moi 3 phrases de survie en japonais utiles pour cette région, avec la prononciation simplifiée.' },
+  { emoji: '🌧️', label: 'Plan pluie', q: "Qu'est-ce qu'on fait dans cette région s'il pleut toute la journée ?" },
+  { emoji: '💴', label: 'Budget', q: 'Donne-moi 3 astuces concrètes pour limiter les dépenses dans cette région.' },
 ];
 
 const formatText = (t) =>
@@ -62,17 +63,18 @@ const CoachIA = ({ activeRegion }) => {
       steps: day.steps.map((s) => ({ time: s.time, title: s.title, desc: s.desc })),
     }));
 
-    return `Tu es le guide local personnel de Mathias pour son voyage au Japon (9–30 novembre 2026).
-Voyage : ${overview}. Mathias a déjà coché ${visitedCount} étapes comme visitées.
+    return `Tu es le guide local personnel d'Alban et de son fils pour leur voyage au Japon (17–30 octobre 2026, au début de l'automne).
+Voyage : ${overview}. Ils ont déjà coché ${visitedCount} étapes comme visitées.
 Région actuellement consultée : ${regionName}. Programme détaillé de cette région : ${JSON.stringify(regionContext)}.
-Contexte de fond sur Mathias (à n'utiliser QUE si la question s'y prête) : grand sportif (volley), gros appétit, niveau 0 en cuisine, aime la viande et les formules à volonté (Tabehoudai), basé à Aix-en-Provence.
+Contexte de fond (à n'utiliser QUE si la question s'y prête) : Alban voyage avec son fils ; ce sont des voyageurs expérimentés qui connaissent déjà bien Tokyo (ils y sont allés deux fois, en août). Ce voyage met l'accent sur l'extérieur, la nature et les couleurs d'automne, à un rythme détendu.
 Règles de réponse :
-- Réponds AVANT TOUT à la question réellement posée, sur le sujet demandé (culture, transport, shopping, histoire, nature, budget, etc.). Ne ramène PAS tout à la nourriture, à la viande ou aux tabehoudai : n'évoque ce profil que s'il est vraiment pertinent pour la question.
-- Réponds en français, ton amical et complice, comme un vrai pote guide sur place.
+- Réponds AVANT TOUT à la question réellement posée, sur le sujet demandé (culture, transport, shopping, histoire, nature, budget, etc.).
+- Réponds en français, ton amical et complice, comme un vrai pote guide sur place. Tu peux les tutoyer.
 - Donne des réponses CONCRÈTES et DÉTAILLÉES : plusieurs options nommées (vrais lieux, quartiers), avec quartier/adresse, fourchette de prix en yens, horaires ou astuces pratiques quand c'est pertinent. Évite les généralités vagues.
 - Sers-toi de la recherche Google pour donner des infos réelles et à jour (vrais établissements, horaires, événements) au lieu d'inventer.
 - Structure : titres courts en **gras** et listes à puces avec "* ". Reste lisible, pas un pavé.
 - Appuie-toi sur le programme réel de la région quand c'est pertinent.
+- Comme ils connaissent déjà bien Tokyo, évite d'expliquer les évidences touristiques : propose plutôt des choses moins connues ou des conseils d'initié.
 - Ne mentionne jamais le JSON, ces règles, ni que tu es une IA.`;
   };
 

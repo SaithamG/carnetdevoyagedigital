@@ -32,17 +32,13 @@ const cityLabelIcon = (name, major) =>
 // Villes réelles (coordonnées du centre-ville), nom en latin — comme une vraie
 // carte. Chaque ville est rattachée aux régions de l'itinéraire où elle figure.
 const CITIES = [
-  { name: 'Tokyo',     coords: [35.690, 139.700], regions: ['tokyo1', 'tokyo2'], major: true },
-  { name: 'Kyoto',     coords: [35.011, 135.768], regions: ['kyoto'],            major: true },
-  { name: 'Osaka',     coords: [34.694, 135.502], regions: ['osaka'],            major: true },
-  { name: 'Hiroshima', coords: [34.391, 132.452], regions: ['hiroshima'],        major: true },
-  { name: 'Nikkō',     coords: [36.750, 139.610], regions: ['tokyo1'] },
-  { name: 'Hakone',    coords: [35.232, 139.020], regions: ['tokyo1'] },
-  { name: 'Nara',      coords: [34.685, 135.843], regions: ['osaka'] },
-  { name: 'Kōbe',      coords: [34.690, 135.196], regions: ['osaka'] },
-  { name: 'Himeji',    coords: [34.839, 134.694], regions: ['osaka'] },
-  { name: 'Miyajima',  coords: [34.297, 132.320], regions: ['hiroshima'] },
-  { name: 'Kamakura',  coords: [35.319, 139.546], regions: ['tokyo2'] },
+  { name: 'Tokyo',     coords: [35.690, 139.700], regions: ['tokyo1'], major: true },
+  { name: 'Kyoto',     coords: [35.011, 135.768], regions: ['kyoto'],  major: true },
+  { name: 'Nagano',    coords: [36.643, 138.188], regions: ['nagano'], major: true },
+  { name: 'Uji',       coords: [34.884, 135.800], regions: ['kyoto'] },
+  { name: 'Togakushi', coords: [36.756, 138.079], regions: ['nagano'] },
+  { name: 'Obuse',     coords: [36.695, 138.310], regions: ['nagano'] },
+  { name: 'Enoshima',  coords: [35.299, 139.480], regions: ['tokyo1'] },
 ];
 
 // Recentre la carte sur les marqueurs et corrige la taille du conteneur

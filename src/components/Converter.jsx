@@ -61,7 +61,7 @@ const Converter = () => {
 
         <div className="mt-4 text-center">
           <p className="text-[10px] text-slate-400">
-            Transactions sécurisées sans frais via <strong>Revolut</strong>.
+            Astuce : privilégiez une <strong>carte bancaire sans frais à l'étranger</strong>.
           </p>
         </div>
       </div>

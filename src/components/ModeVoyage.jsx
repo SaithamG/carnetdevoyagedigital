@@ -6,17 +6,15 @@ import {
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { reminders } from '../data/reminders';
+import { TRIP_START, TRIP_END, TRIP_MONTH, TRIP_YEAR } from '../data/constants';
 
 // ─── Utils ────────────────────────────────────────────────────────────────────
 
-const TRIP_START = new Date(2026, 10, 9);  // 9 Nov 2026
-const TRIP_END   = new Date(2026, 10, 30); // 30 Nov 2026
-
-// "Lun 9 Nov" → Date(2026-11-09)
+// "Sam 17 Oct" → Date(2026-10-17)
 const parseDayDate = (dateStr) => {
   const match = dateStr.match(/(\d+)/);
   if (!match) return null;
-  return new Date(2026, 10, parseInt(match[0]));
+  return new Date(TRIP_YEAR, TRIP_MONTH, parseInt(match[0]));
 };
 
 // "09h00" → minutes depuis minuit
@@ -101,7 +99,7 @@ const PreTripView = ({ daysLeft, now }) => {
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 mb-3">Départ dans</p>
         <p className="text-8xl font-black italic text-white leading-none">{daysLeft}</p>
         <p className="text-lg font-black text-blue-300 mt-1">JOURS</p>
-        <p className="text-xs text-slate-400 mt-3">9 Novembre 2026 — Haneda, Tokyo</p>
+        <p className="text-xs text-slate-400 mt-3">17 Octobre 2026 — Kansai (KIX)</p>
       </div>
 
       {/* Dual clock */}
@@ -332,7 +330,7 @@ const PostTripView = () => {
       <div className="bg-gradient-to-br from-slate-900 to-emerald-950/20 p-10 rounded-[2rem] border border-emerald-900/40">
         <Trophy className="w-16 h-16 text-amber-400 mx-auto mb-4" />
         <h2 className="text-3xl font-black italic text-white mb-2">Mission Accomplie</h2>
-        <p className="text-sm text-slate-400">30 novembre 2026 — Tu es rentré avec ton épargne intacte</p>
+        <p className="text-sm text-slate-400">30 octobre 2026 — De retour, des souvenirs plein la tête</p>
       </div>
       <div className="grid grid-cols-3 gap-3">
         <div className="bg-slate-900 p-4 rounded-2xl border border-slate-800 text-center">

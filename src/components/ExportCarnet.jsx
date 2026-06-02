@@ -93,7 +93,7 @@ const ExportCarnet = () => {
   .gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
   @media print{body{padding:0 12px}.region{break-after:avoid}}
 </style></head><body>
-  <div class="cover"><h1>🗾 Mon Carnet de Voyage</h1><p><strong>Japon 2026</strong> · 9 → 30 novembre</p><p>${visitedCount} étapes vécues · ${all.length} photos souvenirs</p></div>
+  <div class="cover"><h1>🗾 Carnet de Voyage</h1><p><strong>Japon · Automne 2026</strong> · 17 → 30 octobre</p><p>${visitedCount} étapes vécues · ${all.length} photos souvenirs</p></div>
   ${body}
   <p style="text-align:center;color:#94a3b8;font-size:11px;margin-top:32px">Carnet de Voyage Digital</p>
 </body></html>`;

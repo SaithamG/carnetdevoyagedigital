@@ -8,13 +8,15 @@ import {
   ShoppingBag,
 } from 'lucide-react';
 
+// Postes du budget, répartis en deux blocs : « avant » = à régler avant/au
+// départ (vol, hébergement, transports), « place » = la vie sur place.
 export const budgetData = [
   {
     label: 'Vol A/R (2 voyageurs)',
     cost: 1700,
     icon: <Plane size={16} />,
     color: 'blue',
-    type: 'epargne',
+    type: 'avant',
     desc: 'Estimation à confirmer · KIX aller / Tokyo retour',
   },
   {
@@ -22,7 +24,7 @@ export const budgetData = [
     cost: 1300,
     icon: <Hotel size={16} />,
     color: 'emerald',
-    type: 'epargne',
+    type: 'avant',
     desc: 'Airbnb Kyoto · maison Nagano · hôtel Kabukicho (estim.)',
   },
   {
@@ -30,7 +32,7 @@ export const budgetData = [
     cost: 600,
     icon: <Train size={16} />,
     color: 'orange',
-    type: 'epargne',
+    type: 'avant',
     desc: 'Haruka, Shinkansen, métros & monorail · billets sur place',
   },
   {
@@ -38,7 +40,7 @@ export const budgetData = [
     cost: 700,
     icon: <Utensils size={16} />,
     color: 'purple',
-    type: 'salaire',
+    type: 'place',
     desc: '~50€/jour : repas et petites dépenses du quotidien',
   },
   {
@@ -46,7 +48,7 @@ export const budgetData = [
     cost: 800,
     icon: <Ticket size={16} />,
     color: 'pink',
-    type: 'salaire',
+    type: 'place',
     desc: 'DisneySea, Small Worlds, musées, monorail, Sea Candle…',
   },
   {
@@ -54,11 +56,26 @@ export const budgetData = [
     cost: 1500,
     icon: <ShoppingBag size={16} />,
     color: 'amber',
-    type: 'salaire',
+    type: 'place',
     desc: 'Le gros poste plaisir du voyage',
   },
 ];
 
-export const totalEpargneUsed = budgetData
-  .filter((i) => i.type === 'epargne')
+export const totalAvantDepart = budgetData
+  .filter((i) => i.type === 'avant')
   .reduce((acc, curr) => acc + curr.cost, 0);
+
+export const totalSurPlace = budgetData
+  .filter((i) => i.type === 'place')
+  .reduce((acc, curr) => acc + curr.cost, 0);
+
+export const totalBudget = totalAvantDepart + totalSurPlace;
+
+// Catégories du suivi de dépenses sur place (cash en yens). Réutilisées par le
+// tracker (SuiviDepenses) et le budget total affiché dans le header.
+export const trackerCategories = [
+  { id: 'repas', label: 'Repas', icon: <Utensils size={18} />, color: 'rose', budgetEur: 700 },
+  { id: 'loisirs', label: 'Loisirs', icon: <Ticket size={18} />, color: 'pink', budgetEur: 800 },
+  { id: 'souvenirs', label: 'Souvenirs', icon: <ShoppingBag size={18} />, color: 'amber', budgetEur: 1500 },
+  { id: 'transport', label: 'Transport local', icon: <Train size={18} />, color: 'indigo', budgetEur: 100 },
+];

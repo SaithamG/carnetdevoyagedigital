@@ -5,16 +5,15 @@ const NUMEROS = [
   { label: 'Police (Secours, Accidents)', sub: 'Vol, agression, urgence sécurité', numero: '110', big: true },
   { label: 'Ambulance / Pompiers', sub: 'Urgence médicale, incendie', numero: '119', big: true },
   { label: 'Ambassade de France à Tokyo', sub: 'Passeport perdu, assistance consulaire', numero: '+81 3-5798-6000', big: false },
-  { label: 'Opposition CB (Revolut)', sub: "Blocage carte depuis l'application", numero: '+44 20 3322 8352', big: false },
+  { label: 'Opposition carte bancaire', sub: 'Numéro au dos de la carte / appli (à noter avant le départ)', numero: '—', big: false },
 ];
 
+// Adresses au niveau quartier (les hébergements exacts sont à compléter une
+// fois les réservations confirmées) — à montrer au chauffeur de taxi.
 const HOTELS = [
-  { hotel: 'Toyoko Inn Shinjuku Kabukicho (Tokyo 1 & 2)', address: '東京都新宿区歌舞伎町2-20-15', sub: 'Tokyo Ouest & Est' },
-  { hotel: 'Stay SAKURA Kyoto', address: '京都市中京区大宮通御池下る三坊大宮町146-1', sub: 'Kyoto' },
-  { hotel: 'Toyoko Inn Osaka Honmachi', address: '大阪市中央区本町1-5-7', sub: 'Osaka' },
-  { hotel: 'Comfort Hotel Hiroshima', address: '広島市中区中町3-11', sub: 'Hiroshima' },
-  { hotel: 'Ryokan Sakuraya (Miyajima)', address: '廿日市市宮島町853', sub: 'Miyajima Island' },
-  { hotel: 'Grids Tokyo Ueno Hotel Hostel', address: '東京都台東区上野7-10-4', sub: 'Tokyo Ueno Retour' },
+  { hotel: 'Airbnb — proche gare de Kyoto', address: '京都駅周辺', sub: 'Kyoto' },
+  { hotel: 'Maison — proche du temple Zenko-ji', address: '長野市 善光寺周辺', sub: 'Nagano' },
+  { hotel: 'Hôtel — Kabukicho, Shinjuku', address: '東京都新宿区歌舞伎町', sub: 'Tokyo' },
 ];
 
 const PHRASES = [

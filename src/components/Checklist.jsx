@@ -49,8 +49,8 @@ const Checklist = () => {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { key: 'v1', label: 'Valise 1 (Mathias)', color: 'text-blue-400' },
-            { key: 'v2', label: 'Valise 2 (Vérane)', color: 'text-pink-400' },
+            { key: 'v1', label: 'Valise 1 (Alban)', color: 'text-blue-400' },
+            { key: 'v2', label: 'Valise 2 (son fils)', color: 'text-pink-400' },
           ].map(({ key, label, color }) => {
             const weight = valiseWeights[key];
             const isOver = weight > 23;

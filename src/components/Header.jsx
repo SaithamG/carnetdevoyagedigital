@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Globe, CheckCircle2, Check,
+  Globe, Leaf,
   Map, Wallet, Calendar, TrainFront, Calculator,
   CheckSquare, Languages, ListChecks, Sparkles, Receipt, ShieldAlert, Navigation, MapPin,
   Luggage, Compass, Wrench, BookHeart,
 } from 'lucide-react';
+import { EXCHANGE_RATE, TRIP_START, TRIP_END } from '../data/constants';
+import { trackerCategories } from '../data/budgetData';
 
-const EXCHANGE_RATE = 185;
-const TOTAL_BUDGET_YEN = 1296 * EXCHANGE_RATE;
-
-const TRIP_START = new Date(2026, 10, 9);
-const TRIP_END   = new Date(2026, 10, 30);
+const TOTAL_BUDGET_YEN =
+  trackerCategories.reduce((acc, c) => acc + c.budgetEur, 0) * EXCHANGE_RATE;
 
 const isTripActive = () => {
   const today = new Date();
@@ -99,12 +98,10 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
 
         <div className="flex flex-row md:flex-col gap-2 shrink-0 mt-2 md:mt-0">
           <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl h-fit">
-            <CheckCircle2 size={16} className="text-emerald-500" />
+            <Leaf size={16} className="text-emerald-500" />
             <div>
-              <p className="text-[10px] font-black text-emerald-500 uppercase">Vol Garanti</p>
-              <p className="text-xs font-bold text-emerald-100 flex items-center gap-1">
-                3/4 Payé <Check size={14} />
-              </p>
+              <p className="text-[10px] font-black text-emerald-500 uppercase">Automne 2026</p>
+              <p className="text-xs font-bold text-emerald-100">17 → 30 oct · 2 voyageurs</p>
             </div>
           </div>
 

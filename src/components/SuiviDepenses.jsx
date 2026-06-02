@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Trash2, Utensils, ShoppingBag, Train, Sparkles } from 'lucide-react';
+import { Plus, Trash2 } from 'lucide-react';
 import { EXCHANGE_RATE } from '../data/constants';
-
-const CATEGORIES = [
-  { id: 'nourriture', label: 'Nourriture', icon: <Utensils size={18} />, color: 'rose', budgetEur: 770 },
-  { id: 'shopping', label: 'Shopping', icon: <ShoppingBag size={18} />, color: 'blue', budgetEur: 330 },
-  { id: 'transport', label: 'Transport local', icon: <Train size={18} />, color: 'indigo', budgetEur: 50 },
-  { id: 'divers', label: 'Divers', icon: <Sparkles size={18} />, color: 'amber', budgetEur: 146 },
-];
+import { trackerCategories as CATEGORIES } from '../data/budgetData';
 
 const TOTAL_BUDGET_EUR = CATEGORIES.reduce((acc, cat) => acc + cat.budgetEur, 0);
 const TOTAL_BUDGET_YEN = TOTAL_BUDGET_EUR * EXCHANGE_RATE;
@@ -17,7 +11,7 @@ const SuiviDepenses = () => {
     const saved = localStorage.getItem('japan_expenses');
     return saved ? JSON.parse(saved) : [];
   });
-  const [expCategory, setExpCategory] = useState('nourriture');
+  const [expCategory, setExpCategory] = useState('repas');
   const [expAmount, setExpAmount] = useState('');
   const [expDesc, setExpDesc] = useState('');
 
