@@ -1,7 +1,7 @@
 {
-  "name": "Carnet de Voyage Digital — Japon 2026",
-  "short_name": "Japon 2026",
-  "description": "Carnet de voyage digital pour le Japon, automne 2026",
+  "name": "Carnet de voyage d'Alban — Japon",
+  "short_name": "Carnet d'Alban",
+  "description": "Carnet de voyage d'Alban au Japon, automne 2026",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",

@@ -1,40 +1,15 @@
 import React from 'react';
 import {
-  Plane,
-  Hotel,
-  Train,
   Utensils,
   Ticket,
   ShoppingBag,
 } from 'lucide-react';
 
-// Postes du budget, répartis en deux blocs : « avant » = à régler avant/au
-// départ (vol, hébergement, transports), « place » = la vie sur place.
+// Budget « sur place » communiqué par Alban (dépenses du quotidien en yens).
+// Les postes "avant le départ" (vol, hébergement, transports) ne sont pas
+// renseignés : aucune estimation inventée. type = 'avant' réservé si Alban
+// fournit ces montants plus tard.
 export const budgetData = [
-  {
-    label: 'Vol A/R (2 voyageurs)',
-    cost: 1700,
-    icon: <Plane size={16} />,
-    color: 'blue',
-    type: 'avant',
-    desc: 'Estimation à confirmer · KIX aller / Tokyo retour',
-  },
-  {
-    label: 'Hébergement (13 nuits)',
-    cost: 1300,
-    icon: <Hotel size={16} />,
-    color: 'emerald',
-    type: 'avant',
-    desc: 'Airbnb Kyoto · maison Nagano · hôtel Kabukicho (estim.)',
-  },
-  {
-    label: 'Transports au Japon (sans JR Pass)',
-    cost: 600,
-    icon: <Train size={16} />,
-    color: 'orange',
-    type: 'avant',
-    desc: 'Haruka, Shinkansen, métros & monorail · billets sur place',
-  },
   {
     label: 'Repas & vie (14 jours)',
     cost: 700,
@@ -77,5 +52,4 @@ export const trackerCategories = [
   { id: 'repas', label: 'Repas', icon: <Utensils size={18} />, color: 'rose', budgetEur: 700 },
   { id: 'loisirs', label: 'Loisirs', icon: <Ticket size={18} />, color: 'pink', budgetEur: 800 },
   { id: 'souvenirs', label: 'Souvenirs', icon: <ShoppingBag size={18} />, color: 'amber', budgetEur: 1500 },
-  { id: 'transport', label: 'Transport local', icon: <Train size={18} />, color: 'indigo', budgetEur: 100 },
 ];
