@@ -30,7 +30,7 @@ const SettingsPanel = () => {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-60 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl z-[200] p-4 space-y-4">
+        <div className="absolute left-0 md:left-auto md:right-0 top-full mt-2 w-60 max-w-[calc(100vw-2rem)] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl z-[200] p-4 space-y-4">
 
           {/* Thème */}
           <div>

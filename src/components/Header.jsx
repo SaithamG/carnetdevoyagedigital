@@ -58,8 +58,10 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
   const activeGroupTabs = NAV_GROUPS.find((g) => g.id === openGroup)?.tabs || [];
 
   return (
-  <header className="bg-slate-900 border-b border-slate-800 p-6 sticky top-0 z-50 shadow-xl relative overflow-hidden">
-    <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
+  <header className="bg-slate-900 border-b border-slate-800 p-6 sticky top-0 z-50 shadow-xl relative">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
+    </div>
     <div className="max-w-5xl mx-auto relative z-10">
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-4">
 
