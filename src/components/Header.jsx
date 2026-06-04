@@ -67,7 +67,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
 
         <div className="flex flex-col">
           <h1 className="text-2xl font-black italic tracking-tighter flex items-center gap-2 text-white">
-            <Globe className="text-blue-500" /> CARNET DE VOYAGE DIGITAL
+            <Globe style={{ color: '#c9683f' }} /> CARNET DE VOYAGE DIGITAL
           </h1>
 
           <div className="mt-4 flex items-center gap-4 px-4 py-2 bg-slate-900/80 border border-slate-800 rounded-xl w-fit shadow-lg backdrop-blur-sm">
@@ -78,23 +78,18 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
             <div className="w-px h-6 bg-slate-800" />
             <div className="flex items-center gap-2 font-mono text-sm font-black tracking-tight">
               <div className="flex items-baseline gap-0.5">
-                <span className="text-blue-400 text-base">{timeLeft.jours}</span>
-                <span className="text-[10px] font-mono font-black text-slate-500 ml-0.5">J</span>
+                <span style={{ color: '#c9683f' }} className="text-lg">{timeLeft.jours}</span>
+                <span className="text-[10px] font-mono font-black text-slate-500 ml-0.5">JOURS</span>
               </div>
-              <span className="text-slate-700 font-sans mx-0.5">|</span>
+              <span className="text-slate-700 font-sans mx-1">·</span>
               <div className="flex items-baseline gap-0.5">
-                <span className="text-slate-200">{timeLeft.heures}</span>
+                <span className="text-slate-300">{timeLeft.heures}</span>
                 <span className="text-[10px] font-mono font-black text-slate-500 ml-0.5">H</span>
               </div>
-              <span className="text-slate-800">:</span>
+              <span className="text-slate-700">:</span>
               <div className="flex items-baseline gap-0.5">
-                <span className="text-slate-200">{timeLeft.minutes}</span>
+                <span className="text-slate-300">{timeLeft.minutes}</span>
                 <span className="text-[10px] font-mono font-black text-slate-500 ml-0.5">M</span>
-              </div>
-              <span className="text-slate-800">:</span>
-              <div className="flex items-baseline gap-0.5">
-                <span className="text-red-400 animate-pulse">{timeLeft.secondes}</span>
-                <span className="text-[10px] font-mono font-black text-red-500/70 ml-0.5">S</span>
               </div>
             </div>
           </div>

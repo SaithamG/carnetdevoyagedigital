@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 const FONT_SIZES = { normal: '16px', large: '18px', xl: '20px' };
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => localStorage.getItem('cvd_theme') || 'dark');
+  const [theme, setTheme] = useState(() => localStorage.getItem('cvd_theme') || 'light');
   const [fontSize, setFontSize] = useState(() => localStorage.getItem('cvd_fontSize') || 'normal');
 
   useEffect(() => {
