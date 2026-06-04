@@ -180,3 +180,12 @@ h1, h2, h3, .font-black.italic:not(.font-mono) {
 
 [data-theme="light"] .text-amber-200\/60 { color: rgba(146,103,47,0.85) !important; }
 [data-theme="light"] .text-amber-300     { color: #9a6b2f !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Carte (Leaflet) — mode clair : réchauffe les tuiles CARTO (gris neutre)
+   vers le crème éditorial du reste de l'app. Cible UNIQUEMENT les tuiles,
+   pas les marqueurs/popups (qui ne sont pas dans .leaflet-tile-pane).
+   ══════════════════════════════════════════════════════════════════════════ */
+.carte-tuiles-chaudes {
+  filter: sepia(0.25) saturate(1.1) brightness(1.02) hue-rotate(-8deg);
+}

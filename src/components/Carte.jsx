@@ -6,13 +6,15 @@ import { MapPinned, CheckCircle2 } from 'lucide-react';
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { getGeo } from '../data/itineraryGeo';
+import { useTheme } from '../context/ThemeContext';
 import PlaceImage from './PlaceImage';
 
 // Pin rond numéroté (numéro = ordre chronologique du parcours).
-const makeIcon = (color, n) =>
+// La bordure et l'ombre s'adaptent au thème pour rester lisibles sur fond clair.
+const makeIcon = (color, n, light) =>
   L.divIcon({
     className: '',
-    html: `<div style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:${color};border:3px solid #0f172a;box-shadow:0 0 0 1px ${color}66,0 2px 6px rgba(0,0,0,.6);color:#fff;font:800 11px/1 system-ui">${n}</div>`,
+    html: `<div style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:${color};border:3px solid ${light ? '#ffffff' : '#0f172a'};box-shadow:0 0 0 1px ${color}66,0 2px 6px rgba(0,0,0,${light ? '.3' : '.6'});color:#fff;font:800 11px/1 system-ui">${n}</div>`,
     iconSize: [26, 26],
     iconAnchor: [13, 13],
     popupAnchor: [0, -13],
@@ -21,10 +23,14 @@ const makeIcon = (color, n) =>
 // Étiquette de ville en alphabet latin (le fond de carte n'a pas de labels).
 // major=false (ville secondaire) : affichée seulement quand on filtre la région
 // pour ne pas surcharger la vue « tout le voyage ».
-const cityLabelIcon = (name, major) =>
+const cityLabelIcon = (name, major, light) =>
   L.divIcon({
     className: '',
-    html: `<div style="white-space:nowrap;transform:translateX(-50%);font:${major ? 800 : 700} ${major ? 14 : 12}px/1 system-ui;color:${major ? '#f1f5f9' : '#cbd5e1'};text-shadow:0 1px 3px #000,0 0 6px #000;letter-spacing:.06em;text-transform:uppercase">${name}</div>`,
+    html: `<div style="white-space:nowrap;transform:translateX(-50%);font:${major ? 800 : 700} ${major ? 14 : 12}px/1 system-ui;color:${
+      light ? (major ? '#2b2420' : '#5c5249') : major ? '#f1f5f9' : '#cbd5e1'
+    };text-shadow:${
+      light ? '0 1px 3px #fff,0 0 6px #fff' : '0 1px 3px #000,0 0 6px #000'
+    };letter-spacing:.06em;text-transform:uppercase">${name}</div>`,
     iconSize: [0, 0],
     iconAnchor: [0, 0],
   });
@@ -62,6 +68,8 @@ const FitBounds = ({ points }) => {
 };
 
 const Carte = () => {
+  const { theme } = useTheme();
+  const light = theme === 'light';
   const [activeRegion, setActiveRegion] = useState('all');
 
   const visitedSteps = useMemo(() => {
@@ -192,33 +200,35 @@ const Carte = () => {
           center={[35.0, 137.0]}
           zoom={6}
           scrollWheelZoom
-          style={{ height: '70vh', width: '100%', background: '#0f172a' }}
+          style={{ height: '70vh', width: '100%', background: light ? '#f4ece1' : '#0f172a' }}
         >
-          {/* Fond sombre SANS labels (pas de toponymes japonais illisibles) */}
+          {/* Fond SANS labels (pas de toponymes japonais illisibles), clair ou sombre selon le thème */}
           <TileLayer
+            key={light ? 'light' : 'dark'}
+            className={light ? 'carte-tuiles-chaudes' : ''}
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
+            url={`https://{s}.basemaps.cartocdn.com/${light ? 'light_nolabels' : 'dark_nolabels'}/{z}/{x}/{y}{r}.png`}
             subdomains="abcd"
           />
 
           {routeCoords.length > 1 && (
             <Polyline
               positions={routeCoords}
-              pathOptions={{ color: '#60a5fa', weight: 2.5, opacity: 0.45, dashArray: '6 8' }}
+              pathOptions={{ color: light ? '#c9683f' : '#60a5fa', weight: 2.5, opacity: light ? 0.6 : 0.45, dashArray: '6 8' }}
             />
           )}
 
           <FitBounds points={points} />
 
           {cityLabels.map((c) => (
-            <Marker key={`city-${c.name}`} position={c.coords} icon={cityLabelIcon(c.name, c.major)} interactive={false} />
+            <Marker key={`city-${c.name}`} position={c.coords} icon={cityLabelIcon(c.name, c.major, light)} interactive={false} />
           ))}
 
           {markers.map((m) => (
             <Marker
               key={m.mapUrl}
               position={m.coords}
-              icon={makeIcon(m.visited ? '#10b981' : '#3b82f6', m.order)}
+              icon={makeIcon(m.visited ? '#10b981' : '#3b82f6', m.order, light)}
             >
               <Tooltip permanent={showNames} direction="top" offset={[0, -14]} className="carte-tip">
                 {m.order}. {m.title}
