@@ -101,9 +101,11 @@ h1, h2, h3 {
 [data-theme="light"] .bg-red-950\/30     { background-color: #fbf0ec !important; }
 [data-theme="light"] .border-red-900\/50 { border-color: rgba(197,140,118,0.6) !important; }
 
-/* ── Carte dégradée (Finance hero) → crème chaud ── */
+/* ── Cartes & placeholders dégradés → crème/sable chaud ── */
 [data-theme="light"] .from-slate-900 { --tw-gradient-from: #fffdf9 !important; }
+[data-theme="light"] .from-slate-800 { --tw-gradient-from: #f0e7d8 !important; }
 [data-theme="light"] .to-slate-950   { --tw-gradient-to:   #f6efe4 !important; }
+[data-theme="light"] .to-slate-900   { --tw-gradient-to:   #e7dccb !important; }
 
 /* ── Ligne verticale de timeline ── */
 [data-theme="light"] .before\:bg-slate-800::before { background-color: #e9ddcd !important; }
@@ -117,3 +119,53 @@ h1, h2, h3 {
 /* ── Ombres globales ── */
 [data-theme="light"] .shadow-xl  { box-shadow: 0 4px 20px 0 rgba(60,40,20,0.07) !important; }
 [data-theme="light"] .shadow-2xl { box-shadow: 0 8px 32px 0 rgba(60,40,20,0.09) !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Fonds sombres teintés — variantes d'opacité (sinon poches noires en clair).
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Slate (cartes & items) */
+[data-theme="light"] .bg-slate-950\/80 { background-color: rgba(250,246,240,0.92) !important; }
+[data-theme="light"] .bg-slate-950\/50 { background-color: rgba(244,236,225,0.7) !important; }
+[data-theme="light"] .bg-slate-900\/95 { background-color: rgba(255,255,255,0.98) !important; }
+[data-theme="light"] .bg-slate-900\/60 { background-color: rgba(255,255,255,0.9) !important; }
+
+/* Cartes vertes (sauge) — étape visitée, hacks */
+[data-theme="light"] .bg-emerald-950\/10 { background-color: #f1f7f2 !important; }
+[data-theme="light"] .bg-emerald-950\/20 { background-color: #eef5ef !important; }
+[data-theme="light"] .bg-emerald-950\/30 { background-color: #e7f0e9 !important; }
+[data-theme="light"] .bg-emerald-900\/50 { background-color: #dceadf !important; }
+
+/* Cartes indigo (« Maintenant », badges) */
+[data-theme="light"] .bg-blue-950\/20 { background-color: #f0f2f8 !important; }
+[data-theme="light"] .bg-blue-950\/30 { background-color: #eceff7 !important; }
+[data-theme="light"] .bg-blue-950\/40 { background-color: #e6eaf4 !important; }
+[data-theme="light"] .bg-blue-900\/20 { background-color: #eceff7 !important; }
+[data-theme="light"] .bg-blue-900\/40 { background-color: #e0e6f2 !important; }
+
+/* Cartes brique (urgences, sorties d'argent) */
+[data-theme="light"] .bg-red-950\/20 { background-color: #fbf1ed !important; }
+[data-theme="light"] .bg-red-900\/40 { background-color: #f6e1d9 !important; }
+
+/* Cartes ambre (« Ensuite », alertes douces) — chaleureux, dans le ton */
+[data-theme="light"] .bg-amber-950\/20 { background-color: #fbf4e6 !important; }
+[data-theme="light"] .bg-amber-900\/30 { background-color: #f6ebd2 !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Textes pâles (prévus pour fond sombre) → assombris pour rester lisibles.
+   ══════════════════════════════════════════════════════════════════════════ */
+[data-theme="light"] .text-slate-100 { color: #2b2420 !important; }
+
+[data-theme="light"] .text-blue-100,
+[data-theme="light"] .text-blue-100\/80,
+[data-theme="light"] .text-blue-200,
+[data-theme="light"] .text-blue-200\/80,
+[data-theme="light"] .text-blue-200\/70 { color: #2f3a56 !important; }
+[data-theme="light"] .text-blue-300     { color: #3d4d6e !important; }
+
+[data-theme="light"] .text-indigo-300\/70 { color: rgba(61,74,107,0.8) !important; }
+
+[data-theme="light"] .text-emerald-100 { color: #3f6b4d !important; }
+
+[data-theme="light"] .text-amber-200\/60 { color: rgba(146,103,47,0.85) !important; }
+[data-theme="light"] .text-amber-300     { color: #9a6b2f !important; }
