@@ -1,6 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { CheckSquare, Check, Scale, Briefcase } from 'lucide-react';
-import { checklistData } from '../data/checklistData';
+// Checklist générique « quoi emporter » (indépendante du voyage du client).
+const checklistData = [
+  { id: 'passeport', label: 'Passeport (valable 6 mois)', category: 'Documents' },
+  { id: 'visa', label: 'Visa / Visit Japan Web rempli', category: 'Documents' },
+  { id: 'assurance', label: 'Assurance voyage', category: 'Documents' },
+  { id: 'billets', label: "Billets d'avion + réservations hôtel", category: 'Documents' },
+  { id: 'cash', label: 'Espèces en yens (beaucoup de commerces cash only)', category: 'Argent' },
+  { id: 'cb', label: 'Carte bancaire sans frais à l’étranger', category: 'Argent' },
+  { id: 'esim', label: 'Carte eSIM / WiFi de poche', category: 'Connectivité' },
+  { id: 'adaptateur', label: 'Adaptateur de prise Type A', category: 'Électronique' },
+  { id: 'batterie', label: 'Batterie externe', category: 'Électronique' },
+  { id: 'chargeur', label: 'Chargeurs téléphone / appareil photo', category: 'Électronique' },
+  { id: 'chaussures', label: 'Chaussures confortables (20 000 pas/jour)', category: 'Vêtements' },
+  { id: 'pluie', label: 'Petit parapluie / coupe-vent', category: 'Vêtements' },
+  { id: 'sac', label: 'Sacoche ou banane (plutôt qu’un gros sac)', category: 'Vêtements' },
+  { id: 'sacplastique', label: 'Sac plastique (peu de poubelles dans la rue)', category: 'Pratique' },
+  { id: 'pharmacie', label: 'Trousse à pharmacie de base', category: 'Pratique' },
+  { id: 'mouchoirs', label: 'Mouchoirs / lingettes', category: 'Pratique' },
+];
 
 const Checklist = () => {
   const [checkedItems, setCheckedItems] = useState(() => {
@@ -49,8 +67,8 @@ const Checklist = () => {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { key: 'v1', label: 'Valise 1 (Mathias)', color: 'text-blue-400' },
-            { key: 'v2', label: 'Valise 2 (Vérane)', color: 'text-pink-400' },
+            { key: 'v1', label: 'Valise 1', color: 'text-blue-400' },
+            { key: 'v2', label: 'Valise 2', color: 'text-pink-400' },
           ].map(({ key, label, color }) => {
             const weight = valiseWeights[key];
             const isOver = weight > 23;

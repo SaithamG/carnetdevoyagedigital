@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import {
-  UploadCloud, Loader2, AlertCircle, Eye, Pencil, Save, Trash2, ArrowUp, ArrowDown,
+  UploadCloud, Loader2, AlertCircle, Pencil, Save, Trash2, ArrowUp, ArrowDown,
   ImagePlus, X, FileText, RefreshCw, CheckCircle2,
 } from 'lucide-react';
 import {
@@ -9,7 +9,6 @@ import {
 } from '../lib/pdfImport';
 import { fileToScaledDataUrl } from '../lib/imageUtil';
 import { useCarnet } from '../context/CarnetContext';
-import ImportedCarnet from './ImportedCarnet';
 
 const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' }) => (
   <label className="block">
@@ -34,11 +33,10 @@ const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' })
 );
 
 const ImportPdf = () => {
-  const { raw, brand, data, dirty, importCarnet, updateRaw, saveNow, updateBrand, clearAll } = useCarnet();
+  const { raw, brand, dirty, importCarnet, updateRaw, saveNow, updateBrand, clearAll } = useCarnet();
   const [status, setStatus] = useState('idle'); // idle | working
   const [progress, setProgress] = useState('');
   const [error, setError] = useState(null);
-  const [mode, setMode] = useState('preview'); // preview | edit
   const [apiKey, setApiKey] = useState('');
   const [savedFlash, setSavedFlash] = useState(false);
   const fileRef = useRef(null);
@@ -74,7 +72,6 @@ const ImportPdf = () => {
 
       await importCarnet(parsed);
       setStatus('idle');
-      setMode('preview');
     } catch (e) {
       setError(e.message || "Échec de l'import.");
       setStatus('idle');
@@ -161,19 +158,9 @@ const ImportPdf = () => {
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
       <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900 border border-slate-800 rounded-2xl p-3">
-        <div className="flex gap-2">
-          <button
-            onClick={() => setMode('preview')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-colors ${mode === 'preview' ? 'bg-blue-600 text-white' : 'bg-slate-950 text-slate-400 hover:text-white'}`}
-          >
-            <Eye size={15} /> Aperçu
-          </button>
-          <button
-            onClick={() => setMode('edit')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-colors ${mode === 'edit' ? 'bg-blue-600 text-white' : 'bg-slate-950 text-slate-400 hover:text-white'}`}
-          >
-            <Pencil size={15} /> Modifier
-          </button>
+        <div className="flex items-center gap-2 text-xs text-slate-400">
+          <Pencil size={15} className="text-blue-400" />
+          <span>Modifie le carnet ici. L'aperçu se voit dans les onglets <b className="text-slate-200">Itinéraire</b> et <b className="text-slate-200">Carte</b>.</span>
         </div>
         <div className="flex gap-2 items-center">
           {savedFlash && <span className="text-emerald-400 text-xs font-bold flex items-center gap-1"><CheckCircle2 size={14} /> Enregistré</span>}
@@ -190,11 +177,7 @@ const ImportPdf = () => {
         </div>
       </div>
 
-      {mode === 'preview' ? (
-        <ImportedCarnet data={data} brand={brand} />
-      ) : (
-        <Editor raw={raw} brand={brand} update={updateRaw} updateBrand={updateBrand} replaceImage={replaceImage} />
-      )}
+      <Editor raw={raw} brand={brand} update={updateRaw} updateBrand={updateBrand} replaceImage={replaceImage} />
     </div>
   );
 };

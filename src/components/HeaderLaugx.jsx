@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { BookOpen, MapPin, Wrench } from 'lucide-react';
+import { Calendar, MapPin, Languages, CheckSquare, Calculator, ShieldAlert, FileUp } from 'lucide-react';
 
 const TABS = [
-  { id: 'carnet', label: 'Carnet', icon: <BookOpen size={16} /> },
+  { id: 'roadbook', label: 'Itinéraire', icon: <Calendar size={16} /> },
   { id: 'carte', label: 'Carte', icon: <MapPin size={16} /> },
-  { id: 'gerer', label: 'Gérer', icon: <Wrench size={16} /> },
+  { id: 'lexique', label: 'Lexique', icon: <Languages size={16} /> },
+  { id: 'checklist', label: 'Checklist', icon: <CheckSquare size={16} /> },
+  { id: 'conversion', label: 'Convertisseur', icon: <Calculator size={16} /> },
+  { id: 'urgences', label: 'Urgences', icon: <ShieldAlert size={16} /> },
+  { id: 'import', label: 'Importer', icon: <FileUp size={16} /> },
 ];
 
 const computeLeft = (target) => {
