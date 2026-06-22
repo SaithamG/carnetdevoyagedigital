@@ -408,11 +408,16 @@ const fetchWithRetry = async (url, options, retries = 3, delay = 1000) => {
  * Envoie le texte extrait à Gemini et renvoie l'objet carnet structuré (brut,
  * icônes encore sous forme de clés texte — voir hydrateCarnet pour l'affichage).
  */
+// Modèles essayés dans l'ordre : si le principal est saturé ("high demand"),
+// on bascule automatiquement sur un modèle de repli moins sollicité.
+const PARSE_MODELS = ['gemini-2.5-flash', 'gemini-2.0-flash'];
+
+const isOverloaded = (msg = '') => /demand|overload|unavailable|try again|503|429|quota|resource/i.test(msg);
+
 export const parsePdfToCarnet = async (rawText, apiKey) => {
   if (!apiKey) {
     throw new Error("Clé API Gemini absente (REACT_APP_JAPON_GEMINI_KEY). Le parsing IA n'est disponible qu'en environnement configuré.");
   }
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
   const body = {
     contents: [{ role: 'user', parts: [{ text: buildParsePrompt(rawText) }] }],
     generationConfig: {
@@ -422,19 +427,30 @@ export const parsePdfToCarnet = async (rawText, apiKey) => {
       responseSchema: CARNET_SCHEMA,
     },
   };
-  const data = await fetchWithRetry(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text).join('') || '';
-  let parsed;
-  try {
-    parsed = JSON.parse(text);
-  } catch {
-    throw new Error("La réponse de l'IA n'est pas un JSON valide. Réessaie avec ce document.");
+
+  let lastError;
+  for (const model of PARSE_MODELS) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+      const data = await fetchWithRetry(
+        url,
+        { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+        4,
+        1500,
+      );
+      const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text).join('') || '';
+      return JSON.parse(text); // succès → on s'arrête
+    } catch (error) {
+      lastError = error;
+      // Surcharge → on tente le modèle suivant. Sinon, erreur de format : idem.
+    }
   }
-  return parsed;
+
+  throw new Error(
+    isOverloaded(lastError?.message)
+      ? "Le service IA est très sollicité en ce moment. Réessaie dans une minute."
+      : "L'analyse IA a échoué. Réessaie dans un instant.",
+  );
 };
 
 /* ------------------------------------------------------------------ *
