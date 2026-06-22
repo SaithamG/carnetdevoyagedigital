@@ -148,15 +148,14 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                           </div>
                         )}
 
-                        {step.image && (
-                          <PlaceImage
-                            src={step.image}
-                            title={step.title}
-                            className={`w-full h-44 object-cover rounded-2xl border ${
-                              visitedSteps[`${day.date}_${step.time}`] ? 'border-emerald-900/40 opacity-80' : 'border-slate-800'
-                            }`}
-                          />
-                        )}
+                        <PlaceImage
+                          src={step.image}
+                          title={step.title}
+                          query={step.title}
+                          className={`w-full h-44 object-cover rounded-2xl border ${
+                            visitedSteps[`${day.date}_${step.time}`] ? 'border-emerald-900/40 opacity-80' : 'border-slate-800'
+                          }`}
+                        />
 
                         <div className="flex gap-4 items-start">
                           <div

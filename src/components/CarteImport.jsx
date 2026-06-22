@@ -85,7 +85,7 @@ const CarteImport = ({ data, brand }) => {
               <Tooltip direction="top" offset={[0, -14]}>{m.order}. {m.title}</Tooltip>
               <Popup>
                 <div className="min-w-[200px]">
-                  <PlaceImage src={m.image} title={m.title} className="w-full h-28 object-cover rounded-lg mb-2" />
+                  <PlaceImage src={m.image} title={m.title} query={m.title} className="w-full h-28 object-cover rounded-lg mb-2" />
                   <p className="font-black text-slate-900 text-sm mb-1">{m.order}. {m.title}</p>
                   {m.desc && <p className="text-[11px] text-slate-600 leading-snug mb-2">{m.desc}</p>}
                   <a

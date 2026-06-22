@@ -8,6 +8,7 @@ import CarteImport from './components/CarteImport';
 import Lexique from './components/Lexique';
 import Checklist from './components/Checklist';
 import Converter from './components/Converter';
+import ConverterWidget from './components/ConverterWidget';
 import Urgences from './components/Urgences';
 import ImportPdf from './components/ImportPdf';
 
@@ -53,6 +54,7 @@ const LaugxApp = () => {
         {activeTab === 'urgences' && <Urgences />}
         {activeTab === 'import' && <ImportPdf />}
       </main>
+      <ConverterWidget />
     </div>
   );
 };

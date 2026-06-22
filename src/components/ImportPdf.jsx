@@ -213,7 +213,10 @@ const PhotoEditor = ({ image, onReplace, onRemove }) => {
 const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
   const logoInput = useRef(null);
   return (
-    <div className="space-y-8">
+    // color-scheme: dark → les champs natifs (date, couleur, scrollbars) ne
+    // s'affichent plus en gris clair "cheap" mais en sombre, cohérent.
+    <div className="space-y-8" style={{ colorScheme: 'dark' }}>
+
       {/* MARQUE */}
       <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
         <h3 className="font-black italic text-white">Identité de l'agence</h3>
