@@ -1,17 +1,15 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   UploadCloud, Loader2, AlertCircle, Eye, Pencil, Save, Trash2, ArrowUp, ArrowDown,
   ImagePlus, X, FileText, RefreshCw, CheckCircle2,
 } from 'lucide-react';
 import {
   extractPdfText, extractPdfImages, extractPdfTextItems,
-  parsePdfToCarnet, attachImagesToCarnet, hydrateCarnet,
+  parsePdfToCarnet, attachImagesToCarnet,
 } from '../lib/pdfImport';
-import { saveCarnet, loadCarnet, clearCarnet, loadBrand, saveBrand } from '../lib/carnetStore';
 import { fileToScaledDataUrl } from '../lib/imageUtil';
+import { useCarnet } from '../context/CarnetContext';
 import ImportedCarnet from './ImportedCarnet';
-
-const clone = (o) => (typeof structuredClone === 'function' ? structuredClone(o) : JSON.parse(JSON.stringify(o)));
 
 const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' }) => (
   <label className="block">
@@ -36,43 +34,17 @@ const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' })
 );
 
 const ImportPdf = () => {
-  const [raw, setRaw] = useState(null);
-  const [brand, setBrand] = useState(loadBrand());
-  const [status, setStatus] = useState('idle'); // idle | working | error
+  const { raw, brand, data, dirty, importCarnet, updateRaw, saveNow, updateBrand, clearAll } = useCarnet();
+  const [status, setStatus] = useState('idle'); // idle | working
   const [progress, setProgress] = useState('');
   const [error, setError] = useState(null);
   const [mode, setMode] = useState('preview'); // preview | edit
   const [apiKey, setApiKey] = useState('');
-  const [dirty, setDirty] = useState(false);
   const [savedFlash, setSavedFlash] = useState(false);
   const fileRef = useRef(null);
 
-  // Charge le carnet existant au montage.
-  useEffect(() => {
-    loadCarnet().then((stored) => { if (stored) setRaw(stored); }).catch(() => {});
-  }, []);
-
-  const data = useMemo(() => (raw ? hydrateCarnet(raw) : null), [raw]);
-
-  const update = (mutator) => {
-    setRaw((prev) => {
-      const next = clone(prev);
-      mutator(next);
-      return next;
-    });
-    setDirty(true);
-  };
-
-  const updateBrand = (patch) => {
-    const next = { ...brand, ...patch };
-    setBrand(next);
-    saveBrand(next); // léger : sauvegarde immédiate
-  };
-
   const persist = async () => {
-    if (!raw) return;
-    await saveCarnet(raw);
-    setDirty(false);
+    await saveNow();
     setSavedFlash(true);
     setTimeout(() => setSavedFlash(false), 1500);
   };
@@ -100,14 +72,12 @@ const ImportPdf = () => {
       setProgress('Association intelligente des photos…');
       attachImagesToCarnet(parsed, images, items);
 
-      await saveCarnet(parsed);
-      setRaw(parsed);
-      setDirty(false);
+      await importCarnet(parsed);
       setStatus('idle');
       setMode('preview');
     } catch (e) {
       setError(e.message || "Échec de l'import.");
-      setStatus('error');
+      setStatus('idle');
     }
   };
 
@@ -121,13 +91,7 @@ const ImportPdf = () => {
   const replaceImage = async (file, apply) => {
     if (!file) return;
     const dataUrl = await fileToScaledDataUrl(file);
-    update(apply(dataUrl));
-  };
-
-  const resetAll = async () => {
-    await clearCarnet();
-    setRaw(null);
-    setMode('preview');
+    updateRaw(apply(dataUrl));
   };
 
   /* ----------------------------- ÉCRAN UPLOAD ----------------------------- */
@@ -220,7 +184,7 @@ const ImportPdf = () => {
           >
             <Save size={15} /> Enregistrer
           </button>
-          <button onClick={resetAll} className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold bg-slate-950 text-slate-400 hover:text-red-400">
+          <button onClick={clearAll} className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold bg-slate-950 text-slate-400 hover:text-red-400">
             <RefreshCw size={14} /> Nouveau PDF
           </button>
         </div>
@@ -229,13 +193,7 @@ const ImportPdf = () => {
       {mode === 'preview' ? (
         <ImportedCarnet data={data} brand={brand} />
       ) : (
-        <Editor
-          raw={raw}
-          brand={brand}
-          update={update}
-          updateBrand={updateBrand}
-          replaceImage={replaceImage}
-        />
+        <Editor raw={raw} brand={brand} update={updateRaw} updateBrand={updateBrand} replaceImage={replaceImage} />
       )}
     </div>
   );
@@ -277,6 +235,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
           <Field label="Site web (URL)" value={brand.website} onChange={(v) => updateBrand({ website: v })} />
           <Field label="Bouton d'action (texte)" value={brand.ctaLabel} onChange={(v) => updateBrand({ ctaLabel: v })} />
           <Field label="Bouton d'action (URL)" value={brand.ctaUrl} onChange={(v) => updateBrand({ ctaUrl: v })} />
+          <Field label="Date de départ (compte à rebours)" type="date" value={brand.tripStart} onChange={(v) => updateBrand({ tripStart: v })} />
           <label className="block">
             <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">Couleur d'accent</span>
             <div className="mt-1 flex items-center gap-2">

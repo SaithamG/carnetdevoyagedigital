@@ -303,6 +303,8 @@ const CARNET_SCHEMA = {
                       title: { type: 'STRING' },
                       desc: { type: 'STRING' },
                       icon: { type: 'STRING' },
+                      lat: { type: 'NUMBER' },
+                      lng: { type: 'NUMBER' },
                     },
                     required: ['title'],
                   },
@@ -324,6 +326,8 @@ const CARNET_SCHEMA = {
           category: { type: 'STRING' },
           desc: { type: 'STRING' },
           icon: { type: 'STRING' },
+          lat: { type: 'NUMBER' },
+          lng: { type: 'NUMBER' },
         },
         required: ['name'],
       },
@@ -355,6 +359,7 @@ Règles :
 - Chaque itinéraire/circuit du document devient un élément de "regions" (name = nom du circuit). Si le document n'a pas de jours datés, mets tout dans UN seul "day" (title = nom du circuit, date omise).
 - Chaque lieu/étape devient un "step" : "time" = la plage horaire si présente (ex "9:00 - 10:00"), "title" = le nom du lieu, "desc" = sa description.
 - "icon" : choisis la clé la PLUS pertinente STRICTEMENT dans cette liste : ${ICON_KEYS.join(', ')}. En cas de doute, "place".
+- "lat"/"lng" : si tu connais avec une bonne confiance les coordonnées GPS réelles du lieu (monuments, quartiers, gares, lieux touristiques connus), donne-les en degrés décimaux. Si tu n'es pas sûr, OMETS ces champs (ne devine pas au hasard).
 - "addresses" : les bonnes adresses / recommandations (restaurants, cafés, boutiques) listées hors itinéraire.
 - "lexique" : vocabulaire/phrases avec traduction et prononciation si fournies.
 - "conseils" : les astuces / conseils pratiques, un par entrée.
@@ -452,6 +457,8 @@ export const hydrateCarnet = (raw) => {
           desc: step.desc || '',
           icon: resolveIcon(step.icon, { size: 20, fallbackText: `${step.title} ${step.desc}` }),
           image: step.image || null,
+          lat: typeof step.lat === 'number' ? step.lat : null,
+          lng: typeof step.lng === 'number' ? step.lng : null,
           mapUrl: step.title ? mapsUrl(step.title) : null,
           isOutdoor: false,
         })),
