@@ -3,22 +3,24 @@ import {
   UploadCloud, Loader2, AlertCircle, Pencil, Save, Trash2, ArrowUp, ArrowDown,
   ImagePlus, X, FileText, RefreshCw, CheckCircle2,
 } from 'lucide-react';
-import {
-  extractPdfText, extractPdfImages, extractPdfTextItems,
-  parsePdfToCarnet, attachImagesToCarnet,
-} from '../lib/pdfImport';
+import { extractPdfText, parsePdfToCarnet } from '../lib/pdfImport';
 import { fileToScaledDataUrl } from '../lib/imageUtil';
 import { useCarnet } from '../context/CarnetContext';
 
+const FIELD_CLS =
+  'mt-1.5 w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white ' +
+  'placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:bg-slate-800 focus:ring-1 focus:ring-blue-500/40 transition-colors';
+
 const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' }) => (
   <label className="block">
-    <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">{label}</span>
+    <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">{label}</span>
     {textarea ? (
       <textarea
         value={value || ''}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="mt-1 w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-sm text-slate-200 focus:outline-none focus:border-blue-500 min-h-[70px] resize-y"
+        style={{ colorScheme: 'dark' }}
+        className={`${FIELD_CLS} min-h-[70px] resize-y`}
       />
     ) : (
       <input
@@ -26,7 +28,8 @@ const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' })
         value={value || ''}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="mt-1 w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-sm text-slate-200 focus:outline-none focus:border-blue-500"
+        style={{ colorScheme: 'dark' }}
+        className={FIELD_CLS}
       />
     )}
   </label>
@@ -55,20 +58,9 @@ const ImportPdf = () => {
       setProgress('Lecture du texte du PDF…');
       const text = await extractPdfText(file);
 
-      setProgress('Extraction des photos…');
-      const images = await extractPdfImages(file, {
-        onProgress: (p, total) => setProgress(`Extraction des photos… page ${p}/${total}`),
-      });
-
-      setProgress('Repérage des positions…');
-      const items = await extractPdfTextItems(file);
-
       setProgress("Analyse du contenu par l'IA…");
       const key = process.env.REACT_APP_JAPON_GEMINI_KEY || apiKey;
       const parsed = await parsePdfToCarnet(text, key);
-
-      setProgress('Association intelligente des photos…');
-      attachImagesToCarnet(parsed, images, items);
 
       await importCarnet(parsed);
       setStatus('idle');
@@ -340,7 +332,8 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
               <textarea
                 value={c}
                 onChange={(e) => update((r) => { r.conseils[i] = e.target.value; })}
-                className="flex-1 bg-slate-950 border border-slate-800 rounded-lg p-2 text-sm text-slate-200 focus:outline-none focus:border-blue-500 min-h-[44px] resize-y"
+                style={{ colorScheme: 'dark' }}
+                className="flex-1 bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 focus:bg-slate-800 min-h-[44px] resize-y transition-colors"
               />
               <button onClick={() => update((r) => { r.conseils.splice(i, 1); })} className="p-2 text-slate-400 hover:text-red-400"><Trash2 size={14} /></button>
             </div>

@@ -49,22 +49,28 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
-      {/* NAVIGATION RÉGIONS */}
+      {/* SÉLECTEUR D'ITINÉRAIRES — circuits au choix */}
       {regions.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2">
-          {regions.map((region) => (
-            <button
-              key={region.id}
-              onClick={() => setActiveRegion(region.id)}
-              className={`flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
-                activeRegion === region.id
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40 border-blue-500'
-                  : 'bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
-              }`}
-            >
-              {region.icon} {region.name}
-            </button>
-          ))}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4">
+          <p className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-3">
+            {regions.length} itinéraires au choix — sélectionnez-en un
+          </p>
+          <div className="flex gap-2 overflow-x-auto no-scrollbar">
+            {regions.map((region, i) => (
+              <button
+                key={region.id}
+                onClick={() => setActiveRegion(region.id)}
+                className={`flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                  activeRegion === region.id
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40 border-blue-500'
+                    : 'bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+                }`}
+              >
+                <span className={`flex items-center justify-center w-5 h-5 rounded-full text-[10px] ${activeRegion === region.id ? 'bg-white/20' : 'bg-slate-800'}`}>{i + 1}</span>
+                {region.name}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
