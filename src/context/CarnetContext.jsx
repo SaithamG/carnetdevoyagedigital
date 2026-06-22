@@ -16,6 +16,17 @@ export const CarnetProvider = ({ children }) => {
   const [dirty, setDirty] = useState(false);
 
   useEffect(() => {
+    // Garde-fou : si le carnet stocké date d'une version antérieure (qui pouvait
+    // contenir des images PDF corrompues noir/rose), on le purge pour forcer un
+    // ré-import propre. On bumpe CARNET_VERSION à chaque changement de format.
+    const CARNET_VERSION = '2';
+    if (localStorage.getItem('laugx_carnet_version') !== CARNET_VERSION) {
+      clearCarnet().catch(() => {}).finally(() => {
+        localStorage.setItem('laugx_carnet_version', CARNET_VERSION);
+        setLoading(false);
+      });
+      return;
+    }
     loadCarnet()
       .then((stored) => { if (stored) setRaw(stored); })
       .catch(() => {})

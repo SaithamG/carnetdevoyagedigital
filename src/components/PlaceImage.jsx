@@ -4,6 +4,12 @@ import { MapPin } from 'lucide-react';
 // Cache mémoire des recherches Wikipédia (évite de refaire les requêtes).
 const wikiCache = {};
 
+// Garde-fou : écarte les "images" qui ne sont pas des photos (logos, cartes,
+// SVG, drapeaux, blasons, icônes…) — fréquentes sur Wikipédia.
+const isRealPhoto = (url = '') =>
+  /\.(jpe?g|png)$/i.test(url.split('?')[0]) &&
+  !/(logo|icon|map|carte|flag|drapeau|seal|sceau|coat_of_arms|blason|svg|symbol|wikimedia|wiktionary)/i.test(url);
+
 // Récupère une vraie photo du lieu via Wikipédia (gratuit, sans clé, CORS ok).
 const fetchWikiImage = async (query) => {
   if (!query) return null;
@@ -11,13 +17,13 @@ const fetchWikiImage = async (query) => {
   const tryLang = async (lang) => {
     const url =
       `https://${lang}.wikipedia.org/w/api.php?action=query&generator=search` +
-      `&gsrsearch=${encodeURIComponent(query)}&gsrlimit=1&prop=pageimages&piprop=thumbnail` +
-      `&pithumbsize=700&format=json&origin=*`;
+      `&gsrsearch=${encodeURIComponent(query)}&gsrlimit=1&gsrnamespace=0&prop=pageimages&piprop=thumbnail` +
+      `&pithumbsize=1000&format=json&origin=*`;
     const res = await fetch(url);
     const json = await res.json();
     const pages = json?.query?.pages || {};
-    const first = Object.values(pages)[0];
-    return first?.thumbnail?.source || null;
+    const src = Object.values(pages)[0]?.thumbnail?.source || null;
+    return src && isRealPhoto(src) ? src : null;
   };
   try {
     const img = (await tryLang('en')) || (await tryLang('fr'));
@@ -56,7 +62,17 @@ const PlaceImage = ({ src, title, query, className = '' }) => {
     );
   }
 
-  return <img src={resolved} alt={title} loading="lazy" onError={() => setFailed(true)} className={className} />;
+  return (
+    <img
+      src={resolved}
+      alt={title}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      // Garde-fou : une image trop petite (vignette dégénérée) = on bascule sur le dégradé.
+      onLoad={(e) => { if (e.target.naturalWidth && e.target.naturalWidth < 250) setFailed(true); }}
+      className={className}
+    />
+  );
 };
 
 export default PlaceImage;
