@@ -6,10 +6,11 @@ import {
 import { extractPdfText, parsePdfToCarnet } from '../lib/pdfImport';
 import { fileToScaledDataUrl } from '../lib/imageUtil';
 import { useCarnet } from '../context/CarnetContext';
+import PlaceImage from './PlaceImage';
 
 const FIELD_CLS =
-  'mt-1.5 w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white ' +
-  'placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:bg-slate-800 focus:ring-1 focus:ring-blue-500/40 transition-colors';
+  'mt-1.5 w-full bg-slate-950 border border-slate-700/70 rounded-lg px-3 py-2.5 text-sm text-white ' +
+  'placeholder:text-slate-600 focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors';
 
 const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' }) => (
   <label className="block">
@@ -175,43 +176,39 @@ const ImportPdf = () => {
 };
 
 /* ------------------------------- ÉDITEUR -------------------------------- */
-const PhotoEditor = ({ image, onReplace, onRemove }) => {
-  if (!image) {
-    // Emplacement vide propre (plus de bloc gris) : zone pointillée cliquable.
-    return (
-      <label className="flex flex-col items-center justify-center gap-1.5 w-full h-28 rounded-xl border-2 border-dashed border-slate-700 bg-slate-950/40 text-slate-500 hover:border-blue-500 hover:text-blue-400 cursor-pointer transition-colors">
-        <ImagePlus size={20} />
-        <span className="text-[11px] font-bold">Ajouter une photo</span>
+// Aperçu de la photo réelle (uploadée OU auto Wikipédia via le titre) + actions.
+const PhotoEditor = ({ image, title, onReplace, onRemove }) => (
+  <div className="relative w-full h-36 rounded-xl overflow-hidden border border-slate-800">
+    <PlaceImage src={image} title={title} query={title} className="w-full h-full object-cover" />
+    {!image && (
+      <span className="absolute bottom-2 left-2 text-[10px] font-bold bg-black/60 text-white px-2 py-0.5 rounded-md">
+        Photo auto
+      </span>
+    )}
+    <div className="absolute top-2 right-2 flex gap-1.5">
+      <label className="cursor-pointer bg-slate-900/90 text-white px-2 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1 border border-slate-700 hover:bg-slate-800">
+        <ImagePlus size={12} /> Changer
         <input type="file" accept="image/*" className="hidden" onChange={(e) => onReplace(e.target.files?.[0])} />
       </label>
-    );
-  }
-  return (
-    <div className="relative w-full h-32 rounded-xl overflow-hidden border border-slate-800">
-      <img src={image} alt="" className="w-full h-full object-cover" />
-      <div className="absolute top-2 right-2 flex gap-1.5">
-        <label className="cursor-pointer bg-slate-900/90 text-white px-2 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1 border border-slate-700">
-          <ImagePlus size={12} /> Changer
-          <input type="file" accept="image/*" className="hidden" onChange={(e) => onReplace(e.target.files?.[0])} />
-        </label>
+      {image && (
         <button onClick={onRemove} className="bg-red-600/90 text-white px-2 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1">
           <X size={12} /> Retirer
         </button>
-      </div>
+      )}
     </div>
-  );
-};
+  </div>
+);
 
 const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
   const logoInput = useRef(null);
   return (
-    // color-scheme: dark → les champs natifs (date, couleur, scrollbars) ne
-    // s'affichent plus en gris clair "cheap" mais en sombre, cohérent.
-    <div className="space-y-8" style={{ colorScheme: 'dark' }}>
+    // --accent pilote le focus des champs ; color-scheme dark évite le gris
+    // clair des champs natifs.
+    <div className="space-y-8" style={{ colorScheme: 'dark', '--accent': brand.accent }}>
 
       {/* MARQUE */}
       <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
-        <h3 className="font-black italic text-white">Identité de l'agence</h3>
+        <h3 className="font-black italic" style={{ color: brand.accent }}>Identité de l'agence</h3>
         <div className="grid md:grid-cols-2 gap-3">
           <Field label="Nom de l'agence" value={brand.name} onChange={(v) => updateBrand({ name: v })} />
           <Field label="Accroche" value={brand.tagline} onChange={(v) => updateBrand({ tagline: v })} />
@@ -252,7 +249,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
 
       {/* MÉTA CARNET */}
       <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-        <h3 className="font-black italic text-white">Le carnet</h3>
+        <h3 className="font-black italic" style={{ color: brand.accent }}>Le carnet</h3>
         <Field label="Titre" value={raw.title} onChange={(v) => update((r) => { r.title = v; })} />
         <Field label="Introduction" textarea value={raw.intro} onChange={(v) => update((r) => { r.intro = v; })} />
         <Field label="Mot de fin" textarea value={raw.outro} onChange={(v) => update((r) => { r.outro = v; })} />
@@ -261,6 +258,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
       {/* ITINÉRAIRES */}
       {(raw.regions || []).map((region, rIdx) => (
         <section key={rIdx} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
+          <h3 className="font-black italic" style={{ color: brand.accent }}>Itinéraire {rIdx + 1}</h3>
           <Field label="Nom de l'itinéraire" value={region.name} onChange={(v) => update((r) => { r.regions[rIdx].name = v; })} />
           <Field label="Description" textarea value={region.desc} onChange={(v) => update((r) => { r.regions[rIdx].desc = v; })} />
 
@@ -288,6 +286,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
                   <Field label="Description" textarea value={step.desc} onChange={(v) => update((r) => { r.regions[rIdx].days[dIdx].steps[sIdx].desc = v; })} />
                   <PhotoEditor
                     image={step.image}
+                    title={step.title}
                     onReplace={(f) => replaceImage(f, (url) => (r) => { r.regions[rIdx].days[dIdx].steps[sIdx].image = url; })}
                     onRemove={() => update((r) => { r.regions[rIdx].days[dIdx].steps[sIdx].image = null; })}
                   />
@@ -301,7 +300,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
       {/* ADRESSES */}
       {(raw.addresses || []).length > 0 && (
         <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
-          <h3 className="font-black italic text-white">Bonnes adresses</h3>
+          <h3 className="font-black italic" style={{ color: brand.accent }}>Bonnes adresses</h3>
           {raw.addresses.map((a, i) => (
             <div key={i} className="border border-slate-800 rounded-lg p-3 space-y-3 bg-slate-950/40">
               <div className="flex items-center justify-between">
@@ -315,6 +314,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
               <Field label="Description" textarea value={a.desc} onChange={(v) => update((r) => { r.addresses[i].desc = v; })} />
               <PhotoEditor
                 image={a.image}
+                title={a.name}
                 onReplace={(f) => replaceImage(f, (url) => (r) => { r.addresses[i].image = url; })}
                 onRemove={() => update((r) => { r.addresses[i].image = null; })}
               />
@@ -326,7 +326,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
       {/* CONSEILS */}
       {(raw.conseils || []).length > 0 && (
         <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-2">
-          <h3 className="font-black italic text-white flex items-center gap-2"><FileText size={16} /> Conseils</h3>
+          <h3 className="font-black italic flex items-center gap-2" style={{ color: brand.accent }}><FileText size={16} /> Conseils</h3>
           {raw.conseils.map((c, i) => (
             <div key={i} className="flex gap-2 items-start">
               <textarea
