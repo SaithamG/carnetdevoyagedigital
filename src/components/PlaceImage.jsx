@@ -5,10 +5,12 @@ import { MapPin } from 'lucide-react';
 const wikiCache = {};
 
 // Garde-fou : écarte les "images" qui ne sont pas des photos (logos, cartes,
-// SVG, drapeaux, blasons, icônes…) — fréquentes sur Wikipédia.
-const isRealPhoto = (url = '') =>
-  /\.(jpe?g|png)$/i.test(url.split('?')[0]) &&
-  !/(logo|icon|map|carte|flag|drapeau|seal|sceau|coat_of_arms|blason|svg|symbol|wikimedia|wiktionary)/i.test(url);
+// SVG, drapeaux, blasons…). On teste UNIQUEMENT le nom de fichier — pas l'URL
+// entière (qui contient toujours "wikimedia.org" et ferait tout rejeter).
+const isRealPhoto = (url = '') => {
+  const file = (url.split('?')[0].split('/').pop() || '').toLowerCase();
+  return /\.(jpe?g|png)$/.test(file) && !/(logo|icon|_map|flag|seal|coat_of_arms|blason|symbol)/.test(file);
+};
 
 // Récupère une vraie photo du lieu via Wikipédia (gratuit, sans clé, CORS ok).
 const fetchWikiImage = async (query) => {
