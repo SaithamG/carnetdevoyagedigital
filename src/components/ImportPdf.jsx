@@ -8,9 +8,11 @@ import { fileToScaledDataUrl } from '../lib/imageUtil';
 import { useCarnet } from '../context/CarnetContext';
 import PlaceImage from './PlaceImage';
 
+// Classes alignées sur le thème de l'appli (le style.css recolore slate-*/blue-*
+// selon le thème clair/sombre). On ne force PAS le sombre ici.
 const FIELD_CLS =
-  'mt-1.5 w-full bg-slate-950 border border-slate-700/70 rounded-lg px-3 py-2.5 text-sm text-white ' +
-  'placeholder:text-slate-600 focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors';
+  'mt-1.5 w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white ' +
+  'placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition-colors';
 
 const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' }) => (
   <label className="block">
@@ -20,7 +22,6 @@ const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' })
         value={value || ''}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        style={{ colorScheme: 'dark' }}
         className={`${FIELD_CLS} min-h-[70px] resize-y`}
       />
     ) : (
@@ -29,7 +30,6 @@ const Field = ({ label, value, onChange, textarea, placeholder, type = 'text' })
         value={value || ''}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        style={{ colorScheme: 'dark' }}
         className={FIELD_CLS}
       />
     )}
@@ -202,9 +202,7 @@ const PhotoEditor = ({ image, title, onReplace, onRemove }) => (
 const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
   const logoInput = useRef(null);
   return (
-    // --accent pilote le focus des champs ; color-scheme dark évite le gris
-    // clair des champs natifs.
-    <div className="space-y-8" style={{ colorScheme: 'dark', '--accent': brand.accent }}>
+    <div className="space-y-8">
 
       {/* MARQUE */}
       <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
@@ -263,7 +261,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
           <Field label="Description" textarea value={region.desc} onChange={(v) => update((r) => { r.regions[rIdx].desc = v; })} />
 
           {(region.days || []).map((day, dIdx) => (
-            <div key={dIdx} className="border border-slate-800 rounded-xl p-4 space-y-4 bg-slate-950/40">
+            <div key={dIdx} className="border border-slate-800 rounded-xl p-4 space-y-4 bg-slate-950">
               <div className="grid grid-cols-2 gap-3">
                 <Field label="Date / jour" value={day.date} onChange={(v) => update((r) => { r.regions[rIdx].days[dIdx].date = v; })} />
                 <Field label="Titre du jour" value={day.title} onChange={(v) => update((r) => { r.regions[rIdx].days[dIdx].title = v; })} />
@@ -302,7 +300,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
         <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
           <h3 className="font-black italic" style={{ color: brand.accent }}>Bonnes adresses</h3>
           {raw.addresses.map((a, i) => (
-            <div key={i} className="border border-slate-800 rounded-lg p-3 space-y-3 bg-slate-950/40">
+            <div key={i} className="border border-slate-800 rounded-lg p-3 space-y-3 bg-slate-950">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">Adresse {i + 1}</span>
                 <button onClick={() => update((r) => { r.addresses.splice(i, 1); })} className="p-1 text-slate-400 hover:text-red-400"><Trash2 size={14} /></button>
@@ -332,8 +330,7 @@ const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
               <textarea
                 value={c}
                 onChange={(e) => update((r) => { r.conseils[i] = e.target.value; })}
-                style={{ colorScheme: 'dark' }}
-                className="flex-1 bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 focus:bg-slate-800 min-h-[44px] resize-y transition-colors"
+                className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 min-h-[44px] resize-y transition-colors"
               />
               <button onClick={() => update((r) => { r.conseils.splice(i, 1); })} className="p-2 text-slate-400 hover:text-red-400"><Trash2 size={14} /></button>
             </div>

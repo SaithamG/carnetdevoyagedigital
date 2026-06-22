@@ -8,7 +8,7 @@ import PlaceImage from './PlaceImage';
 const makeIcon = (color, n) =>
   L.divIcon({
     className: '',
-    html: `<div style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:${color};border:3px solid #0f172a;box-shadow:0 0 0 1px ${color}66,0 2px 6px rgba(0,0,0,.6);color:#fff;font:800 11px/1 system-ui">${n}</div>`,
+    html: `<div style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:${color};border:3px solid #ffffff;box-shadow:0 0 0 1px ${color}55,0 2px 6px rgba(0,0,0,.3);color:#fff;font:800 11px/1 system-ui">${n}</div>`,
     iconSize: [26, 26],
     iconAnchor: [13, 13],
     popupAnchor: [0, -13],
@@ -70,10 +70,10 @@ const CarteImport = ({ data, brand }) => {
       </div>
 
       <div className="relative z-0 rounded-[2rem] overflow-hidden border border-slate-800 shadow-xl" style={{ isolation: 'isolate' }}>
-        <MapContainer center={points[0]} zoom={12} scrollWheelZoom style={{ height: '70vh', width: '100%', background: '#0f172a' }}>
+        <MapContainer center={points[0]} zoom={12} scrollWheelZoom style={{ height: '70vh', width: '100%', background: '#faf6f0' }}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
             subdomains="abcd"
           />
           {routeCoords.length > 1 && (
