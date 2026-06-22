@@ -24,8 +24,12 @@ root.render(
   </StrictMode>
 );
 
+// Pendant la phase de test Laugx : on DÉSACTIVE le service worker et on purge
+// les caches existants, pour éviter que l'ancienne appli (compte à rebours, etc.)
+// reste servie en cache. (On pourra réactiver la PWA pour le client plus tard.)
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
-  });
+  navigator.serviceWorker.getRegistrations().then((regs) => regs.forEach((r) => r.unregister())).catch(() => {});
+}
+if (window.caches) {
+  caches.keys().then((keys) => keys.forEach((k) => caches.delete(k))).catch(() => {});
 }
