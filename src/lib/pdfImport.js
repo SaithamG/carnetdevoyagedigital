@@ -48,6 +48,31 @@ const matMul = (m1, m2) => [
   m1[1] * m2[4] + m1[3] * m2[5] + m1[5],
 ];
 
+/** Détecte une image vide / noire / uniforme (masque, extraction ratée). */
+const isLowContent = (ctx, w, h) => {
+  try {
+    const { data } = ctx.getImageData(0, 0, w, h);
+    const total = w * h;
+    const step = Math.max(1, Math.floor(total / 2000)); // ~2000 pixels échantillonnés
+    let sum = 0;
+    let sumSq = 0;
+    let n = 0;
+    for (let p = 0; p < total; p += step) {
+      const i = p * 4;
+      const lum = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+      sum += lum;
+      sumSq += lum * lum;
+      n++;
+    }
+    const mean = sum / n;
+    const variance = sumSq / n - mean * mean;
+    // Quasi noir, ou quasi uniforme (bloc d'une seule couleur) → on rejette.
+    return mean < 18 || variance < 25;
+  } catch {
+    return false;
+  }
+};
+
 /** Convertit un objet image pdfjs (bitmap ou data brut) en data URL JPEG réduite. */
 const imgToDataUrl = (img, maxDim) => {
   if (!img) return null;
@@ -60,6 +85,10 @@ const imgToDataUrl = (img, maxDim) => {
   canvas.width = w;
   canvas.height = h;
   const ctx = canvas.getContext('2d');
+  // Fond blanc AVANT de dessiner : sinon les zones transparentes deviennent
+  // NOIRES à l'export JPEG (cause des "images noires").
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, w, h);
 
   if (bitmap) {
     ctx.drawImage(bitmap, 0, 0, w, h);
@@ -86,7 +115,9 @@ const imgToDataUrl = (img, maxDim) => {
   } else {
     return null;
   }
-  return canvas.toDataURL('image/jpeg', 0.8);
+
+  if (isLowContent(ctx, w, h)) return null; // écarte les blocs noirs/vides
+  return canvas.toDataURL('image/jpeg', 0.85);
 };
 
 /** Récupère l'objet image pdfjs (peut être asynchrone selon le décodage). */
