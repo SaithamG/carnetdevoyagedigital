@@ -26,7 +26,22 @@ export const extractPdfText = async (file, onProgress) => {
   for (let i = 1; i <= pdf.numPages; i++) {
     const page = await pdf.getPage(i);
     const content = await page.getTextContent();
-    pages.push(content.items.map((it) => it.str).join(' '));
+    // Les PDF Canva sortent souvent le texte dans le désordre : on remet en
+    // ordre de lecture (haut→bas, gauche→droite) et on reconstruit les lignes,
+    // sinon l'IA mélange ou rate des étapes.
+    const items = content.items.filter((it) => it.str && it.str.trim());
+    items.sort((a, b) => (b.transform[5] - a.transform[5]) || (a.transform[4] - b.transform[4]));
+    const lines = [];
+    let line = [];
+    let lastY = null;
+    for (const it of items) {
+      const y = it.transform[5];
+      if (lastY !== null && Math.abs(y - lastY) > 4) { lines.push(line.join(' ')); line = []; }
+      line.push(it.str);
+      lastY = y;
+    }
+    if (line.length) lines.push(line.join(' '));
+    pages.push(lines.join('\n'));
     onProgress?.(i, pdf.numPages);
   }
   return pages.join('\n\n').replace(/[ \t]+/g, ' ').trim();
@@ -66,8 +81,9 @@ const isLowContent = (ctx, w, h) => {
     }
     const mean = sum / n;
     const variance = sumSq / n - mean * mean;
-    // Quasi noir, ou quasi uniforme (bloc d'une seule couleur) → on rejette.
-    return mean < 18 || variance < 25;
+    // Rejette seulement le vraiment vide : quasi noir, ou bloc d'une seule
+    // couleur. Seuils prudents pour ne PAS jeter une vraie photo sombre.
+    return mean < 10 || variance < 12;
   } catch {
     return false;
   }
@@ -355,6 +371,7 @@ const buildParsePrompt = (rawText) => `Tu es un moteur d'extraction. On te donne
 Ta mission : structurer ce contenu dans le schéma JSON imposé, SANS rien inventer.
 
 Règles :
+- EXHAUSTIVITÉ : recense TOUS les lieux/étapes du document, dans l'ordre, sans en omettre AUCUN ni en fusionner deux. Chaque lieu cité avec sa propre description = un step distinct.
 - N'invente AUCUNE information absente du document (pas d'horaires, de prix ni de lieux fictifs). Si une donnée manque, omets le champ.
 - Chaque itinéraire/circuit du document devient un élément de "regions" (name = nom du circuit). Si le document n'a pas de jours datés, mets tout dans UN seul "day" (title = nom du circuit, date omise).
 - Chaque lieu/étape devient un "step" : "time" = la plage horaire si présente (ex "9:00 - 10:00"), "title" = le nom du lieu, "desc" = sa description.
@@ -400,7 +417,7 @@ export const parsePdfToCarnet = async (rawText, apiKey) => {
     contents: [{ role: 'user', parts: [{ text: buildParsePrompt(rawText) }] }],
     generationConfig: {
       temperature: 0.2,
-      maxOutputTokens: 8192,
+      maxOutputTokens: 16384,
       responseMimeType: 'application/json',
       responseSchema: CARNET_SCHEMA,
     },

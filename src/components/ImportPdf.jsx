@@ -183,26 +183,32 @@ const ImportPdf = () => {
 };
 
 /* ------------------------------- ÉDITEUR -------------------------------- */
-const PhotoEditor = ({ image, onReplace, onRemove }) => (
-  <div className="relative w-full h-32 rounded-lg overflow-hidden border border-slate-800 bg-slate-950 group">
-    {image ? (
-      <img src={image} alt="" className="w-full h-full object-cover" />
-    ) : (
-      <div className="w-full h-full flex items-center justify-center text-slate-600 text-xs">Aucune photo</div>
-    )}
-    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-      <label className="cursor-pointer bg-white/90 text-slate-900 px-2 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1">
-        <ImagePlus size={12} /> Changer
+const PhotoEditor = ({ image, onReplace, onRemove }) => {
+  if (!image) {
+    // Emplacement vide propre (plus de bloc gris) : zone pointillée cliquable.
+    return (
+      <label className="flex flex-col items-center justify-center gap-1.5 w-full h-28 rounded-xl border-2 border-dashed border-slate-700 bg-slate-950/40 text-slate-500 hover:border-blue-500 hover:text-blue-400 cursor-pointer transition-colors">
+        <ImagePlus size={20} />
+        <span className="text-[11px] font-bold">Ajouter une photo</span>
         <input type="file" accept="image/*" className="hidden" onChange={(e) => onReplace(e.target.files?.[0])} />
       </label>
-      {image && (
-        <button onClick={onRemove} className="bg-red-600 text-white px-2 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1">
+    );
+  }
+  return (
+    <div className="relative w-full h-32 rounded-xl overflow-hidden border border-slate-800">
+      <img src={image} alt="" className="w-full h-full object-cover" />
+      <div className="absolute top-2 right-2 flex gap-1.5">
+        <label className="cursor-pointer bg-slate-900/90 text-white px-2 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1 border border-slate-700">
+          <ImagePlus size={12} /> Changer
+          <input type="file" accept="image/*" className="hidden" onChange={(e) => onReplace(e.target.files?.[0])} />
+        </label>
+        <button onClick={onRemove} className="bg-red-600/90 text-white px-2 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1">
           <X size={12} /> Retirer
         </button>
-      )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Editor = ({ raw, brand, update, updateBrand, replaceImage }) => {
   const logoInput = useRef(null);
