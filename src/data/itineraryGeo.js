@@ -89,6 +89,7 @@ export const geoByMapUrl = {
   'https://maps.google.com/?q=Tsurugaoka+Hachimangu': { coords: [35.3258, 139.5563] },
   'https://maps.google.com/?q=Hokokuji+Temple': { coords: [35.3186, 139.5710] },
   'https://maps.google.com/?q=Kotoku-in': { coords: [35.3169, 139.5358] },
+  'https://maps.google.com/?q=Kamakurakokomae+Station': { coords: [35.3074, 139.4901] },
   'https://maps.google.com/?q=Enoshima+Island': { coords: [35.2993, 139.4805] },
   'https://maps.google.com/?q=Ameyoko': { coords: [35.7100, 139.7745] },
   'https://maps.google.com/?q=Yanaka+Ginza': { coords: [35.7276, 139.7660] },
