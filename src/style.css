@@ -118,6 +118,13 @@ h1, h2, h3, .font-black.italic:not(.font-mono) {
 [data-theme="light"] .to-slate-950   { --tw-gradient-to:   #f6efe4 !important; }
 [data-theme="light"] .to-slate-900   { --tw-gradient-to:   #e7dccb !important; }
 
+/* Fins de dégradé teintées (Mode Voyage). Sans ça, le hero du compte à rebours
+   garde un gris-bleu froid au milieu du crème : c'était la dernière poche
+   sombre de l'app. */
+[data-theme="light"] .to-blue-950\/30    { --tw-gradient-to: #f4ece1 !important; }
+[data-theme="light"] .to-blue-950\/20    { --tw-gradient-to: #f7f2ea !important; }
+[data-theme="light"] .to-emerald-950\/20 { --tw-gradient-to: #eef5ef !important; }
+
 /* ── Ligne verticale de timeline ── */
 [data-theme="light"] .before\:bg-slate-800::before { background-color: #e9ddcd !important; }
 

@@ -37,8 +37,8 @@ export const transports = [
   {
     from: 'Tokyo Ueno',
     to: 'Aéroport Haneda',
-    type: 'Keisei Skyliner + Monorail',
-    cost: '~15€',
-    desc: "Trajet retour le dernier matin. Ligne express qui t'emmène à l'aéroport en 45 minutes chrono.",
+    type: 'JR Yamanote + Tokyo Monorail',
+    cost: '~4€',
+    desc: "Trajet retour le dernier matin (vol 08h30). Yamanote jusqu'à Hamamatsucho (~25 min) puis Monorail jusqu'au terminal (~20 min) : ~50 min, ~650¥ à la Suica. Variante : Yamanote → Shinagawa → Keikyu direct. ATTENTION : le Keisei Skyliner ne dessert QUE Narita, jamais Haneda. Pars à 05h45 pour avoir 2h de marge.",
   },
 ];

@@ -6,12 +6,9 @@ import {
   Luggage, Compass, Wrench, BookHeart,
 } from 'lucide-react';
 import SettingsPanel from './SettingsPanel';
+import { EXCHANGE_RATE, TRIP_START, TRIP_END } from '../data/constants';
 
-const EXCHANGE_RATE = 185;
 const TOTAL_BUDGET_YEN = 1296 * EXCHANGE_RATE;
-
-const TRIP_START = new Date(2026, 10, 9);
-const TRIP_END   = new Date(2026, 10, 30);
 
 const isTripActive = () => {
   const today = new Date();
@@ -104,7 +101,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
             <div>
               <p className="text-[10px] font-black text-emerald-500 uppercase">Vol Garanti</p>
               <p className="text-xs font-bold text-emerald-100 flex items-center gap-1">
-                3/4 Payé <Check size={14} />
+                Soldé 4/4 <Check size={14} />
               </p>
             </div>
           </div>

@@ -10,7 +10,7 @@ const PlaceImage = ({ mapUrl, title, className = '' }) => {
   if (!mapUrl || failed) {
     return (
       <div
-        className={`flex flex-col items-center justify-center gap-1.5 bg-gradient-to-br from-slate-800 via-slate-850 to-slate-900 ${className}`}
+        className={`flex flex-col items-center justify-center gap-1.5 bg-gradient-to-br from-slate-800 to-slate-900 ${className}`}
       >
         <MapPin size={22} className="text-slate-600" />
         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 px-3 text-center leading-tight line-clamp-2">

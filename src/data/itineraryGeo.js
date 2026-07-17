@@ -84,6 +84,7 @@ export const geoByMapUrl = {
   'https://maps.google.com/?q=Grids+Tokyo+Ueno+Hotel+Hostel': { coords: [35.7115, 139.7745] },
   'https://maps.google.com/?q=Unicorn+Gundam+Statue': { coords: [35.6256, 139.7756] },
   'https://maps.google.com/?q=Tokyo+Joypolis': { coords: [35.6275, 139.7793] },
+  'https://maps.google.com/?q=Aomi+Odaiba': { coords: [35.6220, 139.7800] },
   'https://maps.google.com/?q=Ueno+Station': { coords: [35.7138, 139.7770] },
   'https://maps.google.com/?q=Tsurugaoka+Hachimangu': { coords: [35.3258, 139.5563] },
   'https://maps.google.com/?q=Hokokuji+Temple': { coords: [35.3186, 139.5710] },

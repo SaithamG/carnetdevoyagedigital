@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Landmark, Plane, Activity, Coffee, Dumbbell, MapPin, CalendarDays } from 'lucide-react';
-import { surplusFinal } from '../data/constants';
+import { surplusPrudent, surplusGodMode, soldeReel, soldeReelDate } from '../data/constants';
 
 const Overview = () => (
   <div className="space-y-6 animate-in fade-in duration-500">
@@ -31,11 +31,14 @@ const Overview = () => (
       <div className="md:col-span-2 bg-gradient-to-br from-slate-900 to-slate-950 p-7 rounded-[2rem] border border-slate-800 shadow-xl relative overflow-hidden">
         <div className="relative z-10">
           <p className="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-2 flex items-center gap-2">
-            <CheckCircle2 size={12} /> Surplus garanti (fin 2026)
+            <CheckCircle2 size={12} /> Surplus au retour (fin 2026)
           </p>
-          <p className="text-4xl font-black italic text-white">+ {surplusFinal} €</p>
+          <p className="text-4xl font-black italic text-white">
+            + {surplusPrudent} <span className="text-slate-500">→</span> {surplusGodMode} €
+          </p>
           <p className="text-xs text-slate-400 mt-3 font-medium max-w-lg leading-relaxed">
-            Calcul strict : 0 freelance futur, frais de Summer Tour inclus. Solde pur et sécurisé au retour du voyage.
+            Fourchette ancrée sur ton solde réel de {soldeReel}€ au {soldeReelDate}. Le bas suppose l'épargne
+            capée à 500€/mois, le haut le déblocage CAF. Ni freelance ni prime d'activité comptés.
           </p>
         </div>
         <Landmark className="absolute -right-4 -bottom-4 w-32 h-32 text-emerald-500 opacity-5" />

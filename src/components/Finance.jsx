@@ -2,7 +2,10 @@ import React from 'react';
 import { Wallet, Zap, Calendar, ArrowDownCircle } from 'lucide-react';
 import { budgetData, totalEpargneUsed } from '../data/budgetData';
 import { cashflowTimeline } from '../data/cashflowTimeline';
-import { surplusFinal, salaireNov, chargesFrance } from '../data/constants';
+import {
+  surplusPrudent, surplusGodMode, soldeReel, soldeReelDate,
+  salaireNov, chargesFrance,
+} from '../data/constants';
 import { COLOR_CLASSES } from '../data/colorMap';
 
 const Finance = () => (
@@ -10,11 +13,22 @@ const Finance = () => (
     <div className="bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-[2rem] border border-slate-800 shadow-xl text-center relative overflow-hidden">
       <div className="relative z-10 flex flex-col justify-center items-center">
         <p className="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-1">
-          Marge de Sécurité Absolue (Au Retour)
+          Marge de Sécurité au Retour
         </p>
-        <p className="text-5xl font-black italic text-white">+ {surplusFinal} €</p>
-        <p className="text-xs text-slate-400 mt-3 font-medium max-w-lg">
-          Calculé <strong>sans aucun revenu freelance futur</strong> et en déduisant intégralement le coût des vacances d'été.
+        <p className="text-5xl font-black italic text-white">
+          + {surplusPrudent} <span className="text-slate-500">→</span> {surplusGodMode} €
+        </p>
+        <div className="flex gap-2 mt-4 flex-wrap justify-center">
+          <span className="text-[10px] font-black uppercase bg-slate-800 text-slate-300 px-3 py-1.5 rounded-full border border-slate-700">
+            Prudent {surplusPrudent}€ — épargne capée à 500€/mois
+          </span>
+          <span className="text-[10px] font-black uppercase bg-emerald-950/30 text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-900/50">
+            God Mode {surplusGodMode}€ — si la CAF débloque
+          </span>
+        </div>
+        <p className="text-xs text-slate-400 mt-4 font-medium max-w-lg">
+          Ancré sur ton solde <strong>réel</strong> de {soldeReel}€ au {soldeReelDate}.
+          Sans aucun revenu freelance ni prime d'activité : elle serait du bonus.
         </p>
       </div>
     </div>
@@ -108,8 +122,23 @@ const Finance = () => (
             </div>
             <div className="flex-1 bg-slate-950 p-4 rounded-2xl border border-slate-800/80 hover:border-slate-700 transition-colors">
               <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-2">
-                <h4 className="font-bold text-white text-sm">{item.month}</h4>
-                <span className="text-lg font-black text-emerald-400 italic">Solde : {item.balance} €</span>
+                <h4 className="font-bold text-white text-sm flex items-center gap-2">
+                  {item.month}
+                  {item.actual ? (
+                    <span className="text-[9px] font-black uppercase bg-emerald-950/40 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-900/50">Réel</span>
+                  ) : (
+                    <span className="text-[9px] font-black uppercase bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full border border-slate-700">Projeté</span>
+                  )}
+                </h4>
+                {item.actual ? (
+                  <span className="text-lg font-black text-emerald-400 italic">Solde : {item.balance} €</span>
+                ) : (
+                  <span className="text-sm font-black italic flex items-center gap-2">
+                    <span className="text-slate-400">{item.balancePrudent} €</span>
+                    <span className="text-slate-600">→</span>
+                    <span className="text-emerald-400">{item.balanceGodMode} €</span>
+                  </span>
+                )}
               </div>
               <div className="flex justify-between items-center bg-slate-900/50 p-2 rounded-lg mb-2">
                 <span className="text-xs text-emerald-400">{item.textIn}</span>

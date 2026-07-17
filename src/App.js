@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Globe } from 'lucide-react';
 
+import { FLIGHT_OUT } from './data/constants';
 import Header from './components/Header';
 import Overview from './components/Overview';
 import Finance from './components/Finance';
@@ -20,7 +20,7 @@ import CoachIA from './components/CoachIA';
 import ExportCarnet from './components/ExportCarnet';
 
 const calculerTempsRestant = () => {
-  const difference = +new Date('2026-11-08T00:00:00') - +new Date();
+  const difference = +FLIGHT_OUT - +new Date();
   if (difference <= 0) return { jours: 0, heures: 0, minutes: 0, secondes: 0 };
   return {
     jours: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -76,18 +76,6 @@ const App = () => {
 
       <ConverterWidget />
       <ChronoTabehoudai />
-
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-slate-900 text-white p-4 rounded-3xl shadow-2xl flex justify-between items-center border border-slate-800 hidden md:flex">
-        <div className="flex items-center gap-3">
-          <div className="p-2 bg-emerald-600 rounded-lg">
-            <Globe size={16} />
-          </div>
-          <div>
-            <p className="text-[10px] font-black uppercase opacity-60 leading-none mb-1">Carnet de Voyage Digital</p>
-            <p className="text-xs font-bold leading-none italic underline">Release Candidate V_FINAL</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

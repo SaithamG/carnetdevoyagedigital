@@ -12,20 +12,36 @@ import {
 
 export const budgetData = [
   {
-    label: 'Reste Vol A/R (Air China)',
-    cost: 488,
+    label: 'Vol A/R (Air China) — Soldé',
+    cost: 0,
     icon: <Plane size={16} />,
     color: 'blue',
     type: 'epargne',
-    desc: '3 x 163€ via PayPal 4x',
+    desc: '✓ 4/4 réglé via PayPal — plus rien à sortir',
   },
   {
     label: 'TGV Aix-Paris A/R',
-    cost: 120,
+    cost: 75,
     icon: <TrainFront size={16} />,
     color: 'red',
     type: 'epargne',
-    desc: 'Navette aéroport (déduit en Oct)',
+    desc: '✓ Aller 45€ payé · ⚠ reste le RETOUR du 1er déc',
+  },
+  {
+    label: 'Nuits CDG (EasyHotel Villepinte)',
+    cost: 32,
+    icon: <Hotel size={16} />,
+    color: 'orange',
+    type: 'epargne',
+    desc: '✓ Nuit 7→8 payée · ⚠ reste celle du 30 nov→1er déc (ta part)',
+  },
+  {
+    label: 'Tokyo Drift (Fast & Furious)',
+    cost: 107,
+    icon: <Ticket size={16} />,
+    color: 'purple',
+    type: 'epargne',
+    desc: 'Ven 27 nov au soir · ride-along JDM · GetYourGuide',
   },
   {
     label: 'Hébergement (21 nuits)',

@@ -734,8 +734,8 @@ export const itineraryData = {
     days: [
       {
         date: 'Ven 27 Nov',
-        title: 'La Remontée & Odaiba',
-        simplissime: "C'est la plus grosse journée de train. La soirée à Odaiba est juste du fun pur pour relâcher la pression.",
+        title: 'La Remontée & Tokyo Drift',
+        simplissime: "Grosse journée de train, puis LA soirée du voyage : le Tokyo Drift part d'Aomi, là où tu es déjà. Couche-toi quand même : Kamakura part à 08h.",
         steps: [
           {
             time: '08h30',
@@ -764,9 +764,17 @@ export const itineraryData = {
           {
             time: '19h30',
             icon: <Gamepad2 size={20} className="text-purple-400" />,
-            title: 'Joypolis',
-            desc: "Parc d'attraction SEGA en intérieur avec VR et grand huit.",
+            title: 'Joypolis (passage court)',
+            desc: "Parc d'attraction SEGA en intérieur avec VR et grand huit. Écourté ce soir : le Tokyo Drift part d'Aomi, à 10 min à pied.",
             mapUrl: 'https://maps.google.com/?q=Tokyo+Joypolis',
+            isOutdoor: false,
+          },
+          {
+            time: '20h30',
+            icon: <Zap size={20} className="text-orange-400" />,
+            title: 'Tokyo Drift — Ride-along JDM',
+            desc: "Départ Aomi (Odaiba), 3h à 3h30, tu es passager : Wangan/C1, tunnels, Rainbow Bridge, puis Daikoku PA — le meet JDM. Le vendredi soir est le créneau le plus fiable pour l'affluence (le samedi attire plus de monde mais se fait fermer par la police plus souvent). CONFIRME L'HORAIRE EXACT à la réservation. Retour vers minuit : Kamakura part à 08h le lendemain.",
+            mapUrl: 'https://maps.google.com/?q=Aomi+Odaiba',
             isOutdoor: false,
           },
         ],
@@ -868,22 +876,22 @@ export const itineraryData = {
       {
         date: 'Lun 30 Nov',
         title: 'Extraction & Game Over',
-        simplissime: 'Grâce au Hack du Mois Blanc, ton budget a survécu et tu rentres avec ton épargne intacte.',
+        simplissime: "NE PRENDS PAS LE SKYLINER : il ne va QU'À NARITA. Pour Haneda c'est Yamanote → Hamamatsucho → Monorail.",
         steps: [
           {
-            time: '05h30',
+            time: '05h15',
             icon: <Clock size={20} className="text-slate-400" />,
             title: 'Check-out',
-            desc: "C'est l'heure de dire adieu.",
+            desc: "C'est l'heure de dire adieu. Départ avancé : il faut être à Haneda 2h avant un vol international.",
             mapUrl: 'https://maps.google.com/?q=Grids+Tokyo+Ueno+Hotel+Hostel',
             isOutdoor: false,
           },
           {
-            time: '06h15',
+            time: '05h45',
             icon: <Train size={20} className="text-blue-500" />,
-            title: 'Keisei Skyliner',
-            desc: "Train express d'Ueno à l'aéroport d'Haneda en ~45 min.",
-            mapUrl: 'https://maps.google.com/?q=Keisei-Ueno+Station',
+            title: 'Ueno → Haneda (Yamanote + Monorail)',
+            desc: "JR Yamanote jusqu'à Hamamatsucho (~25 min), puis Tokyo Monorail jusqu'au terminal (~20 min). ~50 min porte à porte, ~650¥ à la Suica. Variante équivalente : Yamanote jusqu'à Shinagawa puis Keikyu direct Haneda.",
+            mapUrl: 'https://maps.google.com/?q=Ueno+Station',
             isOutdoor: false,
           },
           {

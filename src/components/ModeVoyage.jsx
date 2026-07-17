@@ -6,11 +6,9 @@ import {
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { reminders } from '../data/reminders';
+import { TRIP_START, TRIP_END, FLIGHT_OUT } from '../data/constants';
 
 // ─── Utils ────────────────────────────────────────────────────────────────────
-
-const TRIP_START = new Date(2026, 10, 9);  // 9 Nov 2026
-const TRIP_END   = new Date(2026, 10, 30); // 30 Nov 2026
 
 // "Lun 9 Nov" → Date(2026-11-09)
 const parseDayDate = (dateStr) => {
@@ -101,7 +99,8 @@ const PreTripView = ({ daysLeft, now }) => {
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 mb-3">Départ dans</p>
         <p className="text-8xl font-black italic text-white leading-none">{daysLeft}</p>
         <p className="text-lg font-black text-blue-300 mt-1">JOURS</p>
-        <p className="text-xs text-slate-400 mt-3">9 Novembre 2026 — Haneda, Tokyo</p>
+        <p className="text-xs text-slate-400 mt-3">Décollage CDG — 8 Novembre 2026, 12h25</p>
+        <p className="text-[10px] text-slate-500 mt-1">Haneda le 9 à 16h20 · TGV Aix le 7 · nuit à Villepinte</p>
       </div>
 
       {/* Dual clock */}
@@ -366,7 +365,9 @@ const ModeVoyage = () => {
   const isAfterTrip = today > TRIP_END;
 
   if (isBeforeTrip) {
-    const daysLeft = Math.ceil((TRIP_START - today) / (1000 * 60 * 60 * 24));
+    // Même base de calcul que le compte à rebours du header (décollage CDG,
+    // arrondi vers le bas), sinon les deux s'affichent à un jour d'écart.
+    const daysLeft = Math.max(0, Math.floor((FLIGHT_OUT - now) / (1000 * 60 * 60 * 24)));
     return <PreTripView daysLeft={daysLeft} now={now} />;
   }
 

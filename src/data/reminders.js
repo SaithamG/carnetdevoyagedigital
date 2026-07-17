@@ -1,12 +1,21 @@
 export const reminders = [
   {
     id: 1,
-    title: 'Billets TGV INOUI (Aix-Paris A/R)',
-    targetDate: 'Trajets : 08 Nov & 30 Nov 2026',
-    reminderDate: '🗓 Alerte : 08 Juillet 2026',
-    desc: "Ouverture des ventes SNCF (~4 mois avant). Indispensable de prendre les billets très tôt pour sécuriser la correspondance avec le vol Air China.",
-    url: 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Achat+Billets+TGV+Aix-Paris',
-    color: 'pink',
+    title: '⚠️ TGV RETOUR (Paris → Aix) + 2e nuit Villepinte — PAS PRIS',
+    targetDate: 'Trajet : Mar 1er Déc 2026 · nuit du 30 nov au 1er déc',
+    reminderDate: '🗓 Alerte : 01 Août 2026',
+    desc: "L'aller est sécurisé (45€, TGV du 7 nov + nuit du 7→8 payée). Le RETOUR ne l'est pas : tu atterris à CDG le 30 au soir après 20h de voyage, donc nuit à l'EasyHotel Villepinte puis TGV le 1er déc. Deux choses à réserver, une seule alerte : les ventes SNCF ouvrent ~4 mois avant, soit début août pour le 1er décembre.",
+    url: 'https://calendar.google.com/calendar/u/0/r/eventedit?text=R%C3%A9server+TGV+RETOUR+1er+d%C3%A9c+%2B+nuit+Villepinte&dates=20260801T070000Z/20260801T073000Z',
+    color: 'red',
+  },
+  {
+    id: 11,
+    title: 'Tokyo Drift (Fast & Furious) — Aomi, Odaiba',
+    targetDate: 'Expérience : Ven 27 Nov 2026, 20h30',
+    reminderDate: '🗓 Alerte : 27 Octobre 2026',
+    desc: "Ride-along JDM de 3h-3h30 au départ d'Aomi : Wangan, Rainbow Bridge, Daikoku PA. 107€. Choisi un vendredi parce que c'est le soir le plus fiable à Daikoku. Vérifie l'horaire de départ proposé : il doit te laisser finir Joypolis, et Kamakura part à 08h le lendemain.",
+    url: 'https://www.getyourguide.com/tokyo-l193/tokyo-fast-furious-tokyo-drift-3-experience-t794698/',
+    color: 'purple',
   },
   {
     id: 2,

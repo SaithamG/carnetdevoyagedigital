@@ -2,7 +2,7 @@ export const runbook = [
   {
     id: 1,
     title: 'Achat Vol (Air China)',
-    desc: 'Billets achetés (9 au 30 nov). 650€/pers via PayPal 4x. 1ère échéance réglée le 3 mars.',
+    desc: 'Soldé : 4/4 des échéances PayPal réglées (650€/pers). Décollage CDG le 8 nov à 12h25, Haneda le 9 à 16h20. Retour Haneda le 30 nov à 08h30.',
     status: 'done',
   },
   {
