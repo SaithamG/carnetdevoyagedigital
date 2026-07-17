@@ -44,11 +44,11 @@ export const cashflowTimeline = [
   {
     month: 'Juillet 2026',
     textIn: '+750€ (500€ fixe + 250€ BTS)',
-    textOut: '-552€ (Été + aespa + TGV + hôtel)',
+    textOut: '-552€ (Été + aespa + TGV + hôtel + avance)',
     balance: 1957,
     actual: true,
     detail:
-      "SOLDE RÉEL RELEVÉ AU 17/07 : 1 957 €. Détail : -280€ Summer Tour, -119€ place aespa 2027, -45€ TGV aller (payé en avance, il était budgété en octobre), -32€ nuit Villepinte. Il reste 76€ d'écart NON IDENTIFIÉ vs la projection (revente BTS sous les 250€ ? Summer Tour au-dessus de 280€ ?) — à retrouver sur le relevé.",
+      "SOLDE RÉEL RELEVÉ AU 17/07 : 1 957 €. Sorties : -280€ Summer Tour, -119€ place aespa 2027, -45€ TGV aller (payé en avance, il était budgété en octobre), -32€ nuit Villepinte, et ~40€ d'avance Flixbus jamais remboursée — ce n'est pas une dépense mais une créance dormante, à relancer ou à acter en perte, quand tu voudras. Reste ~36€ d'écart non identifié : sous le seuil de bruit sur 9 mois, on arrête de chercher.",
   },
   {
     month: 'Août 2026',
