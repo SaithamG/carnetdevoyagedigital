@@ -67,7 +67,8 @@ export const cashflowTimeline = [
     balancePrudent: 2655,
     balanceGodMode: 3155,
     actual: false,
-    detail: 'Achat de ton USJ Express Pass 7 (200€) et TeamLab (25€).',
+    detail:
+      "Achat USJ + TeamLab. Le budget table sur 200€ pour l'USJ ; le vrai tarif est ~96€ l'Express Pass 7 (17 800¥) + ~48€ le Studio Pass d'entrée (que le budget oubliait), soit ~144€. Avec TeamLab (~25€) on est plutôt vers 169€ que 225€. Les 225€ sont GARDÉS exprès : le tarif Express varie selon la date, autant garder le matelas.",
   },
   {
     month: 'Oct 2026',
@@ -82,11 +83,11 @@ export const cashflowTimeline = [
   {
     month: 'Départ (Nov)',
     textIn: '-',
-    textOut: '-1326€ (Hôtels + Reste Infra)',
-    balancePrudent: 1532,
-    balanceGodMode: 2282,
+    textOut: '-1376€ (Hôtels + Reste Infra)',
+    balancePrudent: 1482,
+    balanceGodMode: 2232,
     actual: false,
     detail:
-      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (175€). Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
+      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (225€, +50€ pour la journée kimono du 17). Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
   },
 ];
