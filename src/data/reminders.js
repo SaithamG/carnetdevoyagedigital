@@ -47,9 +47,9 @@ export const reminders = [
   {
     id: 5,
     title: 'Train Express Spacia (Nikko)',
-    targetDate: 'Trajet : Jeu 12 Nov 2026',
-    reminderDate: '🗓 Alerte : 12 Octobre 2026',
-    desc: "Ouverture des billets pile 1 mois avant. Indispensable car c'est le pic de l'automne (sur réservation).",
+    targetDate: 'Trajet : Mer 11 Nov 2026 (décalé du 12)',
+    reminderDate: '🗓 Alerte : 11 Octobre 2026',
+    desc: "Ouverture des billets pile 1 mois avant. Nikko a été avancé au 11 : le pic de Toshogu court du 5 au 12 nov, le 12 en tutoyait le dernier jour. Réserve pour le 11, pas le 12.",
     url: 'https://calendar.google.com/calendar/u/0/r/eventedit?text=R%C3%A9servation+Train+Spacia+Nikko&dates=20261012T070000Z/20261012T073000Z',
     color: 'orange',
   },
