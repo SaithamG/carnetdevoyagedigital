@@ -332,7 +332,7 @@ export const itineraryData = {
       {
         date: 'Mar 17 Nov',
         title: 'LA Journée Kimono (photos, samurai, thé)',
-        simplissime: "⚠️ Le soleil se couche vers 16h50 à Kyoto en novembre : le shooting DOIT être le matin, pas en fin d'aprèm. Tout est à réserver à l'avance — kimono, photographe et Maikoya.",
+        simplissime: "⚠️ Le soleil se couche vers 16h50 à Kyoto en novembre : fais les photos le MATIN. À réserver à l'avance — kimono et Maikoya (photographe pro abandonné, on shoote en autonomie).",
         steps: [
           {
             time: '09h00',
@@ -345,8 +345,8 @@ export const itineraryData = {
           {
             time: '10h30',
             icon: <Camera size={20} className="text-purple-400" />,
-            title: 'Shooting photo en kimono',
-            desc: "Ninenzaka et Sannenzaka : LE décor de Kyoto, et la lumière est bonne le matin. Shooting extérieur ~16 000¥ chez Waplus (le meilleur rapport), ou forfait kimono+photos ~28 600¥ chez Yumeyakata si tu veux un seul interlocuteur. ÉVITE Flytographer : 325 USD les 30 min.",
+            title: 'Photos en kimono (autonomie)',
+            desc: "Ninenzaka et Sannenzaka : LE décor de Kyoto, lumière du matin. On shoote soi-même — repère les spots sur Insta la veille. Si tu changes d'avis, un photographe reste trouvable via Insta/DM le jour même (mais ce n'est PAS budgété).",
             mapUrl: 'https://maps.google.com/?q=Kiyomizu-dera',
             isOutdoor: true,
           },

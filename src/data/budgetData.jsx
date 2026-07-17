@@ -61,11 +61,11 @@ export const budgetData = [
   },
   {
     label: 'Grands Parcs & Temples',
-    cost: 450,
+    cost: 400,
     icon: <Ticket size={16} />,
     color: 'pink',
     type: 'epargne',
-    desc: '400€ + 50€ pour la journée kimono du 17 (samurai, thé, photographe)',
+    desc: 'USJ, TeamLab, journée kimono du 17 (samurai + thé). Photographe pro retiré (Insta / autonomie).',
   },
   {
     label: 'Nourriture & Vie (22j)',

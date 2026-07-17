@@ -83,11 +83,11 @@ export const cashflowTimeline = [
   {
     month: 'Départ (Nov)',
     textIn: '-',
-    textOut: '-1376€ (Hôtels + Reste Infra)',
-    balancePrudent: 1482,
-    balanceGodMode: 2232,
+    textOut: '-1326€ (Hôtels + Reste Infra)',
+    balancePrudent: 1532,
+    balanceGodMode: 2282,
     actual: false,
     detail:
-      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (225€, +50€ pour la journée kimono du 17). Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
+      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (175€, journée kimono du 17 incluse sans photographe pro). Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
   },
 ];

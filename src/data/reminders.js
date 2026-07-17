@@ -10,10 +10,10 @@ export const reminders = [
   },
   {
     id: 12,
-    title: 'Journée Kimono Kyoto — 3 résas à caler ensemble',
+    title: 'Journée Kimono Kyoto — 2 résas à caler ensemble',
     targetDate: 'Journée : Mar 17 Nov 2026',
     reminderDate: '🗓 Alerte : 17 Septembre 2026',
-    desc: "Trois réservations qui doivent s'emboîter le MÊME jour : (1) kimono forfait couple ~8 800¥ journée, (2) photographe le MATIN — le soleil se couche à 16h50 en novembre, ~16 000¥ chez Waplus, (3) Maikoya combo Samurai + Thé, bloc de ~4h l'après-midi, min. 2 personnes. Réserve le photographe en premier : c'est le plus contraint. FUIS le « PRIVATE VIP » de Maikoya (90 000¥ pour deux).",
+    desc: "Deux réservations le MÊME jour : (1) kimono forfait couple ~8 800¥ journée, (2) Maikoya combo Samurai + Thé, bloc de ~4h l'après-midi, min. 2 personnes. Photos en autonomie le matin (photographe pro abandonné). FUIS le « PRIVATE VIP » de Maikoya (90 000¥ pour deux).",
     url: 'https://mai-ko.com/tour/value-ticket-kimono-tea-ceremony-and-samurai-experience-combo-in-kyoto-for-couples-and-small-groups2/',
     color: 'pink',
   },
