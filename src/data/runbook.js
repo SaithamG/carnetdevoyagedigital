@@ -8,7 +8,7 @@ export const runbook = [
   {
     id: 2,
     title: 'Hébergements Sécurisés',
-    desc: '100% du circuit validé avec annulation gratuite. 0€ engagés.',
+    desc: "Les 6 hôtels japonais (21 nuits, 1 761€ pour deux) sont confirmés en annulation gratuite — tu peux encore tout bouger. SAUF l'easyHotel CDG du 7→8 nov : NON REMBOURSABLE, 63,50€ déjà engagés et payés. Le « 0€ engagés » était faux.",
     status: 'done',
   },
   {

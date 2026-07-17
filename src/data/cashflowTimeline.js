@@ -82,11 +82,11 @@ export const cashflowTimeline = [
   {
     month: 'Départ (Nov)',
     textIn: '-',
-    textOut: '-1228€ (Hôtels + Reste Infra)',
-    balancePrudent: 1630,
-    balanceGodMode: 2380,
+    textOut: '-1326€ (Hôtels + Reste Infra)',
+    balancePrudent: 1532,
+    balanceGodMode: 2282,
     actual: false,
     detail:
-      'Paiement hôtels (783€), reste Transports/Suica (270€) et reste Parcs/Temples (175€). Le mois blanc : le salaire de nov paie la vie sur place, pas l\'épargne.',
+      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (175€). Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
   },
 ];

@@ -11,8 +11,8 @@ export const soldeReelDate = '17 juillet 2026';
 //  · prudent  = épargne capée à 500 €/mois (août→oct), CAF toujours bloquée
 //  · godMode  = 750 €/mois, si le déblocage CAF arrive comme espéré
 // La prime d'activité n'est comptée dans AUCUN des deux : c'est du pur bonus.
-export const surplusPrudent = 1630;
-export const surplusGodMode = 2380;
+export const surplusPrudent = 1532;
+export const surplusGodMode = 2282;
 
 // ── Dates du voyage — SOURCE DE VÉRITÉ UNIQUE ────────────────────────────────
 // Enchaînement réel : TGV Aix→Paris le 7, nuit à Villepinte (EasyHotel CDG),

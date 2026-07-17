@@ -45,11 +45,11 @@ export const budgetData = [
   },
   {
     label: 'Hébergement (21 nuits)',
-    cost: 783,
+    cost: 881,
     icon: <Hotel size={16} />,
     color: 'emerald',
     type: 'epargne',
-    desc: 'Ta part (50%) - Payé sur place',
+    desc: 'Ta part (50% de 1 761€) — relevé sur tes résas Booking, payé sur place',
   },
   {
     label: 'Transports Japon (+ Pass)',
