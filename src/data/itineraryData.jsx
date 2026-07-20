@@ -44,6 +44,7 @@ export const itineraryData = {
       {
         date: 'Mar 10 Nov',
         title: 'Shibuya Crossing & One Piece Gym',
+        reveil: { h: '7h45', note: "réveil peinard — 1re étape Meiji Jingu à 9h (~12 min de train), douche prise la veille", strict: false },
         simplissime: 'Grosse journée de marche et de sport. Tu vas gagner ton "Avis de Recherche" à la salle de muscu !',
         steps: [
           {
@@ -99,6 +100,7 @@ export const itineraryData = {
       {
         date: 'Mer 11 Nov',
         title: 'Day-Trip : Nikko',
+        reveil: { h: '6h30', note: "quitte l'hôtel ~7h00 → Shinjuku Sta, Limited Express Nikko 7h30 (réservé — laisse-toi le temps de trouver le quai)", strict: true },
         simplissime: "Avancé du 12 au 11 : le pic de Toshogu court du 5 au 12 nov, on ne tutoie plus le dernier jour. Bonus : ça met une journée urbaine entre Nikko et Hakone.",
         steps: [
           {
@@ -146,6 +148,7 @@ export const itineraryData = {
       {
         date: 'Jeu 12 Nov',
         title: 'Densité Max : Volley & Anime',
+        reveil: { h: '7h45', note: "journée urbaine, 1re étape 9h à Harajuku — aucune contrainte de train", strict: false },
         simplissime: "Concentre tous tes achats vestimentaires/sportifs ce jour-là pour ne plus y penser ensuite. Journée urbaine volontaire : elle sépare Nikko (hier) de Hakone (demain).",
         steps: [
           {
@@ -193,6 +196,7 @@ export const itineraryData = {
       {
         date: 'Ven 13 Nov',
         title: 'Day-Trip : Hakone',
+        reveil: { h: '7h00', note: "quitte l'hôtel ~7h30 → Shinjuku Sta, Romancecar Hakone 8h00 (place réservée)", strict: true },
         simplissime: 'Si la météo annonce des nuages ou de la pluie, inverse cette journée avec les activités couvertes.',
         steps: [
           {
@@ -232,6 +236,7 @@ export const itineraryData = {
       {
         date: 'Sam 14 Nov',
         title: 'Asakusa & Art Digital',
+        reveil: { h: '7h00', note: "Asakusa est à ~40 min : pars tôt pour avoir Senso-ji au calme avant la foule", strict: false },
         simplissime: 'Tu envoies tes valises ce soir. Demain, tu prends le Shinkansen les mains dans les poches !',
         steps: [
           {
@@ -278,6 +283,7 @@ export const itineraryData = {
       {
         date: 'Dim 15 Nov',
         title: 'Shinkansen & Fushimi Inari',
+        reveil: { h: '7h30', note: "quitte l'hôtel ~8h00 → Tokyo Sta via Chuo, Shinkansen Nozomi 9h00 (réservé, valises déjà parties en Takkyubin)", strict: true },
         simplissime: 'La plupart des touristes ne font que le bas du Fushimi. En grimpant au sommet à 15h30, tu auras la paix et la Golden Hour.',
         steps: [
           {
@@ -317,6 +323,7 @@ export const itineraryData = {
       {
         date: 'Lun 16 Nov',
         title: "L'Ouest (Or & Singes)",
+        reveil: { h: '6h40', note: "quitte l'hôtel ~7h05 → Tambaguchi direct Arashiyama (~15 min), forêt de bambous VIDE", strict: true },
         simplissime: 'Louer des vélos (électriques) à Arashiyama permet de faire cette zone de manière hyper agréable.',
         steps: [
           {
@@ -348,6 +355,7 @@ export const itineraryData = {
       {
         date: 'Mar 17 Nov',
         title: 'LA Journée Kimono (photos, samurai, thé)',
+        reveil: { h: '7h45', note: "réveil tranquille MAIS RDV kimono le matin : pas de retard sur la récup' du kimono", strict: false },
         simplissime: "⚠️ Le soleil se couche vers 16h50 à Kyoto en novembre : fais les photos le MATIN. À réserver à l'avance — kimono et Maikoya (photographe pro abandonné, on shoote en autonomie).",
         steps: [
           {
@@ -395,6 +403,7 @@ export const itineraryData = {
       {
         date: 'Mer 18 Nov',
         title: "Momiji — En Avance sur le Pic (et c'est voulu)",
+        reveil: { h: '8h15', note: "journée temples/momiji, départ 9h30 — grasse mat' possible", strict: false },
         simplissime: "Eikando de nuit, c'est l'image que tu as en tête. Sois lucide : le pic de Kyoto court du 20 nov au 5 déc, tu es 2 à 5 jours AVANT. Tu auras moins de rouge — mais des temples vivables au lieu de la cohue. C'est l'arbitrage, pas un raté.",
         steps: [
           {
@@ -433,6 +442,7 @@ export const itineraryData = {
       {
         date: 'Jeu 19 Nov',
         title: 'Drop & Néons (Dotonbori)',
+        reveil: { h: '8h30', note: "train local vers Osaka à 10h, journée transfert cool", strict: false },
         simplissime: "À Osaka, les gens parlent fort et mangent énormément. C'est la ville parfaite pour toi.",
         steps: [
           {
@@ -472,6 +482,7 @@ export const itineraryData = {
       {
         date: 'Ven 20 Nov',
         title: "L'Épopée de Nara",
+        reveil: { h: '6h45', note: "quitte l'hôtel ~7h05 → Namba, Kintetsu Nara 7h30 : tu bats la foule des daims", strict: true },
         simplissime: "Déplacée du dimanche au vendredi : le 22 tombait dans le week-end de 3 jours du 23 (férié). Un parc à daims un dimanche férié, c'est la marée humaine. Pars quand même tôt.",
         steps: [
           {
@@ -519,6 +530,7 @@ export const itineraryData = {
       {
         date: 'Sam 21 Nov',
         title: 'Sport, Arcade & Bains',
+        reveil: { h: '8h30', note: "journée Osaka (château + arcade + bains), départ 10h", strict: false },
         simplissime: "Ta journée hybride : fun-culture locale et dépense physique. Bien tombée — c'est de l'intérieur, donc le samedi du week-end férié ne te coûte rien.",
         steps: [
           {
@@ -558,6 +570,7 @@ export const itineraryData = {
       {
         date: 'Dim 22 Nov',
         title: 'Otaku Kansai & Hauteurs',
+        reveil: { h: '8h30', note: "journée otaku/hauteurs, départ 10h à Den Den Town", strict: false },
         simplissime: "Récupère le dimanche de Nara : c'est de l'intérieur et du shopping, donc la foule du week-end férié passe mieux ici que dans le parc aux daims.",
         steps: [
           {
@@ -597,6 +610,7 @@ export const itineraryData = {
       {
         date: 'Lun 23 Nov',
         title: 'Day-Trip : Himeji & Kobe',
+        reveil: { h: '7h00', note: "⚠ LUNDI FÉRIÉ = foule : quitte l'hôtel ~7h35 → Shin-Osaka, vise Himeji à l'ouverture (9h)", strict: true },
         simplissime: "⚠️ LUNDI FÉRIÉ au Japon (fête du Travail) : c'est le 3e jour d'un week-end de 3 jours, Himeji sera bondé. Pars à 8h00 pour être au château à l'ouverture — la file du donjon se forme vite et c'est le seul vrai point noir du voyage.",
         steps: [
           {
@@ -628,6 +642,7 @@ export const itineraryData = {
       {
         date: 'Mar 24 Nov',
         title: 'Universal Studios Japan (USJ)',
+        reveil: { h: '6h15', note: "quitte l'hôtel ~6h50 → Universal City (~30 min), arrive avant l'ouverture pour sprinter l'Express Pass", strict: true },
         simplissime: "Faire USJ un mardi est le meilleur Hack pour diviser par deux le temps d'attente aux attractions !",
         steps: [
           {
@@ -674,6 +689,7 @@ export const itineraryData = {
       {
         date: 'Mer 25 Nov',
         title: 'Histoire & Samouraïs',
+        reveil: { h: '7h00', note: "quitte l'hôtel ~7h45 → Shin-Osaka, Shinkansen Hiroshima 8h30 (réservé). Grosses valises déjà parties à Tokyo", strict: true },
         simplissime: 'La ville a été entièrement reconstruite. Elle possède un château magnifique et des jardins zen sublimes.',
         steps: [
           {
@@ -721,6 +737,7 @@ export const itineraryData = {
       {
         date: 'Jeu 26 Nov',
         title: "Miyajima, l'Île des Dieux",
+        reveil: { h: '7h30', note: "quitte l'hôtel ~8h00 → Hiroshima Sta, JR + ferry pour poser le pied sur l'île vers 9h", strict: false },
         simplissime: "Dormir sur l'île est un luxe rare qui permet de voir le Torii illuminé la nuit, sans l'ombre d'un touriste.",
         steps: [
           {
@@ -767,6 +784,7 @@ export const itineraryData = {
       {
         date: 'Ven 27 Nov',
         title: 'La Remontée & Tokyo Drift',
+        reveil: { h: '6h15', note: "check-out 7h sur l'île : ferry + JR pour choper le Shinkansen de 8h30. C'est serré, ne traîne pas", strict: true },
         simplissime: "Tu te réveilles sur une ÎLE : compte 50 min (ferry + JR) avant même de voir le Shinkansen. Puis LA soirée du voyage : le Tokyo Drift part d'Aomi, là où tu es déjà.",
         steps: [
           {
@@ -813,7 +831,7 @@ export const itineraryData = {
             time: '20h30',
             icon: <Zap size={20} className="text-orange-400" />,
             title: 'Tokyo Drift — Ride-along JDM',
-            desc: "Départ Aomi (Odaiba), 3h à 3h30, tu es passager : Wangan/C1, tunnels, Rainbow Bridge, puis Daikoku PA — le meet JDM. Le vendredi soir est le créneau le plus fiable pour l'affluence (le samedi attire plus de monde mais se fait fermer par la police plus souvent). CONFIRME L'HORAIRE EXACT à la réservation. Retour vers minuit : Kamakura part à 08h le lendemain.",
+            desc: "Départ Aomi (Odaiba), 3h à 3h30, tu es passager : Wangan/C1, tunnels, Rainbow Bridge, puis Daikoku PA — le meet JDM. Le vendredi soir est le créneau le plus fiable pour l'affluence (le samedi attire plus de monde mais se fait fermer par la police plus souvent). CONFIRME L'HORAIRE EXACT à la réservation. Retour vers minuit — mais ta récup', tu l'as prise cet aprèm dans le Shinkansen : Kamakura part à 8h le lendemain, on ne sacrifie rien.",
             mapUrl: 'https://maps.google.com/?q=Aomi+Odaiba',
             isOutdoor: false,
           },
@@ -822,13 +840,14 @@ export const itineraryData = {
       {
         date: 'Sam 28 Nov',
         title: "L'Aventure : Kamakura",
-        simplissime: "Coupler Kamakura et l'île d'Enoshima fait de cette journée une véritable aventure côtière très complète.",
+        reveil: { h: '7h00', note: "quitte l'hôtel ~7h35 → Ueno Sta, train Kamakura 8h. Ta récup' était dans le Shinkansen d'hier", strict: true },
+        simplissime: "Départ tôt ASSUMÉ pour profiter à fond, même après le Tokyo Drift de la veille : ta vraie récup', tu l'as déjà prise dans le Shinkansen de 4h. La matinée (sanctuaire + thé matcha) est douce, le gros effort (Enoshima) arrive l'aprèm quand tu es relancé.",
         steps: [
           {
             time: '08h00',
             icon: <Train size={20} className="text-blue-400" />,
             title: 'Train Océan',
-            desc: "Ligne directe vers la côte. On respire l'air marin.",
+            desc: "Ligne directe vers la côte, ~1h depuis Ueno. On respire l'air marin. Petit somme dans le train si la nuit Tokyo Drift a été courte.",
             mapUrl: 'https://maps.google.com/?q=Ueno+Station',
             isOutdoor: false,
           },
@@ -877,6 +896,7 @@ export const itineraryData = {
       {
         date: 'Dim 29 Nov',
         title: 'Derniers Yens & Akihabara',
+        reveil: { h: '8h30', note: "dernier vrai jour, balade Yanaka à 10h — profite du réveil doux", strict: false },
         simplissime: "C'est le dernier jour, on ne compte plus. Fais-toi plaisir sur les achats souvenirs et la bonne viande.",
         steps: [
           {
@@ -916,6 +936,7 @@ export const itineraryData = {
       {
         date: 'Lun 30 Nov',
         title: 'Extraction & Game Over',
+        reveil: { h: '4h45', note: "⚠ JOUR DU RETOUR : check-out 5h15, Yamanote + Monorail vers Haneda. Prépare et boucle TOUT la veille au soir", strict: true },
         simplissime: "NE PRENDS PAS LE SKYLINER : il ne va QU'À NARITA. Pour Haneda c'est Yamanote → Hamamatsucho → Monorail.",
         steps: [
           {

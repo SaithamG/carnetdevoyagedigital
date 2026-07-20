@@ -129,6 +129,21 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
               </div>
 
               <div className="p-6 md:p-8">
+                {day.reveil && (
+                  <div className={`mb-6 flex items-center gap-3 p-3.5 rounded-2xl border ${
+                    day.reveil.strict
+                      ? 'bg-amber-950/20 border-amber-900/40'
+                      : 'bg-slate-800/40 border-slate-700/50'
+                  }`}>
+                    <span className="text-xl shrink-0">{day.reveil.strict ? '⏰' : '😴'}</span>
+                    <p className="text-[13px] leading-relaxed">
+                      <span className={`font-black ${day.reveil.strict ? 'text-amber-300' : 'text-slate-200'}`}>
+                        Réveil {day.reveil.h}
+                      </span>
+                      <span className="text-slate-400 font-medium"> — {day.reveil.note}</span>
+                    </p>
+                  </div>
+                )}
                 <div className="relative pl-8 space-y-8 before:absolute before:inset-0 before:left-[15px] before:w-0.5 before:bg-slate-800">
                   {visibleSteps.map((step, sIdx) => (
                     <div key={sIdx} className="relative">

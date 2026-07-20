@@ -22,7 +22,7 @@ export const reminders = [
     title: 'Tokyo Drift (Fast & Furious) — Aomi, Odaiba',
     targetDate: 'Expérience : Ven 27 Nov 2026, 20h30',
     reminderDate: '🗓 Alerte : 27 Octobre 2026',
-    desc: "Ride-along JDM de 3h-3h30 au départ d'Aomi : Wangan, Rainbow Bridge, Daikoku PA. 107€. Choisi un vendredi parce que c'est le soir le plus fiable à Daikoku. Vérifie l'horaire de départ proposé : il doit te laisser finir Joypolis, et Kamakura part à 08h le lendemain.",
+    desc: "Ride-along JDM de 3h-3h30 au départ d'Aomi : Wangan, Rainbow Bridge, Daikoku PA. 107€. Choisi un vendredi parce que c'est le soir le plus fiable à Daikoku. Vérifie l'horaire de départ proposé : il doit te laisser finir Joypolis. Le lendemain, Kamakura part à 8h (départ tôt assumé — la récup' se fait dans le Shinkansen de 4h de l'après-midi).",
     url: 'https://www.getyourguide.com/tokyo-l193/tokyo-fast-furious-tokyo-drift-3-experience-t794698/',
     color: 'purple',
   },
