@@ -1,10 +1,10 @@
 export const reminders = [
   {
     id: 1,
-    title: '⚠️ OUIGO RETOUR (Paris → Aix) + 2e nuit Villepinte — PAS PRIS',
-    targetDate: 'Trajet : Mar 1er Déc 2026, départ 11h → Aix 14h · nuit du 30 nov au 1er déc',
+    title: '⚠️ OUIGO RETOUR (CDG T2 → Aix) + 2e nuit Villepinte — PAS PRIS',
+    targetDate: 'Trajet : Mar 1er Déc 2026, CDG T2 11h00 → Aix TGV 14h10 · nuit du 30 nov au 1er déc',
     reminderDate: '🔥 EN RETARD — alerte du 01 Août 2026, ventes déjà ouvertes',
-    desc: "L'aller est sécurisé (45€, TGV du 7 nov + nuit du 7→8 payée). Le RETOUR ne l'est pas. Tu atterris à CDG le 30 au soir après 20h de voyage → nuit EasyHotel Villepinte, puis OUIGO le 1er déc (11h → 14h). ⚠️ LE PIÈGE BAGAGES : le billet OUIGO n'inclut qu'un bagage à main (40×30×15) + un bagage cabine (55×35×25). Vos deux valises de 23kg sont HORS GABARIT — il faut prendre l'option « bagage supplémentaire » à 5€ pièce DANS LE TUNNEL DE RÉSERVATION. Non déclarée, elle passe à 20€ pièce à bord : 10€ contre 40€, c'est le seul vrai enjeu. Compte 16€/pers × 2 + 10€ d'options = 42€. Compare aussi OUIGO PLUS : le bagage volumineux y est inclus, donc s'il coûte moins de 5€/pers de plus, il gagne. ⚠️ Vérifie la GARE DE DÉPART : beaucoup de OUIGO partent de Marne-la-Vallée ou Massy, pas de Gare de Lyon — depuis Villepinte le trajet n'est pas le même, et tu le fais avec 2×23kg.",
+    desc: "L'aller est sécurisé (45€, TGV du 7 nov + nuit du 7→8 payée). Le RETOUR ne l'est pas. Tu atterris à CDG le 30 au soir après 20h de voyage → nuit easyHotel Villepinte, puis OUIGO ESSENTIEL 16€ le 1er déc. 🎯 L'ATOUT DE CE TRAIN, C'EST LA GARE, PAS LE PRIX : il part de CDG Terminal 2, à ~10 min / 2 stations de RER B de l'hôtel, dans le sens de l'aéroport — zéro traversée de Paris avec les valises au retour de 3 semaines. Ne le lâche jamais pour un Gare de Lyon ou un Marne-la-Vallée « moins cher ». ⚠️ LE PIÈGE BAGAGES : OUIGO n'inclut qu'un bagage à main (40×30×15) + un bagage cabine (55×35×25). Une valise de 23kg est HORS GABARIT → une option « bagage supplémentaire » PAR valise, à prendre EN LIGNE dans le tunnel de réservation (5 à 9€ selon le trajet, le montant s'affiche à l'achat). Non déclarée, c'est 20€ pièce à bord, avec contrôle sur le quai. Timing validé : check-out ~10h, quitter l'hôtel 9h45, à quai 10h25 (OUIGO ferme l'embarquement 30 min avant le départ).",
     url: 'https://calendar.google.com/calendar/u/0/r/eventedit?text=R%C3%A9server+TGV+RETOUR+1er+d%C3%A9c+%2B+nuit+Villepinte&dates=20260801T070000Z/20260801T073000Z',
     color: 'red',
   },
