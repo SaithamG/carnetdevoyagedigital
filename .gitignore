@@ -1,3 +1,13 @@
 node_modules
 # Build output
 /build
+
+# Outils
+/.vercel
+/test-results
+
+# Données personnelles — captures de réservations, courriers CAF, etc.
+# Ne JAMAIS committer : ce repo part en prod sur Vercel.
+/resas-input
+/capjapon-input
+/caf-input

@@ -65,7 +65,7 @@ export const budgetData = [
     icon: <Ticket size={16} />,
     color: 'pink',
     type: 'epargne',
-    desc: 'USJ, TeamLab, journée kimono du 17 (samurai + thé). Photographe pro retiré (Insta / autonomie).',
+    desc: 'USJ, TeamLab, journée du 17 : Maikoya 30 800¥ (kimono + samurai + thé inclus, ~185€). Photographe pro retiré (Insta / autonomie).',
   },
   {
     label: 'Nourriture & Vie (22j)',
