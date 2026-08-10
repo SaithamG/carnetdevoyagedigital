@@ -25,7 +25,7 @@ export const budgetData = [
     icon: <TrainFront size={16} />,
     color: 'red',
     type: 'epargne',
-    desc: '✓ Aller 45€ payé · ⚠ reste le RETOUR du 1er déc : OUIGO ESSENTIEL 16€ (CDG T2 → Aix) + 1 option bagage par valise 23kg (5-9€ en ligne, 20€ à bord)',
+    desc: '✓ Aller 45€ payé · ⚠ reste le RETOUR du 1er déc — ta part : OUIGO ESSENTIEL 16€ (CDG T2 11h → Aix 14h10) + TON option bagage 23kg (5-9€ en ligne, 20€ à bord) ≈ 21-25€. Vérane paye la sienne.',
   },
   {
     label: 'Nuits CDG (EasyHotel Villepinte)',
