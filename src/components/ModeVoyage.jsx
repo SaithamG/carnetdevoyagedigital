@@ -29,8 +29,10 @@ const FRENCH_MONTHS = {
   Juillet: 6, Août: 7, Septembre: 8, Octobre: 9, Novembre: 10, Décembre: 11,
 };
 
+// ⚠ Pas de \w+ pour le mois : en JS \w = [A-Za-z0-9_], donc « Août » (et
+// Février, Décembre) ne matchent pas et l'alerte disparaît silencieusement.
 const parseReminderDate = (str) => {
-  const m = str.match(/(\d+)\s+(\w+)\s+(\d{4})/);
+  const m = str.match(/(\d+)\s+([A-Za-zÀ-ÿ]+)\s+(\d{4})/);
   if (!m) return null;
   const month = FRENCH_MONTHS[m[2]];
   if (month === undefined) return null;
@@ -83,9 +85,11 @@ const DualClock = ({ now }) => {
 
 // ─── VUE PRE-TRIP ──────────────────────────────────────────────────────────────
 const PreTripView = ({ daysLeft, now }) => {
+  // Un rappel sans date lisible (« réservable dès maintenant ») est à faire
+  // tout de suite : on le remonte en tête plutôt que de le cacher.
   const nextReminder = reminders
-    .map((r) => ({ ...r, date: parseReminderDate(r.reminderDate) }))
-    .filter((r) => r.date && r.date >= new Date())
+    .map((r) => ({ ...r, date: parseReminderDate(r.reminderDate) || now }))
+    .filter((r) => r.date >= now)
     .sort((a, b) => a.date - b.date)[0];
 
   const firstDay = ALL_DAYS[0];
