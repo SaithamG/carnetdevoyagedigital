@@ -85,12 +85,13 @@ const DualClock = ({ now }) => {
 
 // ─── VUE PRE-TRIP ──────────────────────────────────────────────────────────────
 const PreTripView = ({ daysLeft, now }) => {
-  // Un rappel sans date lisible (« réservable dès maintenant ») est à faire
-  // tout de suite : on le remonte en tête plutôt que de le cacher.
+  // Deux règles, une seule intention : ne jamais masquer une résa à faire.
+  // - pas de date lisible (« réservable dès maintenant ») → traité comme urgent
+  // - date déjà passée → EN RETARD, donc en tête, surtout pas filtré
   const nextReminder = reminders
     .map((r) => ({ ...r, date: parseReminderDate(r.reminderDate) || now }))
-    .filter((r) => r.date >= now)
     .sort((a, b) => a.date - b.date)[0];
+  const isLate = nextReminder && nextReminder.date < now;
 
   const firstDay = ALL_DAYS[0];
   const firstStep = firstDay?.steps[0];
@@ -112,13 +113,13 @@ const PreTripView = ({ daysLeft, now }) => {
 
       {/* Prochaine alerte */}
       {nextReminder && (
-        <div className="bg-slate-900 p-5 rounded-[2rem] border border-slate-800">
-          <p className="text-[10px] font-black uppercase tracking-widest text-amber-400 mb-3 flex items-center gap-2">
-            <Bell size={12} /> Prochaine réservation à faire
+        <div className={`bg-slate-900 p-5 rounded-[2rem] border ${isLate ? 'border-red-800/70' : 'border-slate-800'}`}>
+          <p className={`text-[10px] font-black uppercase tracking-widest mb-3 flex items-center gap-2 ${isLate ? 'text-red-400' : 'text-amber-400'}`}>
+            <Bell size={12} /> {isLate ? 'Réservation EN RETARD' : 'Prochaine réservation à faire'}
           </p>
           <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800">
             <p className="text-sm font-black text-white mb-1">{nextReminder.title}</p>
-            <p className="text-[10px] text-amber-400 font-bold mb-2">{nextReminder.reminderDate}</p>
+            <p className={`text-[10px] font-bold mb-2 ${isLate ? 'text-red-400' : 'text-amber-400'}`}>{nextReminder.reminderDate}</p>
             <p className="text-xs text-slate-400 leading-relaxed">{nextReminder.desc}</p>
           </div>
         </div>

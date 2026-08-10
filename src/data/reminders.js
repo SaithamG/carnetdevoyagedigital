@@ -1,10 +1,10 @@
 export const reminders = [
   {
     id: 1,
-    title: '⚠️ TGV RETOUR (Paris → Aix) + 2e nuit Villepinte — PAS PRIS',
-    targetDate: 'Trajet : Mar 1er Déc 2026 · nuit du 30 nov au 1er déc',
-    reminderDate: '🗓 Alerte : 01 Août 2026',
-    desc: "L'aller est sécurisé (45€, TGV du 7 nov + nuit du 7→8 payée). Le RETOUR ne l'est pas : tu atterris à CDG le 30 au soir après 20h de voyage, donc nuit à l'EasyHotel Villepinte puis TGV le 1er déc. Deux choses à réserver, une seule alerte : les ventes SNCF ouvrent ~4 mois avant, soit début août pour le 1er décembre.",
+    title: '⚠️ OUIGO RETOUR (Paris → Aix) + 2e nuit Villepinte — PAS PRIS',
+    targetDate: 'Trajet : Mar 1er Déc 2026, départ 11h → Aix 14h · nuit du 30 nov au 1er déc',
+    reminderDate: '🔥 EN RETARD — alerte du 01 Août 2026, ventes déjà ouvertes',
+    desc: "L'aller est sécurisé (45€, TGV du 7 nov + nuit du 7→8 payée). Le RETOUR ne l'est pas. Tu atterris à CDG le 30 au soir après 20h de voyage → nuit EasyHotel Villepinte, puis OUIGO le 1er déc (11h → 14h). ⚠️ LE PIÈGE BAGAGES : le billet OUIGO n'inclut qu'un bagage à main (40×30×15) + un bagage cabine (55×35×25). Vos deux valises de 23kg sont HORS GABARIT — il faut prendre l'option « bagage supplémentaire » à 5€ pièce DANS LE TUNNEL DE RÉSERVATION. Non déclarée, elle passe à 20€ pièce à bord : 10€ contre 40€, c'est le seul vrai enjeu. Compte 16€/pers × 2 + 10€ d'options = 42€. Compare aussi OUIGO PLUS : le bagage volumineux y est inclus, donc s'il coûte moins de 5€/pers de plus, il gagne. ⚠️ Vérifie la GARE DE DÉPART : beaucoup de OUIGO partent de Marne-la-Vallée ou Massy, pas de Gare de Lyon — depuis Villepinte le trajet n'est pas le même, et tu le fais avec 2×23kg.",
     url: 'https://calendar.google.com/calendar/u/0/r/eventedit?text=R%C3%A9server+TGV+RETOUR+1er+d%C3%A9c+%2B+nuit+Villepinte&dates=20260801T070000Z/20260801T073000Z',
     color: 'red',
   },

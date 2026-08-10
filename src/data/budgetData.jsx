@@ -25,7 +25,7 @@ export const budgetData = [
     icon: <TrainFront size={16} />,
     color: 'red',
     type: 'epargne',
-    desc: '✓ Aller 45€ payé · ⚠ reste le RETOUR du 1er déc',
+    desc: '✓ Aller 45€ payé · ⚠ reste le RETOUR du 1er déc : OUIGO 16€/pers + 2 options bagage à 5€ (valises 23kg hors gabarit) ≈ 42€',
   },
   {
     label: 'Nuits CDG (EasyHotel Villepinte)',
