@@ -17,7 +17,9 @@ export const surplusGodMode = 2282;
 // ── Dates du voyage — SOURCE DE VÉRITÉ UNIQUE ────────────────────────────────
 // Enchaînement réel : TGV Aix→Paris le 7, nuit à Villepinte (EasyHotel CDG),
 // décollage CDG le 8 à 12h25, atterrissage Haneda le 9 à 16h20 (escale Pékin).
-// Retour : décollage Haneda le 30 à 08h30.
+// Retour : décollage Haneda le 30 à 08h30 (CA876), atterrissage CDG le 30 à
+// 17h45 — TERMINAL 1, Air China n'opère qu'au T1 à CDG. Nuit près de CDG,
+// puis OUIGO du 1er déc, 11h00 CDG2 TGV → Aix 14h10.
 // Ne pas redéclarer ces dates ailleurs : le compte à rebours a déjà affiché
 // deux valeurs différentes (113 vs 116) parce qu'elles vivaient en 3 endroits.
 export const TGV_ALLER = new Date(2026, 10, 7);            // 7 nov — départ Aix
