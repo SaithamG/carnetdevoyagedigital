@@ -53,12 +53,12 @@ export const cashflowTimeline = [
   {
     month: 'Août 2026',
     textIn: '+500€ (capé) / +750€ (God Mode)',
-    textOut: '-77€ (TGV retour + nuit Villepinte)',
-    balancePrudent: 2380,
-    balanceGodMode: 2630,
+    textOut: '-58€ (OUIGO retour payé + nuit du 30 à réserver)',
+    balancePrudent: 2399,
+    balanceGodMode: 2649,
     actual: false,
     detail:
-      'Réservation du retour : TGV du 1er déc (~45€) + 2ème nuit à Villepinte (32€, ta part). Les ventes SNCF ouvrent début août.',
+      "✓ OUIGO du 1er déc RÉSERVÉ le 12 août : 26€ ta part (16€ + tes 2 options bagage à 5€), contre 45€ provisionnés à l'origine puis 30€ → 19€ récupérés sur le mois. ⛔ Reste la nuit du 30 nov→1er déc, provisionnée à 32€ (ta part) et toujours pas réservée : c'est la dernière sortie ouverte d'août. Le choix d'hôtel n'est pas tranché — easyHotel Villepinte (provisionné, mais taxi obligatoire en plus) ou Eklo Roissy à 31€ + 6€ de navette qui dépose à la gare TGV.",
   },
   {
     month: 'Sept 2026',

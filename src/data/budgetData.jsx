@@ -20,12 +20,12 @@ export const budgetData = [
     desc: '✓ 4/4 réglé via PayPal — plus rien à sortir',
   },
   {
-    label: 'TGV Aix-Paris A/R',
-    cost: 75,
+    label: 'TGV Aix-Paris A/R — Soldé',
+    cost: 71,
     icon: <TrainFront size={16} />,
-    color: 'red',
+    color: 'green',
     type: 'epargne',
-    desc: '✓ Aller 45€ payé · ⚠ reste le RETOUR du 1er déc — ta part : OUIGO ESSENTIEL 16€ (CDG T2 11h → Aix 14h10) + TES 2 options bagage 23kg à 5€ = 26€. Vérane paye les siennes. ⚠ Non déclarées : 20€ pièce à bord.',
+    desc: '✓ Aller 45€ payé · ✓ RETOUR RÉSERVÉ le 12 août — OUIGO du 1er déc (CDG T2 11h00 → Aix 14h10), ta part 26€ = 16€ + tes 2 options bagage 23kg à 5€. Bagages couverts, rien à payer sur le quai. 30€ étaient provisionnés → 4€ récupérés.',
   },
   {
     label: 'Nuits CDG (EasyHotel Villepinte)',
