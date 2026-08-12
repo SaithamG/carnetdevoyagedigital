@@ -20,12 +20,12 @@ export const budgetData = [
     desc: '✓ 4/4 réglé via PayPal — plus rien à sortir',
   },
   {
-    label: 'TGV Aix-Paris A/R — Soldé',
-    cost: 71,
+    label: 'OUIGO Aix-Paris A/R',
+    cost: 81,
     icon: <TrainFront size={16} />,
-    color: 'emerald',
+    color: 'orange',
     type: 'epargne',
-    desc: '✓ Aller 45€ payé · ✓ RETOUR RÉSERVÉ le 12 août — OUIGO du 1er déc (CDG T2 11h00 → Aix 14h10), ta part 26€ = 16€ + tes 2 options bagage 23kg à 5€. Bagages couverts, rien à payer sur le quai. 30€ étaient provisionnés → 4€ récupérés.',
+    desc: "✓ ALLER du 7 nov payé (45€) — arrive gare Roissy CDG 2 à 13h31, dans l'aéroport. ⚠ MAIS c'est un OUIGO et AUCUNE option bagage n'a été prise : 10€ provisionnés pour tes 2 options à 5€, à ajouter en ligne AVANT le départ (20€/valise si tu paies au quai). Tu en récupères 5 si une seule valise suffit à l'aller. ✓ RETOUR du 1er déc RÉSERVÉ le 12 août (CDG T2 11h00 → Aix 14h10), ta part 26€ = 16€ + tes 2 options bagage à 5€, celles-là bien prises.",
   },
   {
     label: 'Nuits CDG (aller easyHotel + retour Eklo)',

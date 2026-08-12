@@ -53,19 +53,19 @@ export const cashflowTimeline = [
   {
     month: 'Août 2026',
     textIn: '+500€ (capé) / +750€ (God Mode)',
-    textOut: '-26€ (OUIGO retour, payé)',
-    balancePrudent: 2431,
-    balanceGodMode: 2681,
+    textOut: '-36€ (OUIGO retour payé + options bagage de l\'aller)',
+    balancePrudent: 2421,
+    balanceGodMode: 2671,
     actual: false,
     detail:
-      "✓ OUIGO du 1er déc RÉSERVÉ le 12 août : 26€ ta part (16€ + tes 2 options bagage à 5€), contre 45€ provisionnés à l'origine → 19€ récupérés. ✓ Nuit du 30 nov RÉSERVÉE le même jour (Eklo Roissy) — mais en tarif flexible SANS PRÉPAIEMENT : rien ne sort en août, tu paies à l'hôtel. Les ~44€ (ta part de chambre + les 2 navettes) sont donc portés sur le mois du départ, pas ici. Août ne pèse plus que 26€ : c'est le mois le plus léger depuis mars.",
+      "✓ OUIGO du 1er déc RÉSERVÉ le 12 août : 26€ ta part (16€ + tes 2 options bagage à 5€), contre 45€ provisionnés à l'origine → 19€ récupérés. ✓ Nuit du 30 nov RÉSERVÉE le même jour (Eklo Roissy) — mais en tarif flexible SANS PRÉPAIEMENT : rien ne sort en août, tu paies à l'hôtel. Les ~44€ (ta part de chambre + les 2 navettes) sont donc portés sur le mois du départ, pas ici. ⚠ AJOUT : 10€ pour tes options bagage de l'ALLER, qui est aussi un OUIGO et n'en avait aucune — à prendre en ligne avant qu'elles ne soient épuisées, sinon c'est 20€ par valise au quai le 7 nov. Août reste le mois le plus léger depuis mars.",
   },
   {
     month: 'Sept 2026',
     textIn: '+500€ / +750€',
     textOut: '-225€ (Parcs)',
-    balancePrudent: 2706,
-    balanceGodMode: 3206,
+    balancePrudent: 2696,
+    balanceGodMode: 3196,
     actual: false,
     detail:
       "Achat USJ + TeamLab. Le budget table sur 200€ pour l'USJ ; le vrai tarif est ~96€ l'Express Pass 7 (17 800¥) + ~48€ le Studio Pass d'entrée (que le budget oubliait), soit ~144€. Avec TeamLab (~25€) on est plutôt vers 169€ que 225€. Les 225€ sont GARDÉS exprès : le tarif Express varie selon la date, autant garder le matelas.",
@@ -74,8 +74,8 @@ export const cashflowTimeline = [
     month: 'Oct 2026',
     textIn: '+500€ / +750€',
     textOut: '-297€ (Trains + Tokyo Drift)',
-    balancePrudent: 2909,
-    balanceGodMode: 3659,
+    balancePrudent: 2899,
+    balanceGodMode: 3649,
     actual: false,
     detail:
       'Shinkansen (85€) et Kansai Pass (105€). Le TGV n\'est plus ici : l\'aller est déjà payé et le retour part en août. Nouveau : Tokyo Drift (107€), à réserver le 27 oct.',
@@ -84,8 +84,8 @@ export const cashflowTimeline = [
     month: 'Départ (Nov)',
     textIn: '-',
     textOut: '-1370€ (Hôtels + Reste Infra + nuit CDG retour)',
-    balancePrudent: 1539,
-    balanceGodMode: 2289,
+    balancePrudent: 1529,
+    balanceGodMode: 2279,
     actual: false,
     detail:
       "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (175€, journée kimono du 17 incluse sans photographe pro). NOUVEAU : +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
