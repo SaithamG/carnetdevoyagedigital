@@ -60,6 +60,14 @@ export const budgetData = [
     desc: 'Shinkansen, Pass & Suica',
   },
   {
+    label: 'Takkyubin (2 envois de valises)',
+    cost: 53,
+    icon: <Train size={16} />,
+    color: 'orange',
+    type: 'epargne',
+    desc: "⚠ POSTE OUBLIÉ jusqu'au 12 août : l'itinéraire prévoit 2 envois de valises (Tokyo→Osaka le 14 nov, puis retour vers Tokyo le 25) mais AUCUN budget n'était prévu. Tarif Yamato pour une valise 140-160 cm sur Tokyo-Osaka : 2 310 à 2 630¥ pièce. 4 valises × 2 envois = ~107€ pour deux, ta part 53€. Ce n'est pas une option : tout le plan bagages en dépend (tu montes dans le Shinkansen avec un petit sac, sans avoir à réserver de place « hors format »).",
+  },
+  {
     label: 'Grands Parcs & Temples',
     cost: 400,
     icon: <Ticket size={16} />,

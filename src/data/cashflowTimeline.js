@@ -83,11 +83,11 @@ export const cashflowTimeline = [
   {
     month: 'Départ (Nov)',
     textIn: '-',
-    textOut: '-1370€ (Hôtels + Reste Infra + nuit CDG retour)',
-    balancePrudent: 1529,
-    balanceGodMode: 2279,
+    textOut: '-1423€ (Hôtels + Infra + nuit CDG + Takkyubin)',
+    balancePrudent: 1476,
+    balanceGodMode: 2226,
     actual: false,
     detail:
-      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (175€, journée kimono du 17 incluse sans photographe pro). NOUVEAU : +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
+      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (175€, journée kimono du 17 incluse sans photographe pro). NOUVEAU : +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. ⚠ NOUVEAU AUSSI : +53€ de Takkyubin, poste que le budget avait purement oublié alors que l'itinéraire s'appuie dessus (2 envois de 4 valises, ~2 470¥ pièce). Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
   },
 ];
