@@ -56,6 +56,6 @@ export const transports = [
     to: 'Aéroport Haneda',
     type: 'JR Yamanote + Tokyo Monorail',
     cost: '~4€',
-    desc: "Trajet retour le dernier matin (vol 08h30). Yamanote jusqu'à Hamamatsucho (~25 min) puis Monorail jusqu'au terminal (~20 min) : ~50 min, ~650¥ à la Suica. Variante : Yamanote → Shinagawa → Keikyu direct. ATTENTION : le Keisei Skyliner ne dessert QUE Narita, jamais Haneda. Pars à 05h45 pour avoir 2h de marge.",
+    desc: "Trajet retour le dernier matin (vol 08h30). Yamanote jusqu'à Hamamatsucho (~25 min) puis Monorail jusqu'au terminal (~20 min) : ~50 min, ~650¥ à la Suica. Variante : Yamanote → Shinagawa → Keikyu direct. ATTENTION : le Keisei Skyliner ne dessert QUE Narita, jamais Haneda. ⏰ PARS À 5h15 (le « 05h45 » noté ici avant était faux : il ne laissait que 1h55 sur place). Départ 5h15 → Haneda ~6h05, soit 2h25 avant le vol. ⚠️ POURQUOI PAS 3h COMME À CDG : le Monorail ne circule pas avant ~5h00, et le premier Yamanote depuis Ueno est vers 4h30-4h45. Arriver à Haneda à 5h30 est à la limite du physiquement possible en transport public — ce n'est pas un choix de confort, c'est le réseau qui ne suit pas. Si tu veux vraiment 3h : taxi Ueno → Haneda (~40 min, ~7 000-9 000¥ soit 40-50€, roule à toute heure). Sinon, 2h25 à Haneda vaut largement 3h à CDG : l'aéroport est nettement plus fluide.",
   },
 ];
