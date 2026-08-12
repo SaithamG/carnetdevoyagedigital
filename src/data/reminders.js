@@ -1,5 +1,14 @@
 export const reminders = [
   {
+    id: 13,
+    title: "🛫 L'ALLER — 3h à l'aéroport, pas 2h : lever à 7h30 le 8 nov",
+    targetDate: 'Sam 7 nov : TGV → Roissy CDG 2 à 13h31 · Dim 8 nov : décollage T1 à 12h25',
+    reminderDate: '📋 Rien à réserver — c\'est du timing, à relire début novembre',
+    desc: "🚄 LE 7 : ton TGV arrive à « Charles de Gaulle Terminal 2 / Roissy CDG 2 » à 13h31 — c'est la gare TGV À L'INTÉRIEUR de l'aéroport. Tu ne mets pas un pied dans Paris, zéro traversée avec les valises. Tu as tout l'après-midi pour faire 15 min jusqu'à l'easyHotel Villepinte : RER B jusqu'à Villepinte-Parc des Expositions puis ~20 min de marche, ou bus vers l'arrêt « Aéroville » à 2 min à pied de l'hôtel, ou taxi ~15-20€ à deux. Même en prenant le plus lent, tu poses les valises vers 14h30. ⏰ LE 8 : décollage 12h25 au TERMINAL 1 (Air China n'opère qu'au T1). RÈGLE RETENUE : 3h AVANT pour un vol international, pas 2h — donc AU T1 À 9h25 AU PLUS TARD. Air China avec escale à Pékin, comptoir à trouver, 4 valises à enregistrer et des contrôles qui peuvent saturer un dimanche matin : les 3h ne sont pas du zèle. ⇒ Départ de l'hôtel 8h30, lever 7h30, petit-déjeuner et valises bouclées la veille au soir. Trajet : bus depuis « Aéroville » jusqu'à « Aéroport CDG1 Gare » (Roissypole), puis CDGVAL jusqu'au Terminal 1. Compte 30-40 min avec la correspondance, tu as encore ~20 min de battement. 🚕 Si le bus du matin te stresse : taxi direct hôtel → T1, ~15-20€ à deux. ⚠️ À VÉRIFIER SUR TA CONFIRMATION : ce TGV est-il un OUIGO ou un INOUI ? Les deux desservent CDG2 depuis Aix, la gare ne tranche pas. Si c'est un OUIGO et que tu n'as pas pris de supplément bagage, c'est 20€ PAR VALISE au contrôle du quai, soit 40€ chacun — alors que l'option coûte 5€ en ligne. Si c'est un INOUI, les bagages sont inclus et il n'y a rien à faire.",
+    url: 'https://calendar.google.com/calendar/u/0/r/eventedit?text=D%C3%A9part+h%C3%B4tel+%E2%86%92+CDG+Terminal+1+(3h+avant+le+vol)&dates=20261108T073000Z/20261108T083000Z',
+    color: 'indigo',
+  },
+  {
     id: 1,
     title: '✅ RETOUR BOUCLÉ (Eklo + OUIGO) — 1 geste à ne pas oublier au check-in',
     targetDate: 'Nuit du 30 nov au 1er déc 2026 — atterrissage CDG Terminal 1 à 17h45, train le 1er à 11h00',
