@@ -63,19 +63,19 @@ export const cashflowTimeline = [
   {
     month: 'Sept 2026',
     textIn: '+500€ / +750€',
-    textOut: '-225€ (Parcs)',
-    balancePrudent: 2696,
-    balanceGodMode: 3196,
+    textOut: '-200€ (Parcs)',
+    balancePrudent: 2721,
+    balanceGodMode: 3221,
     actual: false,
     detail:
-      "Achat USJ + TeamLab. Le budget table sur 200€ pour l'USJ ; le vrai tarif est ~96€ l'Express Pass 7 (17 800¥) + ~48€ le Studio Pass d'entrée (que le budget oubliait), soit ~144€. Avec TeamLab (~25€) on est plutôt vers 169€ que 225€. Les 225€ sont GARDÉS exprès : le tarif Express varie selon la date, autant garder le matelas.",
+      "Achat USJ + TeamLab. 🎢 DÉCIDÉ LE 13 AOÛT : Express Pass 4 au lieu du 7 → ~69€ (12 800¥) au lieu de ~96€ (17 800¥), soit 27€ récupérés. Avec le Studio Pass d'entrée (~47€, que le budget oubliait) et TeamLab (~25€), le réel est vers 141€. On garde 200€ : le tarif Express est dynamique et celui de nov 2026 n'est pas publié. ⚠ Deux points à ne pas oublier au moment d'acheter : (1) toutes les variantes d'EP4 ne couvrent PAS Super Nintendo World, il faut celle du type « Mine Cart & Jurassic Park » ; (2) l'Express Pass n'est PAS obligatoire pour entrer dans Nintendo World — l'accès se gère par un Area Timed Entry Ticket GRATUIT via l'appli USJ, et un mardi de novembre il n'est souvent même pas exigé. L'EP achète du confort et une file prioritaire, pas un droit d'entrée.",
   },
   {
     month: 'Oct 2026',
     textIn: '+500€ / +750€',
     textOut: '-297€ (Trains + Tokyo Drift)',
-    balancePrudent: 2899,
-    balanceGodMode: 3649,
+    balancePrudent: 2924,
+    balanceGodMode: 3674,
     actual: false,
     detail:
       'Shinkansen (85€) et Kansai Pass (105€). Le TGV n\'est plus ici : l\'aller est déjà payé et le retour part en août. Nouveau : Tokyo Drift (107€), à réserver le 27 oct.',
@@ -83,11 +83,11 @@ export const cashflowTimeline = [
   {
     month: 'Départ (Nov)',
     textIn: '-',
-    textOut: '-1423€ (Hôtels + Infra + nuit CDG + Takkyubin)',
-    balancePrudent: 1476,
-    balanceGodMode: 2226,
+    textOut: '-1504€ (Hôtels + ryokan + Infra + nuit CDG + Takkyubin + valise)',
+    balancePrudent: 1420,
+    balanceGodMode: 2170,
     actual: false,
     detail:
-      "Paiement hôtels 881€ (ta part de 1 761€, RELEVÉ sur tes résas Booking — le budget tablait sur 783€, il manquait 98€), reste Transports/Suica (270€) et reste Parcs/Temples (175€, journée kimono du 17 incluse sans photographe pro). NOUVEAU : +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. ⚠ NOUVEAU AUSSI : +53€ de Takkyubin, poste que le budget avait purement oublié alors que l'itinéraire s'appuie dessus (2 envois de 4 valises, ~2 470¥ pièce). Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne.",
+      "Paiement hôtels 965€ : 881€ de ta part relevée sur tes résas Booking (le budget tablait sur 783€, il manquait 98€) + 84€ pour la NUIT DE RYOKAN À HAKONE réservée le 13 août (Tsukinoya, Miyanoshita, 168€ pour deux, sans prépaiement). Reste Transports/Suica (270€) et reste Parcs/Temples (140€, journée kimono du 17 incluse sans photographe pro). +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. +40€ de Takkyubin, poste que le budget avait purement oublié alors que l'itinéraire s'appuie dessus (recalculé sur 2 valises à l'aller au lieu de 4 : −13€). +45€ pour la 2e valise achetée au Japon : arbitrage tranché le 13 août, elle sort de l'ÉPARGNE et non des goodies. Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne. ⏳ Si le Toyoko Inn accepte de retirer la nuit du 13, ce mois s'allège encore de ~41,50€. 💴 ⚠️ TSUKINOYA SE PAIE EN ESPÈCES, PAS DE CARTE : 30 900¥ le jour même (confirmé par le ryokan le 13 août). À retirer AVANT de monter à Hakone — il n'y a pas de konbini à Miyanoshita.",
   },
 ];
