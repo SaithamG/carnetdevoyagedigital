@@ -196,7 +196,7 @@ export const itineraryData = {
       {
         date: 'Ven 13 Nov',
         title: 'Hakone & Nuit en Ryokan ♨️',
-        reveil: { h: '7h00', note: "quitte l'hôtel ~7h30 → Shinjuku Sta, Romancecar Hakone 8h00 (place réservée). ⚠️ Tu NE rentres PAS à Tokyo ce soir : prends un petit sac pour la nuit, les valises restent au Toyoko", strict: true },
+        reveil: { h: '7h00', note: "quitte l'hôtel ~7h30 → Shinjuku Sta, Romancecar Hakone 8h00 (place réservée). ⚠️ Tu NE rentres PAS à Tokyo ce soir : prends un petit sac pour la nuit, les valises restent DANS TA CHAMBRE au Toyoko (confirmé par eux le 14 août — la chambre est à toi cette nuit-là)", strict: true },
         simplissime: "✅ RÉSERVÉ LE 13 AOÛT — tu dors à Hakone. Ton Free Pass est valable 2 JOURS et tu n'en utilisais qu'un : la nuit au ryokan ne coûte donc AUCUN transport supplémentaire. Si la météo annonce des nuages ou de la pluie, inverse cette journée avec les activités couvertes. 🍜 Achète le dîner à Hakone-Yumoto en changeant de train : il n'y a pas de konbini à Miyanoshita et les restaurants du coin ferment tôt.",
         steps: [
           {
