@@ -118,6 +118,15 @@ export const reminders = [
     color: 'indigo',
   },
   {
+    id: 17,
+    title: '🛟 DOUBLE FILET — la variante à 1 personne reste ouverte, et elle a des dates',
+    targetDate: 'Deux jeux de réservations tenus en parallèle, aucun prépaiement',
+    reminderDate: '🗓 Première échéance qui engage de l’argent : mercredi 4 novembre',
+    desc: "🔑 POURQUOI CE RAPPEL EXISTE : le voyage est prévu à deux, mais la variante à une personne n'est PAS abandonnée — elle est tenue en parallèle, volontairement. Les deux jeux de réservations coexistent, aucun n'a été annulé, et ça ne coûte rien tant qu'aucune carte n'est débitée. ⛔ NE PAS ANNULER L'UN DES DEUX PAR RÉFLEXE DE RANGEMENT. 🏨 LA VARIANTE À 1 PERSONNE, CE SONT 4 HÉBERGEMENTS, 805€ AU TOTAL : 9h nine hours Shinjuku-North du 9 au 15 nov (242€) · GLANSIT Kyoto Kawaramachi du 15 au 19 (152€) · HOTEL Cargo Shinsaibashi du 19 au 25 (215€) · Annex Katsutaro Ryokan du 27 au 30 (196€). C'est 4€ DE MOINS que la part d'une chambre partagée, avec une chambre à soi partout. 🔴 LES DEUX DATES QUI COMPTENT VRAIMENT, parce qu'un débit tombe AVANT la fin du remboursement : le 9h Shinjuku est débité le 6 nov alors qu'il reste annulable jusqu'au 7 ⇒ TRANCHER LE 4. Le Cargo d'Osaka est débité le 16 pour une annulation possible jusqu'au 17 ⇒ TRANCHER LE 14. Les deux autres sont sans prépaiement : Glansit annulable jusqu'au 11 nov (76€ de frais ensuite), Annex Katsutaro jusqu'au 21. ⚖️ CE QUI CHANGE D'AUTRE À 1 PERSONNE : le ryokan de Hakone passe de 84€ à 167€ (même chambre, tarif par personne) · le combo Maikoya devient impossible et bascule sur le musée Samurai seul à 3 300¥ · le restaurant de Kobe doit être vérifié pour un couvert unique · Sakuraya à Miyajima et le Comfort de Hiroshima ne bougent pas, ils facturent la chambre.",
+    url: 'https://secure.booking.com/mysettings.html',
+    color: 'indigo',
+  },
+  {
     id: 15,
     title: '🌿 teamLab Botanical Garden — Osaka, Nagai Park',
     targetDate: 'Visite : Sam 21 Nov 2026, 18h00 (dernière entrée 20h30)',
