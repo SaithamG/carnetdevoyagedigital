@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FLIGHT_OUT } from './data/constants';
 import Header from './components/Header';
 import DemoBar from './components/DemoBar';
+import Vitrine from './components/Vitrine';
 import Itinerary from './components/Itinerary';
 import Carte from './components/Carte';
 import Transport from './components/Transport';
@@ -59,6 +60,7 @@ const App = () => {
       <Header activeTab={activeTab} setActiveTab={setActiveTab} timeLeft={timeLeft} />
 
       <main className="max-w-5xl mx-auto p-4 md:p-6 mt-4">
+        <Vitrine />
         {renderTab()}
       </main>
 
