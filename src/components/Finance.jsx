@@ -1,5 +1,6 @@
 import React from 'react';
 import { Wallet, Zap, Calendar, ArrowDownCircle } from 'lucide-react';
+import Depliable from './Depliable';
 import { budgetData, totalEpargneUsed } from '../data/budgetData';
 import { cashflowTimeline } from '../data/cashflowTimeline';
 import {
@@ -51,15 +52,15 @@ const Finance = () => (
 
         <div className="space-y-3">
           {budgetData.filter((i) => i.type === 'epargne').map((item, i) => (
-            <div key={i} className="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-800">
-              <div>
+            <div key={i} className="flex justify-between items-start gap-3 bg-slate-950 p-3 rounded-xl border border-slate-800">
+              <div className="min-w-0">
                 <p className="text-xs font-bold text-slate-300 flex items-center gap-2">
                   <span className={COLOR_CLASSES[item.color].text500}>{item.icon}</span>
                   {item.label}
                 </p>
-                <p className="text-[10px] text-slate-500 mt-1">{item.desc}</p>
+                <Depliable texte={item.desc} className="text-[10px] text-slate-500 mt-1" />
               </div>
-              <p className="text-sm font-black text-white">{item.cost} €</p>
+              <p className="text-sm font-black text-white shrink-0">{item.cost} €</p>
             </div>
           ))}
         </div>
@@ -88,15 +89,15 @@ const Finance = () => (
 
           <div className="pt-2 border-t border-indigo-500/30 mt-3">
             {budgetData.filter((i) => i.type === 'salaire').map((item, i) => (
-              <div key={i} className="flex justify-between items-center py-2">
-                <div>
+              <div key={i} className="flex justify-between items-start gap-3 py-2">
+                <div className="min-w-0">
                   <span className="text-[11px] font-bold text-indigo-200 flex items-center gap-2">
                     <span className={COLOR_CLASSES[item.color].text400}>{item.icon}</span>
                     {item.label}
                   </span>
-                  <p className="text-[9px] text-indigo-300/70 mt-1">{item.desc}</p>
+                  <Depliable texte={item.desc} className="text-[9px] text-indigo-300/70 mt-1" />
                 </div>
-                <span className="text-sm font-black text-red-300">- {item.cost} €</span>
+                <span className="text-sm font-black text-red-300 shrink-0">- {item.cost} €</span>
               </div>
             ))}
           </div>

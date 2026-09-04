@@ -5,6 +5,7 @@ import { regions } from '../data/regions';
 import { planBData } from '../data/planBData';
 import PlaceImage from './PlaceImage';
 import StepJournal from './StepJournal';
+import Depliable from './Depliable';
 
 const Itinerary = ({ activeRegion, setActiveRegion }) => {
   const [isRaining, setIsRaining] = useState(false);
@@ -133,11 +134,11 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                   <div className={`mb-6 flex items-center gap-3 p-3.5 rounded-2xl border ${
                     day.reveil.strict
                       ? 'bg-amber-950/20 border-amber-900/40'
-                      : 'bg-slate-800/40 border-slate-700/50'
+                      : 'bg-blue-950/20 border-blue-900/40'
                   }`}>
                     <span className="text-xl shrink-0">{day.reveil.strict ? '⏰' : '😴'}</span>
                     <p className="text-[13px] leading-relaxed">
-                      <span className={`font-black ${day.reveil.strict ? 'text-amber-300' : 'text-slate-200'}`}>
+                      <span className={`font-black ${day.reveil.strict ? 'text-amber-300' : 'text-blue-300'}`}>
                         Réveil {day.reveil.h}
                       </span>
                       <span className="text-slate-400 font-medium"> — {day.reveil.note}</span>
@@ -215,7 +216,10 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                                 <CloudRain size={12} className="text-slate-500" title="Activité en extérieur" />
                               )}
                             </h4>
-                            <p className="text-[13px] text-slate-400 leading-relaxed font-medium">{step.desc}</p>
+                            <Depliable
+                            texte={step.desc}
+                            className="text-[13px] text-slate-400 leading-relaxed font-medium"
+                          />
                             <StepJournal stepKey={`${day.date}_${step.time}`} />
                           </div>
                           </div>
@@ -228,9 +232,14 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                 {day.simplissime && (
                   <div className="mt-8 p-4 rounded-2xl bg-emerald-950/20 border border-emerald-900/30 flex items-start gap-3">
                     <CheckCircle2 size={20} className="text-emerald-500 shrink-0 mt-0.5" />
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-[10px] font-black uppercase text-emerald-600 mb-1 tracking-widest">Le Hack Simplissime</p>
-                      <p className="text-xs text-slate-400 font-medium italic">{day.simplissime}</p>
+                      <Depliable
+                        texte={day.simplissime}
+                        className="text-xs text-slate-400 font-medium italic"
+                        libelle="Lire le hack"
+                        boutonClassName="!text-emerald-500 hover:!text-emerald-400"
+                      />
                     </div>
                   </div>
                 )}
