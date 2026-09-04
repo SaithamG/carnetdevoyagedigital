@@ -7,7 +7,7 @@
 export const geoByMapUrl = {
   // --- Tokyo Ouest ---
   'https://maps.google.com/?q=Tokyo+Haneda+Airport': { coords: [35.5494, 139.7798] },
-  'https://maps.google.com/?q=Toyoko+Inn+Shinjuku+Kabukicho': { coords: [35.6955, 139.7027] },
+  'https://maps.google.com/?q=l’hôtel+Inn+Shinjuku+Kabukicho': { coords: [35.6955, 139.7027] },
   'https://maps.google.com/?q=Godzilla+Head+Shinjuku': { coords: [35.6948, 139.7016] },
   'https://maps.google.com/?q=Meiji+Jingu': { coords: [35.6764, 139.6993] },
   'https://maps.google.com/?q=Futako-Tamagawa+riverside': { coords: [35.6108, 139.6300] },
@@ -68,7 +68,7 @@ export const geoByMapUrl = {
   'https://maps.google.com/?q=Kobe+Steakland': { coords: [34.6960, 135.1955] },
   'https://maps.google.com/?q=Mount+Rokko+Cable+Car': { coords: [34.7370, 135.2370] },
   'https://maps.google.com/?q=Universal+Studios+Japan': { coords: [34.6655, 135.4323] },
-  'https://maps.google.com/?q=Toyoko+Inn+Osaka+Honmachi': { coords: [34.6840, 135.5000] },
+  'https://maps.google.com/?q=l’hôtel+Inn+Osaka+Honmachi': { coords: [34.6840, 135.5000] },
 
   // --- Hiroshima & Miyajima ---
   'https://maps.google.com/?q=Shin-Osaka+Station': { coords: [34.7335, 135.5003] },
@@ -79,7 +79,7 @@ export const geoByMapUrl = {
   'https://maps.google.com/?q=Miyajimaguchi+Station': { coords: [34.3110, 132.3030] },
   'https://maps.google.com/?q=Itsukushima+Floating+Torii+Gate': { coords: [34.2960, 132.3197] },
   'https://maps.google.com/?q=Mount+Misen': { coords: [34.2790, 132.3190] },
-  'https://maps.google.com/?q=Ryokan+Sakuraya+Miyajima': { coords: [34.2965, 132.3200] },
+  'https://maps.google.com/?q=Ryokan+l’hôtel+Miyajima': { coords: [34.2965, 132.3200] },
 
   // --- Tokyo Est ---
   'https://maps.google.com/?q=Hiroshima+Station': { coords: [34.3977, 132.4757] },

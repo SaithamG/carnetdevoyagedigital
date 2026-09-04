@@ -33,9 +33,9 @@ const TAB_META = {
 };
 
 const NAV_GROUPS = [
-  { id: 'prepare',  label: 'Avant de partir', icon: <Luggage size={16} />, tabs: ['overview', 'finance', 'checklist', 'runbook'] },
+  { id: 'prepare',  label: 'Avant de partir', icon: <Luggage size={16} />, tabs: ['checklist'] },
   { id: 'surplace', label: 'Explorer',        icon: <Compass size={16} />, tabs: ['roadbook', 'carte', 'transport'] },
-  { id: 'outils',   label: 'Outils',          icon: <Wrench size={16} />,  tabs: ['expenses', 'conversion', 'lexique', 'ai', 'carnet'] },
+  { id: 'outils',   label: 'Outils',          icon: <Wrench size={16} />,  tabs: ['conversion', 'lexique', 'carnet'] },
 ];
 
 const groupOfTab = (tabId) => NAV_GROUPS.find((g) => g.tabs.includes(tabId))?.id;
@@ -96,45 +96,11 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
           <div className="flex items-center gap-2">
             <SettingsPanel />
           </div>
-          <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl h-fit">
-            <CheckCircle2 size={16} className="text-emerald-500" />
-            <div>
-              <p className="text-[10px] font-black text-emerald-500 uppercase">Vol Garanti</p>
-              <p className="text-xs font-bold text-emerald-100 flex items-center gap-1">
-                Soldé 4/4 <Check size={14} />
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl h-fit">
-            <Receipt size={16} className="text-blue-400" />
-            <div>
-              <p className="text-[10px] font-black text-blue-400 uppercase">Dépenses</p>
-              <p className="text-xs font-bold text-blue-100">
-                {totalSpentYen.toLocaleString('fr-FR')}¥ / {TOTAL_BUDGET_YEN.toLocaleString('fr-FR')}¥
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* NAV NIVEAU 1 : raccourcis + groupes */}
       <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2 items-center">
-        <button
-          onClick={() => setActiveTab('voyage')}
-          className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
-            activeTab === 'voyage'
-              ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/40 border border-emerald-500'
-              : 'bg-emerald-900/30 border border-emerald-700/50 text-emerald-400 hover:bg-emerald-900/50'
-          }`}
-        >
-          {TAB_META.voyage.icon} {TAB_META.voyage.label}
-          {tripLive && (
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse border border-slate-900" />
-          )}
-        </button>
-
-        <div className="w-px h-7 bg-slate-800 shrink-0" />
 
         {NAV_GROUPS.map((group) => {
           const isOpen = openGroup === group.id;

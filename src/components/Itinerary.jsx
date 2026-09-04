@@ -165,12 +165,6 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                       Fiche du jour
                     </p>
                     <div className="p-4 grid gap-3 md:grid-cols-2">
-                      <FicheLigne icone={<BedDouble size={14} />} titre="Tu dors">
-                        {day.fiche.dodo}
-                      </FicheLigne>
-                      <FicheLigne icone={<DoorOpen size={14} />} titre="Tu pars">
-                        {day.fiche.depart}
-                      </FicheLigne>
                       <FicheLigne icone={<TrainFront size={14} />} titre="Comment tu bouges" pleineLargeur>
                         <ul className="space-y-1">
                           {day.fiche.trajets.map((t, i) => (
@@ -180,9 +174,6 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                             </li>
                           ))}
                         </ul>
-                      </FicheLigne>
-                      <FicheLigne icone={<Wallet size={14} />} titre="Ce que ça coûte">
-                        {day.fiche.budget}
                       </FicheLigne>
                       <FicheLigne icone={<LifeBuoy size={14} />} titre="Si tu es cramé">
                         {day.fiche.repli}
@@ -274,20 +265,6 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                   ))}
                 </div>
 
-                {day.simplissime && (
-                  <div className="mt-8 p-4 rounded-2xl bg-emerald-950/20 border border-emerald-900/30 flex items-start gap-3">
-                    <CheckCircle2 size={20} className="text-emerald-500 shrink-0 mt-0.5" />
-                    <div className="min-w-0">
-                      <p className="text-[10px] font-black uppercase text-emerald-600 mb-1 tracking-widest">Le Hack Simplissime</p>
-                      <Depliable
-                        texte={day.simplissime}
-                        className="text-xs text-slate-400 font-medium italic"
-                        libelle="Lire le hack"
-                        boutonClassName="!text-emerald-500 hover:!text-emerald-400"
-                      />
-                    </div>
-                  </div>
-                )}
 
                 {/* JOURNAL DE BORD */}
                 <div className="mt-6 pt-6 border-t border-slate-800">
