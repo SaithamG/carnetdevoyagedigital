@@ -826,7 +826,7 @@ export const itineraryData = {
             time: '13h00',
             icon: <Utensils size={20} className="text-red-500" />,
             title: 'Bœuf de Kobe',
-            desc: "Teppanyaki gastronomique : le chef cuit la viande persillée devant toi. 🔄 RECALÉ LE 30 AOÛT de 14h30 à 13h00 — 14h30 tombe dans le trou entre le service du midi et celui du soir, et une réservation à heure fixe juste derrière la file de Himeji était le point de rupture de la journée. 💴 FORMULE DÉJEUNER, décision assumée : 5 000 à 8 000 ¥ (30-47 €) contre 15 000-25 000 ¥ le soir, même viande et même chef devant toi. Ça sort de la poche bouffe, zéro impact sur le van 2027. ⚠️ À réserver le 23 septembre, POUR UNE PERSONNE — vérifier que l'établissement accepte les solos, certains teppanyaki imposent un minimum de 2 couverts.",
+            desc: "Teppanyaki gastronomique : le chef cuit la viande persillée devant toi. 🔄 RECALÉ LE 30 AOÛT de 14h30 à 13h00 — 14h30 tombe dans le trou entre le service du midi et celui du soir, et une réservation à heure fixe juste derrière la file de Himeji était le point de rupture de la journée. 💴 FORMULE DÉJEUNER, décision assumée : 5 000 à 8 000 ¥ (30-47 €) contre 15 000-25 000 ¥ le soir, même viande et même chef devant toi. Ça sort de la poche bouffe, zéro impact sur le van 2027. ⚠️ À réserver le 23 septembre, POUR DEUX COUVERTS. 🔄 Corrigé le 4 septembre : la fiche disait « pour une personne » et de vérifier que l'établissement accepte les solos — c'était le scénario solo, il est caduc. Le voyage se fait à deux, et beaucoup de teppanyaki imposent justement un minimum de 2 couverts : la contrainte disparaît.",
             mapUrl: 'https://maps.google.com/?q=Kobe+Steakland',
             isOutdoor: false,
           },
