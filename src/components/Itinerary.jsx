@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { CloudRain, Umbrella, BookOpen, CheckCircle2, MapPinned, AlertCircle, Check } from 'lucide-react';
+import {
+  CloudRain, Umbrella, BookOpen, CheckCircle2, MapPinned, AlertCircle, Check,
+  BedDouble, DoorOpen, TrainFront, Wallet, LifeBuoy,
+} from 'lucide-react';
 import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { planBData } from '../data/planBData';
 import PlaceImage from './PlaceImage';
 import StepJournal from './StepJournal';
 import Depliable from './Depliable';
+
+// Une ligne de la fiche du jour : pastille + intitulé + contenu.
+const FicheLigne = ({ icone, titre, children, pleineLargeur = false }) => (
+  <div className={`flex gap-2.5 ${pleineLargeur ? 'md:col-span-2' : ''}`}>
+    <span className="text-blue-400 mt-0.5 shrink-0">{icone}</span>
+    <div className="min-w-0">
+      <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">{titre}</p>
+      <div className="text-[12px] text-slate-300 leading-relaxed font-medium">{children}</div>
+    </div>
+  </div>
+);
 
 const Itinerary = ({ activeRegion, setActiveRegion }) => {
   const [isRaining, setIsRaining] = useState(false);
@@ -143,6 +157,37 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                       </span>
                       <span className="text-slate-400 font-medium"> — {day.reveil.note}</span>
                     </p>
+                  </div>
+                )}
+                {day.fiche && (
+                  <div className="mb-6 rounded-2xl border border-slate-800 bg-slate-950/50 overflow-hidden">
+                    <p className="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-slate-500 border-b border-slate-800/80">
+                      Fiche du jour
+                    </p>
+                    <div className="p-4 grid gap-3 md:grid-cols-2">
+                      <FicheLigne icone={<BedDouble size={14} />} titre="Tu dors">
+                        {day.fiche.dodo}
+                      </FicheLigne>
+                      <FicheLigne icone={<DoorOpen size={14} />} titre="Tu pars">
+                        {day.fiche.depart}
+                      </FicheLigne>
+                      <FicheLigne icone={<TrainFront size={14} />} titre="Comment tu bouges" pleineLargeur>
+                        <ul className="space-y-1">
+                          {day.fiche.trajets.map((t, i) => (
+                            <li key={i} className="flex gap-1.5">
+                              <span className="text-slate-600 shrink-0">—</span>
+                              <span>{t}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </FicheLigne>
+                      <FicheLigne icone={<Wallet size={14} />} titre="Ce que ça coûte">
+                        {day.fiche.budget}
+                      </FicheLigne>
+                      <FicheLigne icone={<LifeBuoy size={14} />} titre="Si tu es cramé">
+                        {day.fiche.repli}
+                      </FicheLigne>
+                    </div>
                   </div>
                 )}
                 <div className="relative pl-8 space-y-8 before:absolute before:inset-0 before:left-[15px] before:w-0.5 before:bg-slate-800">

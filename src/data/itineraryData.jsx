@@ -12,6 +12,15 @@ export const itineraryData = {
     days: [
       {
         date: 'Lun 9 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Shinjuku Kabukicho — nuit 1/6",
+          depart: "Tu sors de l'avion vers 17h15, terminal 3",
+          trajets: [
+            "Bus Limousine · T3 2e étage ARRÊT 3 → Shinjuku · 45-60 min · 1 400¥",
+          ],
+          budget: "≈2 500¥ — bus 1 400 + recharge Suica + gyudon",
+          repli: "Rien à couper aujourd'hui. La seule consigne : ne pas dormir avant 22h.",
+        },
         title: 'Atterrissage & Kabukicho',
         reveil: { h: 'à bord', note: "tu n'as RIEN à décider aujourd'hui — trois gestes en tout : le QR, la carte Suica, le bus", strict: false },
         simplissime: "🛬 LA SÉQUENCE, DANS L'ORDRE, ET C'EST TOUT : (1) tu sors de l'avion avec le QR de Visit Japan Web déjà rempli ; (2) immigration puis bagages — ta valise t'a suivi depuis Paris, tu n'as rien eu à faire à Pékin ; (3) une Welcome Suica aux distributeurs ROUGES du hall d'arrivée du Terminal 3 ; (4) tu montes au 2e étage, ARRÊT N°3, et tu prends le bus Limousine direct pour Shinjuku. ⛔ TU NE PRENDS PAS LE TRAIN CE SOIR : pas de correspondance, pas d'escalier avec les valises, pas de plan de métro à déchiffrer après 28h de voyage. Tu t'assois, tu arrives. 😴 Et la seule règle de la journée : NE DORS PAS AVANT 22h locale, c'est ce qui écrase le décalage horaire d'un coup.",
@@ -52,6 +61,17 @@ export const itineraryData = {
       },
       {
         date: 'Mar 10 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Shinjuku Kabukicho — nuit 2/6",
+          depart: "Tu quittes l'hôtel vers 8h30",
+          trajets: [
+            "JR Yamanote · Shinjuku → Harajuku · 5 min · ~150¥",
+            "Tokyu Denentoshi · Shibuya → Futako-Tamagawa · 17 min · ~200¥",
+            "À partir de 14h, tout est à pied dans Shibuya",
+          ],
+          budget: "≈6 000¥ — Shibuya Sky déjà réservé, déjeuner konbini, yakiniku du soir",
+          repli: "Cramé ? Saute les berges de la Tama : ça libère 2h30 et tu arrives frais à Shibuya.",
+        },
         title: 'Shibuya Crossing & One Piece Gym',
         reveil: { h: '7h45', note: "réveil peinard — 1re étape Meiji Jingu à 9h (~12 min de train), douche prise la veille", strict: false },
         simplissime: "Grosse journée de marche et de sport. Tu vas gagner ton « Avis de Recherche » à la salle de muscu ! 🚉 TES TRAJETS DU JOUR, TOUS SIMPLES : Shinjuku → Harajuku, c'est la JR Yamanote, 2 arrêts, 5 min, ~150¥ — le sanctuaire est juste en face de la sortie. Puis Shibuya → Futako-Tamagawa par la Tokyu Denentoshi, 17 min. Retour à Shibuya pour 14h et tu ne bouges plus de la journée : Crossing, Shibuya Sky, la salle One Piece et le yakiniku sont tous dans un rayon de 10 min à pied.",
@@ -108,6 +128,17 @@ export const itineraryData = {
       },
       {
         date: 'Mer 11 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Shinjuku Kabukicho — nuit 3/6",
+          depart: "Tu quittes l'hôtel à 7h00 — sur le QUAI 5 à 7h20",
+          trajets: [
+            "Limited Express « Nikko » · Shinjuku quai 5 → Nikko · 2h · 4 140¥",
+            "Bus en lacet · Nikko → lac Chuzenji · ~50 min",
+            "Retour Nikko → Shinjuku en fin d'après-midi",
+          ],
+          budget: "≈11 000¥ — train aller-retour, Toshogu ~1 300¥, bus, repas",
+          repli: "Journée longue. Si tu fatigues, sacrifie Chuzenji et Kegon sans regret : à 1 200 m les érables seront déjà nus. Toshogu seul justifie le déplacement.",
+        },
         title: 'Day-Trip : Nikko',
         reveil: { h: '6h30', note: "quitte l'hôtel ~7h00 → Shinjuku Sta, Limited Express Nikko 7h30 (réservé — laisse-toi le temps de trouver le quai)", strict: true },
         simplissime: "Avancé du 12 au 11 : le pic de Toshogu court du 5 au 12 nov, on ne tutoie plus le dernier jour. Bonus : ça met une journée urbaine entre Nikko et Hakone.",
@@ -156,6 +187,17 @@ export const itineraryData = {
       },
       {
         date: 'Jeu 12 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Shinjuku Kabukicho — nuit 4/6",
+          depart: "Tu quittes l'hôtel vers 8h30",
+          trajets: [
+            "JR Yamanote · Shinjuku → Harajuku · 5 min",
+            "JR Chuo-Sobu · → Sendagaya, le stade est en face de la sortie",
+            "JR Yamanote · → Ikebukuro · ~15 min",
+          ],
+          budget: "≈25 000¥ si tu prends les deux maillots (19 800¥) + Pokémon + sushis",
+          repli: "Journée 100 % urbaine, aucun train à heure fixe : tout est décalable. La salle de sport de 18h est la première chose à sauter.",
+        },
         title: 'Densité Max : Volley & Anime',
         reveil: { h: '7h45', note: "journée urbaine, 1re étape 9h à Harajuku — aucune contrainte de train", strict: false },
         simplissime: "Concentre tous tes achats vestimentaires/sportifs ce jour-là pour ne plus y penser ensuite. Journée urbaine volontaire : elle sépare Nikko (hier) de Hakone (demain).",
@@ -204,6 +246,17 @@ export const itineraryData = {
       },
       {
         date: 'Ven 13 Nov',
+        fiche: {
+          dodo: "♨️ Ryokan Tsukinoya, Miyanoshita — tu NE rentres PAS à Tokyo ce soir",
+          depart: "Tu quittes l'hôtel à 7h30 — Romancecar à 8h00, place réservée",
+          trajets: [
+            "Romancecar · Shinjuku → Hakone-Yumoto · ~1h30 · Hakone Free Pass, valable 2 JOURS",
+            "Ligne Tozan · Hakone-Yumoto → Miyanoshita · couvert par le Pass",
+            "Puis 12 min de marche en montée, ou bus ligne H arrêt Kamisokokura",
+          ],
+          budget: "30 900¥ EN ESPÈCES au ryokan + le dîner acheté à Hakone-Yumoto",
+          repli: "Petit sac pour la nuit : les valises restent dans ta chambre au Toyoko. S'il pleut, cette journée s'échange avec une journée couverte.",
+        },
         title: 'Hakone & Nuit en Ryokan ♨️',
         reveil: { h: '7h00', note: "quitte l'hôtel ~7h30 → Shinjuku Sta, Romancecar Hakone 8h00 (place réservée). ⚠️ Tu NE rentres PAS à Tokyo ce soir : prends un petit sac pour la nuit, les valises restent DANS TA CHAMBRE au Toyoko (confirmé par eux le 14 août — la chambre est à toi cette nuit-là)", strict: true },
         simplissime: "✅ RÉSERVÉ LE 13 AOÛT — tu dors à Hakone. Ton Free Pass est valable 2 JOURS et tu n'en utilisais qu'un : la nuit au ryokan ne coûte donc AUCUN transport supplémentaire. Si la météo annonce des nuages ou de la pluie, inverse cette journée avec les activités couvertes. 🍜 Achète le dîner à Hakone-Yumoto en changeant de train : il n'y a pas de konbini à Miyanoshita et les restaurants du coin ferment tôt.",
@@ -252,6 +305,16 @@ export const itineraryData = {
       },
       {
         date: 'Sam 14 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Shinjuku Kabukicho — nuit 5/6",
+          depart: "Check-out du ryokan vers 10h — grasse matinée méritée",
+          trajets: [
+            "Tozan + Romancecar · Miyanoshita → Shinjuku · ~2h · Free Pass jour 2",
+            "Métro vers Azabudai Hills pour teamLab",
+          ],
+          budget: "≈9 000¥ — teamLab Borderless ~4 000¥ + Takkyubin ~2 400¥ par valise",
+          repli: "Seul horaire fixe : teamLab à 14h. La mairie de Shinjuku est gratuite et sautable. ⚠️ Les valises partent CE SOIR pour Osaka.",
+        },
         title: 'Retour de Hakone & Art Digital',
         reveil: { h: '8h00', note: "Grasse matinée méritée au ryokan. Petit-déj, dernier bain, check-out ~10h — Miyanoshita → Shinjuku, compte ~2h", strict: false },
         simplissime: "⚠️ JOURNÉE MODIFIÉE LE 13 AOÛT (nuit à Hakone) : Senso-ji est parti au 29 nov, où tu es déjà à Ueno — Asakusa est à 5 min en ligne Ginza. Tu ne perds donc rien, tu le fais même mieux, sans courir depuis la montagne. TeamLab à 14h est le SEUL créneau horodaté de la journée : c'est lui qui commande, et il est largement tenable. Tu envoies tes valises ce soir. Demain, tu prends le Shinkansen les mains dans les poches !",
@@ -299,6 +362,17 @@ export const itineraryData = {
     days: [
       {
         date: 'Dim 15 Nov',
+        fiche: {
+          dodo: "Stay SAKURA Kyoto — nuit 1/4",
+          depart: "Tu quittes l'hôtel à 8h00 — Shinkansen à 9h00, réservé",
+          trajets: [
+            "JR Chuo · Shinjuku → Tokyo Station · ~15 min",
+            "Shinkansen Nozomi · Tokyo → Kyoto · 2h15 · ~13 320¥ · HORS Pass",
+            "Guest Center de Kyoto Station : tes sacs sont livrés à l'hôtel",
+          ],
+          budget: "≈15 000¥ — Shinkansen + ramen du soir",
+          repli: "Fushimi Inari se fait en 1h par le bas si tu n'as plus de jambes. La montée complète, c'est 2h.",
+        },
         title: 'Shinkansen & Fushimi Inari',
         reveil: { h: '7h30', note: "quitte l'hôtel ~8h00 → Tokyo Sta via Chuo, Shinkansen Nozomi 9h00 (réservé, valises déjà parties en Takkyubin)", strict: true },
         simplissime: 'La plupart des touristes ne font que le bas du Fushimi. En grimpant au sommet à 15h30, tu auras la paix et la Golden Hour.',
@@ -339,6 +413,17 @@ export const itineraryData = {
       },
       {
         date: 'Lun 16 Nov',
+        fiche: {
+          dodo: "Stay SAKURA Kyoto — nuit 2/4",
+          depart: "Tu quittes l'hôtel à 7h05 — la forêt de bambous vide, c'est avant 8h30",
+          trajets: [
+            "JR · Tambaguchi → Arashiyama · ~15 min",
+            "Bus vers Kinkaku-ji l'après-midi · ~230¥ le trajet",
+            "Vélo électrique conseillé sur toute la zone d'Arashiyama",
+          ],
+          budget: "≈4 000¥ — Kinkaku-ji 500¥, Ryoan-ji 600¥, vélos ~1 500¥, repas",
+          repli: "Le parc aux singes d'Iwatayama, c'est 30 min de montée raide : c'est LA chose à sauter si tu es fatigué.",
+        },
         title: "L'Ouest (Or & Singes)",
         reveil: { h: '6h40', note: "quitte l'hôtel ~7h05 → Tambaguchi direct Arashiyama (~15 min), forêt de bambous VIDE", strict: true },
         simplissime: 'Louer des vélos (électriques) à Arashiyama permet de faire cette zone de manière hyper agréable.',
@@ -371,6 +456,17 @@ export const itineraryData = {
       },
       {
         date: 'Mar 17 Nov',
+        fiche: {
+          dodo: "Stay SAKURA Kyoto — nuit 3/4",
+          depart: "Tu quittes l'hôtel à 8h15 — Kiyomizu à l'ouverture",
+          trajets: [
+            "Bus vers Kiyomizu-dera le matin",
+            "Descente de Higashiyama vers le centre À PIED · ~30 min",
+            "Maikoya Nishiki · 329 Ebiyacho, Nakagyo-ku",
+          ],
+          budget: "15 400¥ ta part pour Maikoya, déjà comptée + Kiyomizu 500¥",
+          repli: "⛔ Rien n'est déplaçable après 11h15 : le créneau Maikoya de midi est unique et fixe. Mange avant 11h45, tu enchaînes 3h dont une partie en kimono.",
+        },
         title: 'Kyoto : Samurai, Kimono & Thé (Maikoya)',
         reveil: { h: '7h45', note: "Maikoya à MIDI (seul créneau, fixe) : temples de Higashiyama le matin, puis descente au centre pour être à l'heure — pas de traîne après 11h", strict: false },
         simplissime: "⚠️ Maikoya PAS ENCORE RÉSERVÉ — créneau visé : midi (30 800¥ pour vous deux taxe comprise, soit 14 000¥/pers + 10% — prix confirmé sur la page de résa le 13 août). Kimono, thé ET samurai inclus dans le même ticket. 📍 ORDRE CORRIGÉ LE 13 AOÛT : on commence par le KIMONO + THÉ, le musée samurai vient ensuite — c'est ce que dit la page officielle (« show up at the Kimono Tea Ceremony venue first »), l'ancien ordre inverse du carnet n'était fondé sur rien. Si ta confirmation dit le contraire, c'est elle qui fait foi. Le matin reste libre pour les temples de Higashiyama à la fraîche, puis tu bascules au centre (près de Nishiki) pour midi pile. 🍜 Mange un truc rapide AVANT 11h45 : tu enchaînes ~3h dont une partie en kimono. Le kimono Maikoya se porte en intérieur (segment thé) : pour des photos en kimono dehors il faudrait une location du matin à part (~8 800¥) — non prévue, dis-le si tu la veux.",
@@ -427,6 +523,17 @@ export const itineraryData = {
       },
       {
         date: 'Mer 18 Nov',
+        fiche: {
+          dodo: "Stay SAKURA Kyoto — nuit 4/4",
+          depart: "Tu quittes l'hôtel à 9h30 — grasse matinée possible",
+          trajets: [
+            "Bus vers Ginkaku-ji",
+            "Chemin des Philosophes · 2 km À PIED jusqu'à Nanzen-ji",
+            "Eikando est à 10 min à pied de Nanzen-ji",
+          ],
+          budget: "≈3 500¥ — Ginkaku-ji 500¥, Nanzen-ji 600¥, illuminations Eikando ~1 000¥",
+          repli: "Journée douce et courte. Eikando de nuit est le sommet visuel de Kyoto : c'est la dernière chose à couper.",
+        },
         title: "Momiji — En Avance sur le Pic (et c'est voulu)",
         reveil: { h: '8h15', note: "journée temples/momiji, départ 9h30 — grasse mat' possible", strict: false },
         simplissime: "Eikando de nuit, c'est l'image que tu as en tête. Sois lucide : le pic de Kyoto court du 20 nov au 5 déc, tu es 2 à 5 jours AVANT. Tu auras moins de rouge — mais des temples vivables au lieu de la cohue. C'est l'arbitrage, pas un raté.",
@@ -466,6 +573,16 @@ export const itineraryData = {
     days: [
       {
         date: 'Jeu 19 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Osaka Honmachi 1 — nuit 1/6 · 北久宝寺町2-3-6",
+          depart: "Tu quittes l'hôtel vers 10h — journée transfert tranquille",
+          trajets: [
+            "JR ligne locale · Kyoto → Osaka · ~30 min · ~570¥",
+            "Métro Midosuji jusqu'à Honmachi — l'hôtel est à 4 min de Sakaisuji-Hommachi",
+          ],
+          budget: "≈4 000¥ — takoyaki, dîner, et de quoi flâner à Amerikamura",
+          repli: "Journée volontairement légère : tu retrouves tes valises et tu récupères. Rien d'obligatoire après Dotonbori.",
+        },
         title: 'Drop & Néons (Dotonbori)',
         reveil: { h: '8h30', note: "train local vers Osaka à 10h, journée transfert cool", strict: false },
         simplissime: "À Osaka, les gens parlent fort et mangent énormément. C'est la ville parfaite pour toi.",
@@ -506,6 +623,16 @@ export const itineraryData = {
       },
       {
         date: 'Ven 20 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Osaka Honmachi 1 — nuit 2/6",
+          depart: "Tu quittes l'hôtel à 7h05 — train à 7h30",
+          trajets: [
+            "Kintetsu · Osaka Namba → Nara · 40 min · ~570¥ · HORS Pass JR",
+            "Tout Nara se fait à pied depuis la gare Kintetsu",
+          ],
+          budget: "≈3 000¥ — Todai-ji 800¥, biscuits à daims 200¥, mochi, repas",
+          repli: "Le mont Wakakusa en fin de journée est la partie sportive : coupe-la et rentre plus tôt, le parc et Todai-ji sont l'essentiel.",
+        },
         title: "L'Épopée de Nara",
         reveil: { h: '6h45', note: "quitte l'hôtel ~7h05 → Namba, Kintetsu Nara 7h30 : tu bats la foule des daims", strict: true },
         simplissime: "Déplacée du dimanche au vendredi : le 22 tombait dans le week-end de 3 jours du 23 (férié). Un parc à daims un dimanche férié, c'est la marée humaine. Pars quand même tôt.",
@@ -554,6 +681,17 @@ export const itineraryData = {
       },
       {
         date: 'Sam 21 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Osaka Honmachi 1 — nuit 3/6",
+          depart: "Tu quittes l'hôtel vers 10h",
+          trajets: [
+            "Métro Midosuji toute la journée — tu ne changes jamais de ligne",
+            "→ Nagai, sortie 3 puis 10 min à pied, pour teamLab",
+            "→ Dobutsuen-mae pour Spa World · 8 min depuis Nagai",
+          ],
+          budget: "≈7 000¥ — SPO-CHA ~3 000¥, teamLab 1 800¥, Spa World ~1 500¥",
+          repli: "Si tu es cramé, coupe SPO-CHA : le billet teamLab est daté et se perd, pas le sport. Et sors de Spa World avant minuit, supplément de nuit au-delà.",
+        },
         title: 'Sport, Arcade & Bains',
         reveil: { h: '8h30', note: "journée Osaka (château + arcade + bains), départ 10h", strict: false },
         simplissime: "Ta journée hybride : fun-culture locale et dépense physique. Bien tombée — c'est de l'intérieur, donc le samedi du week-end férié ne te coûte rien. 🌿 SOIRÉE RECALÉE : le teamLab Botanical Garden s'intercale à 18h (il n'ouvre QUE le soir) et Spa World passe après. Tout tient sur la ligne Midosuji, tu ne changes jamais de métro.",
@@ -602,6 +740,16 @@ export const itineraryData = {
       },
       {
         date: 'Dim 22 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Osaka Honmachi 1 — nuit 4/6",
+          depart: "Tu quittes l'hôtel à 8h15 — au marché avant 9h30",
+          trajets: [
+            "Métro Tanimachi · → Shitennoji-mae Yuhigaoka",
+            "Shitenno-ji → Den Den Town · 1,5 km · à pied ou une station",
+          ],
+          budget: "≈6 000¥ — kimonos 100-1 000¥ pièce, figurines, Umeda Sky ~2 000¥",
+          repli: "Le marché ferme à 16h et ne revient que le mois suivant : c'est lui qui commande. Tout le reste de la journée est déplaçable.",
+        },
         title: 'Otaku Kansai & Hauteurs',
         reveil: { h: '7h45', note: "marché de Shitenno-ji d'abord (il vide ses meilleurs stands avant 10h), Den Den Town ensuite", strict: false },
         simplissime: "Récupère le dimanche de Nara : c'est de l'intérieur et du shopping, donc la foule du week-end férié passe mieux ici que dans le parc aux daims. 👘 AJOUT : le marché aux puces de Shitenno-ji ne se tient que les 21 et 22 du mois — tu es à Osaka pile ce jour-là, et il est à 1,5 km de Den Den Town. C'est LÀ que se trouvent les kimonos d'occasion à 100-1 000¥.",
@@ -650,6 +798,17 @@ export const itineraryData = {
       },
       {
         date: 'Lun 23 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Osaka Honmachi 1 — nuit 5/6",
+          depart: "Tu quittes l'hôtel à 7h35 — au château à 9h00 PILE",
+          trajets: [
+            "Shinkansen · Shin-Osaka → Himeji · ~30 min · couvert par le Pass",
+            "Himeji → Kobe · ~30 min · même axe, couvert par le Pass",
+            "Téléphérique du mont Rokko en fin de journée",
+          ],
+          budget: "≈14 000¥ — château 1 000¥, Koko-en, déjeuner de Kobe 5 000-8 000¥, Rokko ~2 000¥",
+          repli: "⚠️ LUNDI FÉRIÉ. Si la file du donjon a déjà explosé, fais l'enceinte et le jardin Koko-en sans monter : tu sauves la journée. Le déjeuner de Kobe à 13h, lui, est une réservation ferme.",
+        },
         title: 'Day-Trip : Himeji & Kobe',
         reveil: { h: '7h00', note: "⚠ LUNDI FÉRIÉ = foule : quitte l'hôtel ~7h35 → Shin-Osaka, vise Himeji à l'ouverture (9h)", strict: true },
         simplissime: "⚠️ LUNDI FÉRIÉ au Japon (fête du Travail) : 3e jour d'un week-end de 3 jours, Himeji sera bondé. 🔑 MAIS la file du donjon ne se forme qu'à partir de ~10h30 : si tu passes la porte à 9h00 pile, tu montes quasiment sans attendre. C'est TOUT l'intérêt du départ à 8h, et le 9h00 est le seul horaire non négociable de la journée. 🔄 Journée recalée le 30 août : déjeuner à 13h au lieu de 14h30 (qui tombait dans le trou entre deux services, avec une résa rigide juste derrière la file du château), et Rokko avancé à 17h45 puisque le soleil est couché depuis 16h50. Tu rentres vers 20h30 et tu dors 8h avant USJ.",
@@ -682,6 +841,15 @@ export const itineraryData = {
       },
       {
         date: 'Mar 24 Nov',
+        fiche: {
+          dodo: "Toyoko Inn Osaka Honmachi 1 — nuit 6/6",
+          depart: "Réveil tôt — être aux portes avant l'ouverture change toute la journée",
+          trajets: [
+            "JR · Osaka → Universal City · ~20 min · couvert par le Pass",
+          ],
+          budget: "≈21 000¥ — Studio Pass ~8 600¥ + Express Pass 4 ~12 800¥, déjà budgétés",
+          repli: "Journée entière dans le parc. ⚠️ Les grosses valises partent pour Tokyo ce soir : prépare-les avant de sortir le matin.",
+        },
         title: 'Universal Studios Japan (USJ)',
         reveil: { h: '6h15', note: "quitte l'hôtel ~6h50 → Universal City (~30 min), arrive avant l'ouverture pour sprinter l'Express Pass", strict: true },
         simplissime: "Faire USJ un mardi est le meilleur Hack pour diviser par deux le temps d'attente aux attractions !",
@@ -729,6 +897,16 @@ export const itineraryData = {
     days: [
       {
         date: 'Mer 25 Nov',
+        fiche: {
+          dodo: "Comfort Hotel Hiroshima Otemachi — petit-déjeuner compris",
+          depart: "Tu quittes l'hôtel à 7h45 — Shinkansen à 8h30, réservé",
+          trajets: [
+            "Shinkansen · Shin-Osaka → Hiroshima · ~1h30 · couvert par le Pass",
+            "Tram depuis Hiroshima Station vers le Dôme · ~15 min",
+          ],
+          budget: "≈4 000¥ — musée de la Paix 200¥, Shukkei-en 260¥, okonomiyaki",
+          repli: "Le jardin Shukkei-en est la partie sautable. Le musée demande 3h, et c'est lui qui compte.",
+        },
         title: 'Histoire & Samouraïs',
         reveil: { h: '7h00', note: "quitte l'hôtel ~7h45 → Shin-Osaka, Shinkansen Hiroshima 8h30 (réservé). Grosses valises déjà parties à Tokyo", strict: true },
         simplissime: 'La ville a été entièrement reconstruite. Elle possède un château magnifique et des jardins zen sublimes.',
@@ -777,6 +955,16 @@ export const itineraryData = {
       },
       {
         date: 'Jeu 26 Nov',
+        fiche: {
+          dodo: "♨️ Ryokan Sakuraya, Miyajima — salle de bains commune, vue montagne",
+          depart: "Tu quittes l'hôtel à 8h00 — pied sur l'île vers 9h",
+          trajets: [
+            "JR Sanyo · Hiroshima → Miyajimaguchi · ~27 min · Pass",
+            "Ferry JR · ~10 min · couvert par le Pass",
+          ],
+          budget: "≈4 000¥ — Itsukushima 300¥, téléphérique du mont Misen ~2 000¥, repas",
+          repli: "Le mont Misen est la vraie dépense d'énergie : coupe-le si tu veux une soirée douce au ryokan. Le torii flottant se voit aux deux marées.",
+        },
         title: "Miyajima, l'Île des Dieux",
         reveil: { h: '7h30', note: "quitte l'hôtel ~8h00 → Hiroshima Sta, JR + ferry pour poser le pied sur l'île vers 9h", strict: false },
         simplissime: "Dormir sur l'île est un luxe rare qui permet de voir le Torii illuminé la nuit, sans l'ombre d'un touriste.",
@@ -824,6 +1012,18 @@ export const itineraryData = {
     days: [
       {
         date: 'Ven 27 Nov',
+        fiche: {
+          dodo: "Grids Tokyo Ueno — nuit 1/3",
+          depart: "Check-out 7h00 sur l'île — ferry + JR, ~50 min avant même de voir le Shinkansen",
+          trajets: [
+            "Ferry + JR Sanyo · Miyajima → Hiroshima Station · ~50 min · Pass",
+            "Shinkansen Nozomi · Hiroshima → TOKYO STATION · 4h · HORS Pass",
+            "JR Yamanote · Tokyo → Ueno · 8 min",
+            "Yamanote + Yurikamome · Ueno → Odaiba · ~45 min",
+          ],
+          budget: "≈25 000¥ — Shinkansen hors Pass + Joypolis. Le Tokyo Drift à 137€ est déjà dans la poche épargne.",
+          repli: "⏰ La seule chose intouchable : être à Aomi à 17h15. Si le train prend du retard, tu sautes Joypolis, pas le Tokyo Drift.",
+        },
         title: 'La Remontée & Tokyo Drift',
         reveil: { h: '6h15', note: "check-out 7h sur l'île : ferry + JR pour choper le Shinkansen de 8h30. C'est serré, ne traîne pas", strict: true },
         simplissime: "Tu te réveilles sur une ÎLE : compte 50 min (ferry + JR) avant même de voir le Shinkansen. Puis LA soirée du voyage. 🔴 L'HEURE A CHANGÉ : le Tokyo Drift part à 17h30, pas à 20h30 — donc Odaiba se boucle à 16h45 et tu es à Aomi à 17h15. Le soleil se couche à 16h30 le 27 novembre : à 17h30 il fait déjà nuit noire, tu as l'ambiance nocturne ET 4h d'expérience, et tu rentres vers 21h30 au lieu de 2h30 du matin.",
@@ -880,6 +1080,16 @@ export const itineraryData = {
       },
       {
         date: 'Sam 28 Nov',
+        fiche: {
+          dodo: "Grids Tokyo Ueno — nuit 2/3",
+          depart: "Tu quittes l'hôtel à 7h35 — train à 8h00",
+          trajets: [
+            "JR · Ueno → Kamakura · ~1h · ~940¥",
+            "Ligne Enoden le long de l'océan — le trajet fait partie de la visite",
+          ],
+          budget: "≈5 000¥ — Hokoku-ji 400¥, Grand Bouddha 300¥, Enoden, repas",
+          repli: "Départ tôt assumé après le Tokyo Drift : ta récupération, tu l'as prise hier dans les 4h de Shinkansen. La matinée est douce, l'effort arrive l'après-midi.",
+        },
         title: "L'Aventure : Kamakura",
         reveil: { h: '7h00', note: "quitte l'hôtel ~7h35 → Ueno Sta, train Kamakura 8h. Ta récup' était dans le Shinkansen d'hier", strict: true },
         simplissime: "Départ tôt ASSUMÉ pour profiter à fond, même après le Tokyo Drift de la veille : ta vraie récup', tu l'as déjà prise dans le Shinkansen de 4h. La matinée (sanctuaire + thé matcha) est douce, le gros effort (Enoshima) arrive l'aprèm quand tu es relancé.",
@@ -936,6 +1146,16 @@ export const itineraryData = {
       },
       {
         date: 'Dim 29 Nov',
+        fiche: {
+          dodo: "Grids Tokyo Ueno — nuit 3/3 · dernière nuit au Japon",
+          depart: "Tu quittes l'hôtel à 7h45 — Senso-ji à 8h30, avant la foule",
+          trajets: [
+            "Métro Ginza · Ueno → Asakusa · 5 min",
+            "Ameyoko et Yanaka se font à pied depuis l'hôtel",
+          ],
+          budget: "≈15 000¥ — wagyu du soir, la 2e valise 5 000-12 000¥, derniers achats",
+          repli: "⚠️ DERNIÈRE VRAIE JOURNÉE. Boucle les valises ce soir et pas demain matin : le réveil est à 4h45.",
+        },
         title: 'Derniers Yens & Akihabara',
         reveil: { h: '7h15', note: "Senso-ji à 8h30 (déplacé du 14) : Asakusa est à 5 min d'Ueno par la Ginza. Réveil avancé de 8h30 à 7h15 — c'est le prix du temple au calme", strict: false },
         simplissime: "C'est le dernier jour, on ne compte plus. Fais-toi plaisir sur les achats souvenirs et la bonne viande. 🔁 Senso-ji a été déplacé ici le 13 août depuis le 14 nov (tu dors à Hakone cette nuit-là) : la matinée est plus chargée qu'avant, mais Asakusa est à 5 min et tu gardes l'après-midi entier pour Akihabara.",
@@ -984,6 +1204,17 @@ export const itineraryData = {
       },
       {
         date: 'Lun 30 Nov',
+        fiche: {
+          dodo: "Vol de nuit — la prochaine nuit est près de CDG",
+          depart: "Check-out 5h15 — vol CA184 à 8h30, terminal 3",
+          trajets: [
+            "JR Yamanote · Ueno → Hamamatsucho · ~12 min",
+            "Monorail · Hamamatsucho → Haneda T3 · ~20 min · ~650¥",
+            "⚠️ Ce n'est PAS le Skyliner : le Skyliner ne dessert que Narita",
+          ],
+          budget: "≈700¥ de transport — et ~40€ de détaxe À RÉCUPÉRER",
+          repli: "💴 Borne de détaxe AVANT le comptoir bagages, pas après : la douane peut demander à voir les articles. Garde tes achats accessibles.",
+        },
         title: 'Extraction & Game Over',
         reveil: { h: '4h45', note: "⚠ JOUR DU RETOUR : check-out 5h15, Yamanote + Monorail vers Haneda. Prépare et boucle TOUT la veille au soir", strict: true },
         simplissime: "NE PRENDS PAS LE SKYLINER : il ne va QU'À NARITA. Pour Haneda c'est Yamanote → Hamamatsucho → Monorail.",
