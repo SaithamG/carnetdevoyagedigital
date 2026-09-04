@@ -15,3 +15,13 @@ node_modules
 
 # archives locales (ne JAMAIS pousser : dépôt public)
 *.zip
+
+# Dossiers de travail personnels et clients — NE JAMAIS COMMITTER
+# (ce depot est PUBLIC : dossier CAF, donnees client, captures d ecran)
+/caf-input
+/capjapon-input
+/resas-input
+/screenshots
+.env
+.env.local
+.vercel
