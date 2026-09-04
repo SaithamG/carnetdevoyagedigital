@@ -11,7 +11,7 @@ const NUMEROS = [
 const HOTELS = [
   { hotel: 'Toyoko Inn Shinjuku Kabukicho (Tokyo 1 & 2)', address: '東京都新宿区歌舞伎町2-20-15', sub: 'Tokyo Ouest & Est' },
   { hotel: 'Stay SAKURA Kyoto', address: '京都市中京区大宮通御池下る三坊大宮町146-1', sub: 'Kyoto' },
-  { hotel: 'Toyoko Inn Osaka Honmachi', address: '大阪市中央区本町1-5-7', sub: 'Osaka' },
+  { hotel: 'Toyoko Inn Osaka Honmachi 1 (東横INN大阪本町1)', address: '大阪市中央区北久宝寺町2-3-6', sub: 'Osaka — 4 min à pied de Sakaisuji-Hommachi' },
   { hotel: 'Comfort Hotel Hiroshima', address: '広島市中区中町3-11', sub: 'Hiroshima' },
   { hotel: 'Ryokan Sakuraya (Miyajima)', address: '廿日市市宮島町853', sub: 'Miyajima Island' },
   { hotel: 'Grids Tokyo Ueno Hotel Hostel', address: '東京都台東区上野7-10-4', sub: 'Tokyo Ueno Retour' },

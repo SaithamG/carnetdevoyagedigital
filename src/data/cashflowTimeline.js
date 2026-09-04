@@ -73,19 +73,19 @@ export const cashflowTimeline = [
   {
     month: 'Oct 2026',
     textIn: '+500€ / +750€',
-    textOut: '-297€ (Trains + Tokyo Drift)',
-    balancePrudent: 2924,
-    balanceGodMode: 3674,
+    textOut: '-327€ (Trains + Tokyo Drift)',
+    balancePrudent: 2894,
+    balanceGodMode: 3644,
     actual: false,
     detail:
-      'Shinkansen (85€) et Kansai Pass (105€). Le TGV n\'est plus ici : l\'aller est déjà payé et le retour part en août. Nouveau : Tokyo Drift (107€), à réserver le 27 oct.',
+      'Shinkansen (85€) et Kansai Pass (105€). Le TGV n\'est plus ici : l\'aller est déjà payé et le retour part en août. Tokyo Drift : 137€ et non 107€ (corrigé le 27 août — les 107€ étaient le tarif de la visite de jour, pas celui de l’expérience de nuit). ⚠️ À BLOQUER MAINTENANT et non le 27 oct : GetYourGuide propose « réservez maintenant, payez plus tard » avec annulation gratuite jusqu’au 26 nov, et c’est l’option la plus demandée un vendredi soir.',
   },
   {
     month: 'Départ (Nov)',
     textIn: '-',
     textOut: '-1504€ (Hôtels + ryokan + Infra + nuit CDG + Takkyubin + valise)',
-    balancePrudent: 1420,
-    balanceGodMode: 2170,
+    balancePrudent: 1390,
+    balanceGodMode: 2140,
     actual: false,
     detail:
       "Paiement hôtels 965€ : 881€ de ta part relevée sur tes résas Booking (le budget tablait sur 783€, il manquait 98€) + 84€ pour la NUIT DE RYOKAN À HAKONE réservée le 13 août (Tsukinoya, Miyanoshita, 168€ pour deux, sans prépaiement). Reste Transports/Suica (270€) et reste Parcs/Temples (140€, journée kimono du 17 incluse sans photographe pro). +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. +40€ de Takkyubin, poste que le budget avait purement oublié alors que l'itinéraire s'appuie dessus (recalculé sur 2 valises à l'aller au lieu de 4 : −13€). +45€ pour la 2e valise achetée au Japon : arbitrage tranché le 13 août, elle sort de l'ÉPARGNE et non des goodies. Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne. ✅ 14 août : le Toyoko Inn ne peut pas modifier une résa Booking — les 6 nuits sont conservées et l'allègement de ~41,50€ n'aura pas lieu. Ce chiffre était un bonus espéré, jamais compté dans ce solde : rien ne bouge ici. 💴 ⚠️ TSUKINOYA SE PAIE EN ESPÈCES, PAS DE CARTE : 30 900¥ le jour même (confirmé par le ryokan le 13 août). À retirer AVANT de monter à Hakone — il n'y a pas de konbini à Miyanoshita.",

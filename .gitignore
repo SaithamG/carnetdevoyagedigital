@@ -12,3 +12,6 @@ node_modules
 /capjapon-input
 /caf-input
 /screenshots
+
+# archives locales (ne JAMAIS pousser : dépôt public)
+*.zip

@@ -37,11 +37,11 @@ export const budgetData = [
   },
   {
     label: 'Tokyo Drift (Fast & Furious)',
-    cost: 107,
+    cost: 137,
     icon: <Ticket size={16} />,
     color: 'purple',
     type: 'epargne',
-    desc: 'Ven 27 nov au soir · ride-along JDM · GetYourGuide',
+    desc: 'Ven 27 nov, départ 17h30, 4h · option « Fast & Furious III Tokyo Drift » à 137,48€ · corrigé le 27 août : les 107€ précédents étaient le tarif de la visite DE JOUR · GetYourGuide',
   },
   {
     label: 'Hébergement (22 nuits)',
@@ -77,19 +77,19 @@ export const budgetData = [
   },
   {
     label: 'Nourriture & Vie (22j)',
-    cost: 700,
+    cost: 560,
     icon: <Utensils size={16} />,
     color: 'purple',
     type: 'salaire',
-    desc: '~32€/j au lieu de 35 — konbini le matin, tabehoudai le soir',
+    desc: "25€/j et non 32 — reventilé le 2 septembre après un modèle repas par repas : le réel tombe à ~558€, konbini le matin, tabehoudai le soir. 🍽️ 4 repas-événements sont INTOUCHABLES dans ce total et ne se rognent pas : yakiniku le 10, bœuf de Kobe le 23 (formule déjeuner), wagyu le 29, Okonomimura le 25.",
   },
   {
     label: 'Shopping & Goodies',
-    cost: 400,
+    cost: 540,
     icon: <ShoppingBag size={16} />,
     color: 'amber',
     type: 'salaire',
-    desc: '+70€ pris sur la bouffe : même poche, zéro impact sur le van',
+    desc: "REVENTILÉ LE 2 SEPTEMBRE : 400 → 540€, pris sur la bouffe. Même poche, zéro impact sur le van. 🎽 Maillots volley : Nishida n°1 en NOIR + Ishikawa n°14 en ROUGE, replica ASICS 9 900¥ pièce = 19 800¥ ≈ 108€ (98€ détaxés), plafond ferme « jamais 200€ ». ⛔ Aucun maillot de LIBERO n’existe en replica, et le BLANC non plus — il n’existe que sur l’authentique à 39 600¥ ≈ 216€, aucune année n’a fait de blanc abordable. 🧱 LEGO : l’Arbre Mojo Zelda (77092) est à 41 980¥ ≈ 229€ contre 299,99€ en France, la Tour des Avengers (76269) à 62 980¥ ≈ 344€ contre 499,99€ — ⚠️ les DEUX ensemble = 521€, impossible, c’est l’un OU l’autre. 🧸 Peluches Pokémon Center : 1 200-1 900¥ les mascottes, 2 200-4 500¥ le format standard ; 2026 = les 30 ans de Pokémon, série anniversaire. 👘 Kimonos d’occasion : 100 à 1 000¥ pièce au marché de Shitenno-ji (Osaka, les 21 et 22 nov). 💴 Détaxe : seuil de 5 000¥ PAR BOUTIQUE ET PAR JOUR, donc regroupe tes achats.",
   },
   {
     label: '2e valise (achetée au Japon)',
