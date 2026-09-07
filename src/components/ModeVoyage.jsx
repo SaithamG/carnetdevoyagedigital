@@ -104,7 +104,7 @@ const PreTripView = ({ daysLeft, now }) => {
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 mb-3">Départ dans</p>
         <p className="text-8xl font-black italic text-white leading-none">{daysLeft}</p>
         <p className="text-lg font-black text-blue-300 mt-1">JOURS</p>
-        <p className="text-xs text-slate-400 mt-3">Décollage CDG — 8 Novembre 2026, 12h25</p>
+        <p className="text-xs text-slate-400 mt-3">Décollage CDG — 8 Novembre 2026, 11h30</p>
         <p className="text-[10px] text-slate-500 mt-1">Haneda le 9 à 16h20 · TGV Aix le 7 · nuit à Villepinte</p>
       </div>
 
