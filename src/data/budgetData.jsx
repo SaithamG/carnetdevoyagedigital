@@ -37,11 +37,11 @@ export const budgetData = [
   },
   {
     label: 'Tokyo Drift (Fast & Furious)',
-    cost: 137,
+    cost: 142,
     icon: <Ticket size={16} />,
     color: 'purple',
     type: 'epargne',
-    desc: 'Ven 27 nov, départ 17h30, 4h · option « Fast & Furious III Tokyo Drift » à 137,48€ · corrigé le 27 août : les 107€ précédents étaient le tarif de la visite DE JOUR · GetYourGuide',
+    desc: 'Ven 27 nov, départ 17h30, 4h · option « Fast & Furious III Tokyo Drift » à 142,28€/pers, 284,56€ pour deux · ✅ RÉSERVÉ le 8 sept, débit auto le 24 nov · prix relevé le 7 sept, il était à 137,48€ le 27 août · corrigé le 27 août : les 107€ précédents étaient le tarif de la visite DE JOUR · GetYourGuide',
   },
   {
     label: 'Hébergement (22 nuits)',

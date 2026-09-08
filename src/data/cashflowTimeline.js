@@ -73,21 +73,21 @@ export const cashflowTimeline = [
   {
     month: 'Oct 2026',
     textIn: '+500€ / +750€',
-    textOut: '-327€ (Trains + Tokyo Drift)',
-    balancePrudent: 2894,
-    balanceGodMode: 3644,
+    textOut: '-190€ (Trains)',
+    balancePrudent: 3031,
+    balanceGodMode: 3781,
     actual: false,
     detail:
-      'Shinkansen (85€) et Kansai Pass (105€). Le TGV n\'est plus ici : l\'aller est déjà payé et le retour part en août. Tokyo Drift : 137€ et non 107€ (corrigé le 27 août — les 107€ étaient le tarif de la visite de jour, pas celui de l’expérience de nuit). ⚠️ À BLOQUER MAINTENANT et non le 27 oct : GetYourGuide propose « réservez maintenant, payez plus tard » avec annulation gratuite jusqu’au 26 nov, et c’est l’option la plus demandée un vendredi soir.',
+      'Shinkansen (85€) et Kansai Pass (105€). Le TGV n\'est plus ici : l\'aller est déjà payé et le retour part en août. 🔄 CORRIGÉ LE 8 SEPTEMBRE — LE TOKYO DRIFT N’EST PLUS SUR CE MOIS. Il était compté ici alors que GetYourGuide ne débite que le 24 NOVEMBRE : ses 142€ sont donc passés sur la ligne de novembre, et le solde d’octobre remonte de 2 889€ à 3 031€. Le solde final ne bouge pas, c’est la date de sortie qui était fausse.',
   },
   {
     month: 'Départ (Nov)',
     textIn: '-',
-    textOut: '-1504€ (Hôtels + ryokan + Infra + nuit CDG + Takkyubin + valise)',
-    balancePrudent: 1390,
-    balanceGodMode: 2140,
+    textOut: '-1646€ (Hôtels + ryokan + Infra + nuit CDG + Takkyubin + valise + Tokyo Drift)',
+    balancePrudent: 1385,
+    balanceGodMode: 2135,
     actual: false,
     detail:
-      "Paiement hôtels 965€ : 881€ de ta part relevée sur tes résas Booking (le budget tablait sur 783€, il manquait 98€) + 84€ pour la NUIT DE RYOKAN À HAKONE réservée le 13 août (Tsukinoya, Miyanoshita, 168€ pour deux, sans prépaiement). Reste Transports/Suica (270€) et reste Parcs/Temples (140€, journée kimono du 17 incluse sans photographe pro). +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. +40€ de Takkyubin, poste que le budget avait purement oublié alors que l'itinéraire s'appuie dessus (recalculé sur 2 valises à l'aller au lieu de 4 : −13€). +45€ pour la 2e valise achetée au Japon : arbitrage tranché le 13 août, elle sort de l'ÉPARGNE et non des goodies. Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne. ✅ 14 août : le Toyoko Inn ne peut pas modifier une résa Booking — les 6 nuits sont conservées et l'allègement de ~41,50€ n'aura pas lieu. Ce chiffre était un bonus espéré, jamais compté dans ce solde : rien ne bouge ici. 💴 ⚠️ TSUKINOYA SE PAIE EN ESPÈCES, PAS DE CARTE : 30 900¥ le jour même (confirmé par le ryokan le 13 août). À retirer AVANT de monter à Hakone — il n'y a pas de konbini à Miyanoshita.",
+      "Paiement hôtels 965€ : 881€ de ta part relevée sur tes résas Booking (le budget tablait sur 783€, il manquait 98€) + 84€ pour la NUIT DE RYOKAN À HAKONE réservée le 13 août (Tsukinoya, Miyanoshita, 168€ pour deux, sans prépaiement). Reste Transports/Suica (270€) et reste Parcs/Temples (140€, journée kimono du 17 incluse sans photographe pro). +44€ pour la nuit du 30 nov à l'Eklo Roissy (ta moitié de chambre 31,50€ + tes 2 navettes à 6€) — réservée sans prépaiement, donc payée sur place à ce moment-là et non en août. +40€ de Takkyubin, poste que le budget avait purement oublié alors que l'itinéraire s'appuie dessus (recalculé sur 2 valises à l'aller au lieu de 4 : −13€). +45€ pour la 2e valise achetée au Japon : arbitrage tranché le 13 août, elle sort de l'ÉPARGNE et non des goodies. Le mois blanc : le salaire de nov paie la vie sur place, pas l'épargne. ✅ 14 août : le Toyoko Inn ne peut pas modifier une résa Booking — les 6 nuits sont conservées et l'allègement de ~41,50€ n'aura pas lieu. Ce chiffre était un bonus espéré, jamais compté dans ce solde : rien ne bouge ici. 🏎️ TOKYO DRIFT, RÉSERVÉ LE 8 SEPTEMBRE — le poste le plus piégeux du mois. 💳 LE DÉBIT TOMBE LE MARDI 24 NOVEMBRE ET IL EST DE 284,56€ EN UNE SEULE FOIS, pas de 142€ : c’est TA carte qui encaisse pour deux. Cette ligne ne compte que tes 142€ parce que ⚠️ VÉRANE A DÉJÀ VIRÉ SES 142€ (reçus en septembre) — mais cet argent est sur ton compte DEPUIS SEPTEMBRE et il ne t’appartient pas : il doit encore être là le 24 novembre. Ne le lis jamais comme de l’épargne disponible. 🔑 Le prix est monté de 137,48€ à 142,28€/pers entre le 27 août et le 7 septembre (+5€ sur ta part) ; la course de nuit ayant pris la même hausse, l’option 3 de 17h30 gagne désormais sur tous les critères : même prix, 4h au lieu de 3, fin à 21h30 au lieu de 2h30 du matin. ↩️ Annulation gratuite jusqu’au 26 nov 17h30, changement de date possible jusqu’à 24h avant par WhatsApp. 💴 ⚠️ TSUKINOYA SE PAIE EN ESPÈCES, PAS DE CARTE : 30 900¥ le jour même (confirmé par le ryokan le 13 août). À retirer AVANT de monter à Hakone — il n'y a pas de konbini à Miyanoshita.",
   },
 ];
