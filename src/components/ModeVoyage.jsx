@@ -7,6 +7,7 @@ import { itineraryData } from '../data/itineraryData';
 import { regions } from '../data/regions';
 import { reminders } from '../data/reminders';
 import { TRIP_START, TRIP_END, FLIGHT_OUT } from '../data/constants';
+import Depliable from './Depliable';
 
 // ─── Utils ────────────────────────────────────────────────────────────────────
 
@@ -71,13 +72,13 @@ const DualClock = ({ now }) => {
         <p className="text-[9px] font-black uppercase text-slate-500 tracking-widest mb-1 flex items-center justify-center gap-1">
           <Sun size={10} /> Paris
         </p>
-        <p className="font-mono text-sm font-black text-slate-300">{fmtTime(fr)}</p>
+        <p className="horloge-chiffres text-2xl font-extrabold text-slate-300">{fmtTime(fr)}</p>
       </div>
       <div className="flex-1 bg-blue-950/40 p-3 rounded-2xl border border-blue-800/50 text-center">
         <p className="text-[9px] font-black uppercase text-blue-400 tracking-widest mb-1 flex items-center justify-center gap-1">
           <Sun size={10} /> Tokyo
         </p>
-        <p className="font-mono text-sm font-black text-blue-300">{fmtTime(jp)}</p>
+        <p className="horloge-chiffres text-2xl font-extrabold text-blue-300">{fmtTime(jp)}</p>
       </div>
     </div>
   );
@@ -120,7 +121,7 @@ const PreTripView = ({ daysLeft, now }) => {
           <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800">
             <p className="text-sm font-black text-white mb-1">{nextReminder.title}</p>
             <p className={`text-[10px] font-bold mb-2 ${isLate ? 'text-red-400' : 'text-amber-400'}`}>{nextReminder.reminderDate}</p>
-            <p className="text-xs text-slate-400 leading-relaxed">{nextReminder.desc}</p>
+            <Depliable texte={nextReminder.desc} className="text-xs text-slate-400 leading-relaxed" />
           </div>
         </div>
       )}
@@ -132,7 +133,7 @@ const PreTripView = ({ daysLeft, now }) => {
             <Rocket size={12} /> Aperçu — Jour 1
           </p>
           <p className="text-base font-black text-white mb-1">{firstDay.date} — {firstDay.title}</p>
-          <p className="text-xs text-slate-400 italic mb-4">{firstDay.simplissime}</p>
+          <Depliable texte={firstDay.simplissime} className="text-xs text-slate-400 italic" boutonClassName="mb-4" />
           <div className="space-y-2">
             {firstDay.steps.slice(0, 3).map((step, i) => (
               <div key={i} className="flex items-center gap-3 bg-slate-950 p-3 rounded-xl border border-slate-800">
@@ -202,7 +203,7 @@ const ActiveTripView = ({ todayEntry, now }) => {
         </div>
         <div className="text-right">
           <p className="text-[9px] text-slate-500 uppercase font-black mb-1">Tokyo</p>
-          <p className="font-mono text-lg font-black text-blue-300">
+          <p className="horloge-chiffres text-2xl font-extrabold text-blue-300">
             {jp.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
           </p>
           <p className="text-[10px] text-slate-500 mt-1">{visitedCount}/{totalSteps} étapes</p>

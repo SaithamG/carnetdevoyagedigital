@@ -124,7 +124,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
           onClick={() => setActiveTab('voyage')}
           className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
             activeTab === 'voyage'
-              ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/40 border border-emerald-500'
+              ? 'tab-voyage-actif text-white shadow-lg border'
               : 'bg-emerald-900/30 border border-emerald-700/50 text-emerald-400 hover:bg-emerald-900/50'
           }`}
         >

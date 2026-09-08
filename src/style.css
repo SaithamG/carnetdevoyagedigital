@@ -196,3 +196,32 @@ h1, h2, h3, .font-black.italic:not(.font-mono) {
 .carte-tuiles-chaudes {
   filter: sepia(0.25) saturate(1.1) brightness(1.02) hue-rotate(-8deg);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LE VERT DU MODE VOYAGE — matcha, pas vert-cyan
+
+   Le bouton actif était le `emerald-600` brut de Tailwind (#059669). C'est un
+   vert bleuté, froid, qui détonnait sur le fond sable du thème clair : tout le
+   reste de la palette avait été réchauffé (les chiffres d'argent sont en sauge
+   #4f7a5b), ce bouton était le seul à ne pas l'être.
+   Le matcha reste un vert franc — l'onglet doit se voir — mais il a du jaune
+   dedans, donc il cohabite avec l'orange du titre au lieu de le contredire.
+   ══════════════════════════════════════════════════════════════════════════ */
+.tab-voyage-actif {
+  background-color: #4a7c59 !important;
+  border-color: #5f9670 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px 0 rgba(46, 82, 56, 0.35) !important;
+}
+.tab-voyage-actif:hover { background-color: #528862 !important; }
+
+/* ── Les horloges Paris/Tokyo ──
+   Elles étaient en `font-mono`, donc dans la police système du navigateur et
+   pas dans celle du carnet (Plus Jakarta Sans). D'où l'impression de corps
+   étranger. `tabular-nums` garde les chiffres à chasse fixe pour que l'heure
+   ne sautille pas de seconde en seconde, sans avoir besoin d'une monospace. */
+.horloge-chiffres {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  letter-spacing: 0.02em;
+}
