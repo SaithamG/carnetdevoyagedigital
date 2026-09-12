@@ -161,7 +161,7 @@ const Carte = () => {
   return (
     <div className="space-y-4 animate-in fade-in duration-500">
       {/* Filtres régions */}
-      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 [mask-image:linear-gradient(to_right,#000_calc(100%_-_28px),transparent)] md:[mask-image:none]">
         {filters.map((f) => (
           <button
             key={f.id}

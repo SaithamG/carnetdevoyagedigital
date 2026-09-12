@@ -85,7 +85,7 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
       )}
 
       {/* NAVIGATION RÉGIONS */}
-      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2">
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2 [mask-image:linear-gradient(to_right,#000_calc(100%_-_28px),transparent)] md:[mask-image:none]">
         {regions.map((region) => (
           <button
             key={region.id}
@@ -143,7 +143,7 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                 })()}
               </div>
 
-              <div className="p-6 md:p-8">
+              <div className="p-4 sm:p-6 md:p-8">
                 {day.reveil && (
                   <div className={`mb-6 flex items-center gap-3 p-3.5 rounded-2xl border ${
                     day.reveil.strict
@@ -195,7 +195,7 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
 
                         <div
                           onClick={() => toggleVisited(day.date, step.time)}
-                          className={`flex-1 p-5 rounded-3xl border flex flex-col gap-4 transition-all w-full relative cursor-pointer ${
+                          className={`flex-1 p-4 sm:p-5 rounded-3xl border flex flex-col gap-4 transition-all w-full relative cursor-pointer ${
                             visitedSteps[`${day.date}_${step.time}`]
                               ? 'border-emerald-900/50 bg-emerald-950/10'
                               : 'border-slate-800/80 bg-slate-950/80 hover:border-slate-700'
@@ -233,16 +233,16 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                             />
                           )}
 
-                          <div className="flex gap-4 items-start">
-                          <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 border shadow-sm ${
+                          <div className="flex gap-3 sm:gap-4 items-start">
+                          <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center text-lg sm:text-xl flex-shrink-0 border shadow-sm ${
                             visitedSteps[`${day.date}_${step.time}`]
                               ? 'bg-emerald-950/30 border-emerald-800/50 text-emerald-400'
                               : 'bg-slate-900 border-slate-800 text-blue-400'
                           }`}>
                             {step.icon}
                           </div>
-                          <div className="flex-1 pr-12">
-                            <h4 className={`text-base font-bold mb-2 flex items-center gap-2 ${
+                          <div className="flex-1 min-w-0">
+                            <h4 className={`text-base font-bold mb-2 pr-12 flex items-center gap-2 ${
                               visitedSteps[`${day.date}_${step.time}`]
                                 ? 'text-emerald-400/70 line-through'
                                 : 'text-slate-100'

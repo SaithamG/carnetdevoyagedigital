@@ -100,7 +100,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
       </div>
 
       {/* NAV NIVEAU 1 : raccourcis + groupes */}
-      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2 items-center">
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2 pt-2 items-center [mask-image:linear-gradient(to_right,#000_calc(100%_-_28px),transparent)] md:[mask-image:none]">
 
         {NAV_GROUPS.map((group) => {
           const isOpen = openGroup === group.id;
@@ -136,7 +136,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
       </div>
 
       {/* NAV NIVEAU 2 : sous-onglets du groupe ouvert */}
-      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 pt-2 mt-1 border-t border-slate-800/60">
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 pt-2 mt-1 [mask-image:linear-gradient(to_right,#000_calc(100%_-_28px),transparent)] md:[mask-image:none] border-t border-slate-800/60">
         {activeGroupTabs.map((tabId) => {
           const active = activeTab === tabId;
           return (
