@@ -252,12 +252,16 @@ const Itinerary = ({ activeRegion, setActiveRegion }) => {
                                 <CloudRain size={12} className="text-slate-500" title="Activité en extérieur" />
                               )}
                             </h4>
-                            <Depliable
-                            texte={step.desc}
-                            className="text-[13px] text-slate-400 leading-relaxed font-medium"
-                          />
-                            <StepJournal stepKey={`${day.date}_${step.time}`} />
                           </div>
+                          </div>
+
+                          {/* Description en pleine largeur sur mobile, realignee sous le titre en sm+ */}
+                          <div className="sm:pl-16">
+                            <Depliable
+                              texte={step.desc}
+                              className="text-[13px] text-slate-400 leading-relaxed font-medium"
+                            />
+                            <StepJournal stepKey={`${day.date}_${step.time}`} />
                           </div>
                         </div>
                       </div>
