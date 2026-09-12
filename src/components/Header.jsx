@@ -60,14 +60,14 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
       <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
     </div>
     <div className="max-w-5xl mx-auto relative z-10">
-      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-4">
+      <div className="flex flex-row justify-between items-start gap-3 md:gap-6 mb-3 md:mb-4">
 
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-black italic tracking-tighter flex items-center gap-2 text-white">
-            <Globe style={{ color: '#c9683f' }} /> CARNET DE VOYAGE DIGITAL
+        <div className="flex flex-col min-w-0">
+          <h1 className="text-lg sm:text-2xl font-black italic tracking-tighter flex items-center gap-2 text-white">
+            <Globe style={{ color: '#c9683f' }} className="shrink-0" /> CARNET DE VOYAGE DIGITAL
           </h1>
 
-          <div className="mt-4 flex items-center gap-4 px-4 py-2 bg-slate-900/80 border border-slate-800 rounded-xl w-fit shadow-lg backdrop-blur-sm">
+          <div className="mt-2 md:mt-4 flex items-center gap-3 md:gap-4 px-3 py-1.5 md:px-4 md:py-2 bg-slate-900/80 border border-slate-800 rounded-xl w-fit shadow-lg backdrop-blur-sm">
             <div className="flex flex-col">
               <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">COMPTE À REBOURS</span>
               <span className="text-[11px] font-bold text-blue-500 uppercase tracking-wider mt-0.5">JAPON 2026</span>
@@ -92,7 +92,7 @@ const Header = ({ activeTab, setActiveTab, timeLeft }) => {
           </div>
         </div>
 
-        <div className="flex flex-row md:flex-col gap-2 shrink-0 mt-2 md:mt-0">
+        <div className="flex flex-row md:flex-col gap-2 shrink-0 mt-0">
           <div className="flex items-center gap-2">
             <SettingsPanel />
           </div>

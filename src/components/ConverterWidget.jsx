@@ -10,7 +10,7 @@ const ConverterWidget = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-4 md:right-8 z-50 w-14 h-14 bg-blue-600 hover:bg-blue-500 text-white rounded-full flex items-center justify-center shadow-2xl border border-blue-500 transition-all transform hover:scale-110"
+        className="fixed bottom-4 md:bottom-6 right-3 md:right-8 z-50 w-12 h-12 md:w-14 md:h-14 bg-blue-600 hover:bg-blue-500 text-white rounded-full flex items-center justify-center shadow-2xl border border-blue-500 transition-all transform hover:scale-110"
         title="Convertisseur ¥ → €"
       >
         <Calculator size={24} />

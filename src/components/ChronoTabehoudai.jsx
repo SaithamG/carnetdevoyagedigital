@@ -69,7 +69,7 @@ const ChronoTabehoudai = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 left-4 md:left-8 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl border transition-all transform hover:scale-110 ${
+        className={`fixed bottom-4 md:bottom-6 left-3 md:left-8 z-50 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl border transition-all transform hover:scale-110 ${
           isRunning
             ? 'bg-emerald-600 border-emerald-500 animate-pulse'
             : 'bg-slate-800 border-slate-700 hover:bg-slate-700'

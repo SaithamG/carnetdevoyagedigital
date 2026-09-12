@@ -29,11 +29,11 @@ const Vitrine = () => (
         Fait sur mesure — pour votre voyage, ou pour ceux que vous organisez.
       </p>
 
-      <ul className="mt-5 flex flex-wrap gap-2">
+      <ul className="mt-4 md:mt-5 flex flex-wrap gap-1.5 md:gap-2">
         {ATOUTS.map((a) => (
           <li
             key={a.label}
-            className="flex items-center gap-1.5 rounded-lg border border-slate-800 bg-slate-900/60 px-2.5 py-1.5 text-[11px] font-bold text-slate-300"
+            className="flex items-center gap-1.5 rounded-lg border border-slate-800 bg-slate-900/60 px-2 py-1 text-[10px] md:px-2.5 md:py-1.5 md:text-[11px] font-bold text-slate-300"
           >
             <span className="text-slate-500">{a.icon}</span>
             {a.label}
@@ -57,9 +57,10 @@ const Vitrine = () => (
       </div>
     </div>
 
-    <p className="px-5 md:px-7 py-3 border-t border-slate-800/80 text-[11px] text-slate-500 font-medium">
-      Ci-dessous, un carnet réel : vingt-deux jours au Japon, du premier matin au dernier train.
-      Faites défiler, tout est ouvert.
+    <p className="px-5 md:px-7 py-3 border-t border-slate-800/80 bg-slate-900/40 text-[12px] text-slate-300 font-medium leading-relaxed">
+      <span className="font-black text-blue-400">Par où commencer :</span> faites simplement défiler.
+      En dessous se trouve un carnet réel, vingt-deux jours au Japon, du premier matin au dernier
+      train. Tout est ouvert et tout se clique : les journées, la carte, les trajets, le lexique.
     </p>
   </section>
 );
