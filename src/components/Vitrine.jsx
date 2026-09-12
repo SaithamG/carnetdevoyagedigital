@@ -60,8 +60,8 @@ const Vitrine = () => (
       </div>
     </div>
 
-    <p className="px-5 md:px-7 py-3 border-t border-slate-800/80 bg-slate-900/40 text-[12px] text-slate-300 font-medium leading-relaxed">
-      <span className="font-black text-blue-400">Par où commencer :</span> faites simplement défiler.
+    <p className="px-5 md:px-7 py-3 border-t border-slate-800/80 bg-slate-900/50 text-[12px] text-slate-300 font-medium leading-relaxed">
+      <span className="font-black" style={{ color: '#c9683f' }}>Par où commencer :</span> faites simplement défiler.
       En dessous se trouve un carnet réel, vingt-deux jours au Japon, du premier matin au dernier
       train. Tout est ouvert et tout se clique : les journées, la carte, les trajets, le lexique.
     </p>
