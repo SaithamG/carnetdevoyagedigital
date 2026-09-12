@@ -1,13 +1,15 @@
 import React from 'react';
 import { CalendarDays, MapPin, TrainFront, Languages, ShieldAlert, FileDown, AtSign } from 'lucide-react';
 
+// `court` sert sous md : les libellés longs s'empilaient une par ligne sur un
+// téléphone et repoussaient le carnet hors de l'écran.
 const ATOUTS = [
-  { icon: <CalendarDays size={14} />, label: 'Chaque journée, heure par heure' },
-  { icon: <MapPin size={14} />,       label: 'La carte de toutes les étapes' },
-  { icon: <TrainFront size={14} />,   label: 'Les trajets et les correspondances' },
-  { icon: <Languages size={14} />,    label: 'Le lexique de survie' },
-  { icon: <ShieldAlert size={14} />,  label: 'Les urgences, hors connexion' },
-  { icon: <FileDown size={14} />,     label: 'Et le PDF, toujours là' },
+  { icon: <CalendarDays size={14} />, label: 'Chaque journée, heure par heure',   court: 'Heure par heure' },
+  { icon: <MapPin size={14} />,       label: 'La carte de toutes les étapes',     court: 'La carte' },
+  { icon: <TrainFront size={14} />,   label: 'Les trajets et les correspondances', court: 'Les trajets' },
+  { icon: <Languages size={14} />,    label: 'Le lexique de survie',              court: 'Le lexique' },
+  { icon: <ShieldAlert size={14} />,  label: 'Les urgences, hors connexion',      court: 'Urgences hors ligne' },
+  { icon: <FileDown size={14} />,     label: 'Et le PDF, toujours là',            court: 'Le PDF aussi' },
 ];
 
 /**
@@ -36,7 +38,8 @@ const Vitrine = () => (
             className="flex items-center gap-1.5 rounded-lg border border-slate-800 bg-slate-900/60 px-2 py-1 text-[10px] md:px-2.5 md:py-1.5 md:text-[11px] font-bold text-slate-300"
           >
             <span className="text-slate-500">{a.icon}</span>
-            {a.label}
+            <span className="md:hidden">{a.court}</span>
+            <span className="hidden md:inline">{a.label}</span>
           </li>
         ))}
       </ul>
