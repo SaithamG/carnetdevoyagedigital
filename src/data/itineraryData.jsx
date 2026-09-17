@@ -848,7 +848,7 @@ export const itineraryData = {
           trajets: [
             "JR · Osaka → Universal City · ~20 min · couvert par le Pass",
           ],
-          budget: "≈21 000¥ — Studio Pass ~8 600¥ + Express Pass 4 ~12 800¥, déjà budgétés",
+          budget: "≈19 200 à 22 700¥ — Studio Pass 8 400-11 900¥ selon la date + Express Pass 4 « Race & JAWS » 10 800¥. 🔄 CORRIGÉ LE 17/09 : les anciens chiffres (8 600¥ et 12 800¥) étaient périmés. Prix exacts connus le 23 sept à l'ouverture de la vente",
           repli: "Journée entière dans le parc. ⚠️ Les grosses valises partent pour Tokyo ce soir : prépare-les avant de sortir le matin.",
         },
         title: 'Universal Studios Japan (USJ)',
@@ -859,7 +859,7 @@ export const itineraryData = {
             time: '07h30',
             icon: <Ticket size={20} className="text-emerald-500" />,
             title: 'Accès au Parc',
-            desc: "Arrivée en avance. Sprint vers les zones avec ton Express Pass 4 (décidé le 13 août : ~69€ au lieu de ~96€ pour l'EP7). ⚠️ Ouvre l'appli USJ DÈS L'OUVERTURE du parc : l'accès à Super Nintendo World passe par un « Area Timed Entry Ticket » gratuit, distribué par loterie dans l'appli — il n'est exigé que les jours chargés, et un mardi de novembre il y a de bonnes chances qu'il n'y en ait pas besoin du tout.",
+            desc: "Arrivée en avance. 🎢 TON PASS : Universal Express Pass 4 « RACE & JAWS » (10 800¥), choisi le 17 septembre — Mario Kart + Harry Potter Forbidden Journey + Minion Mayhem + JAWS/Jurassic. Il couvre tes trois univers avec leurs trois attractions phares, et c'est le pass le moins cher du site. ⛔ CE N'EST PLUS « Mine Cart & Jurassic Park » : cette variante coûte 16 800¥ et ne contient NI Mario Kart NI Harry Potter. ⛔ Pass 7 écarté : +22 000¥ pour deux rien que pour couper la file de Mine Cart Madness. 🔴 DEUX CORRECTIONS IMPORTANTES : (1) l'« Area Timed Entry Ticket » de Super Nintendo World N'EST PLUS GRATUIT, le ticket libre de l'appli a disparu ; (2) mais ton Express Pass INCLUT L'ENTRÉE GARANTIE dans Super Nintendo World, donc tu n'as ni loterie ni file d'accès à gérer. 🔑 ET SURTOUT : le Studio Pass donne accès à TOUT LE PARC. L'Express ne débloque rien, il COUPE LA FILE — Yoshi, Mine Cart Madness, Flight of the Hippogriff et Villain-Con se font en file normale, un mardi creux post-férié.",
             mapUrl: 'https://maps.google.com/?q=Universal+Studios+Japan',
             isOutdoor: true,
           },
