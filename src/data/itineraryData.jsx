@@ -229,11 +229,11 @@ export const itineraryData = {
           },
           {
             time: '18h00',
-            icon: <Dumbbell size={20} className="text-slate-400" />,
-            title: 'Anytime Fitness',
-            desc: "Maintien athlétique avec une bonne séance près de l'hôtel.",
-            mapUrl: 'https://maps.google.com/?q=Anytime+Fitness+Shinjuku',
-            isOutdoor: false,
+            icon: <Camera size={20} className="text-amber-400" />,
+            title: 'Tokyo Tower & le 7-Eleven légendaire',
+            desc: "🔁 AJOUTÉ LE 17 SEPTEMBRE, à la place de la séance de sport — cette journée était la seule soirée du voyage sans aucune heure fixe, et le carnet désignait déjà la salle comme la première chose à sauter. 📍 Station AKABANEBASHI, ligne Oedo, DIRECT depuis Shinjuku, sans changement (depuis Ikebukuro, un changement à Shinjuku). 🗼 LE SPOT : le 7-Eleven de Shiba 3-chōme, avec la Tokyo Tower qui monte juste derrière la devanture — c'est cette photo qui tourne partout. Place-toi de l'autre côté de la rue pour cadrer l'enseigne ET la tour. ⏰ POURQUOI LE SOIR ET PAS LA JOURNÉE : le soleil se couche vers 16h35 à la mi-novembre, donc à 18h la tour est illuminée ; et en journée le trottoir est saturé de gens qui font exactement la même photo. 🎁 Akabanebashi est la station au PIED de la Tokyo Tower : tu as le konbini ET la tour de près, sans avoir à choisir ni à monter dedans.",
+            mapUrl: 'https://maps.google.com/?q=7-Eleven+Shiba+3-chome+Minato+Tokyo',
+            isOutdoor: true,
           },
           {
             time: '20h30',
@@ -1179,7 +1179,15 @@ export const itineraryData = {
             isOutdoor: true,
           },
           {
-            time: '10h00',
+            time: '09h45',
+            icon: <Camera size={20} className="text-sky-400" />,
+            title: 'Pont Azuma-bashi — le Skytree en face',
+            desc: "🔁 AJOUTÉ LE 17 SEPTEMBRE. Le Skytree n'était nulle part dans le carnet alors que tu passes juste en face. 📍 3 MINUTES À PIED depuis la sortie de Nakamise, au bout de l'allée : le pont Azuma-bashi. De là tu as la carte postale — la Sumida, le Skytree en face, et l'Asahi Beer Hall doré au premier plan. Ça ne coûte rien à la journée. 🚶 SI TU AS DE L'AVANCE ET DE L'ÉNERGIE : le pied de la tour est à 20 min à pied en longeant la rivière, ou un arrêt de train. Au pied il y a Tokyo Solamachi, le centre commercial de sa base — on peut en faire le tour sans payer d'ascenseur. Compte 1h30 à 2h aller-retour, et c'est Yanaka qui saute. ⚠️ Décide sur place : le 29 porte déjà les valises et la détaxe à préparer, et le réveil du 30 est à 4h30.",
+            mapUrl: 'https://maps.google.com/?q=Azumabashi+Bridge+Asakusa',
+            isOutdoor: true,
+          },
+          {
+            time: '10h15',
             icon: <Leaf size={20} className="text-green-500" />,
             title: 'Ueno & Yanaka',
             desc: 'Balade matinale dans le "vieux Tokyo", Yanaka Ginza (ambiance chill et chats). Retour d\'Asakusa par la Ginza, 5 min.',

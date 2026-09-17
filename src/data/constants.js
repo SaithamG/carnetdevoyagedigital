@@ -8,11 +8,22 @@ export const soldeReel = 1957;
 export const soldeReelDate = '17 juillet 2026';
 
 // Marge au retour, en fourchette. La variable qui décide, c'est la CAF :
-//  · prudent  = épargne capée à 500 €/mois (août→oct), CAF toujours bloquée
+//  · prudent  = épargne capée à 500 €/mois, CAF toujours bloquée
 //  · godMode  = 750 €/mois, si le déblocage CAF arrive comme espéré
 // La prime d'activité n'est comptée dans AUCUN des deux : c'est du pur bonus.
-export const surplusPrudent = 1420;
-export const surplusGodMode = 2170;
+//
+// 🔄 RÉALIGNÉ LE 9 SEPTEMBRE 2026 sur la fin de chaîne de cashflowTimeline.
+// Les deux valeurs DIVERGEAIENT de 35 € (1420/2170 ici contre 1385/2135 en fin
+// de timeline) : le même chiffre s'affichait différemment selon l'écran.
+// Toujours repropager jusqu'ici après avoir touché un mois de la timeline.
+//
+// ⚠️ LE GOD MODE BAISSE DE 2170 À 1952, ET CE N'EST PAS UNE DÉGRADATION DU PLAN.
+// Septembre est passé du projeté au CONSTATÉ : 568 € réellement virés le 5/09.
+// La CAF n'ayant pas débloqué ce mois-ci, le scénario 750 € n'a pas eu lieu —
+// il ne peut plus être compté rétroactivement. Le prudent, lui, MONTE de 1385
+// à 1452 : +68 € de reliquat d'août non dépensé, entrés en épargne.
+export const surplusPrudent = 1452;
+export const surplusGodMode = 1952;
 
 // ── Dates du voyage — SOURCE DE VÉRITÉ UNIQUE ────────────────────────────────
 // Enchaînement réel : TGV Aix→Paris le 7, nuit à Villepinte (EasyHotel CDG),
