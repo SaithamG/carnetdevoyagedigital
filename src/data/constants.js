@@ -22,8 +22,11 @@ export const soldeReelDate = '17 juillet 2026';
 // La CAF n'ayant pas débloqué ce mois-ci, le scénario 750 € n'a pas eu lieu —
 // il ne peut plus être compté rétroactivement. Le prudent, lui, MONTE de 1385
 // à 1452 : +68 € de reliquat d'août non dépensé, entrés en épargne.
-export const surplusPrudent = 1452;
-export const surplusGodMode = 1952;
+//
+// 🎢 23 SEPTEMBRE : +12 € sur les deux scénarios (1452 → 1464, 1952 → 1964).
+// USJ payé ≈148 € ta part au lieu des 160 € provisionnés en septembre.
+export const surplusPrudent = 1464;
+export const surplusGodMode = 1964;
 
 // ── Dates du voyage — SOURCE DE VÉRITÉ UNIQUE ────────────────────────────────
 // Enchaînement réel : TGV Aix→Paris le 7, nuit à Villepinte (EasyHotel CDG),
