@@ -67,10 +67,22 @@ const FitBounds = ({ points }) => {
   return null;
 };
 
+// Recentre la carte sur un lieu choisi dans la liste laterale.
+// target porte un compteur : recliquer le meme lieu doit relancer le vol.
+const FlyTo = ({ target }) => {
+  const map = useMap();
+  React.useEffect(() => {
+    if (!target) return;
+    map.flyTo(target.coords, Math.max(map.getZoom(), 12), { duration: 0.8 });
+  }, [map, target]);
+  return null;
+};
+
 const Carte = () => {
   const { theme } = useTheme();
   const light = theme === 'light';
   const [activeRegion, setActiveRegion] = useState('all');
+  const [focus, setFocus] = useState(null);
 
   const visitedSteps = useMemo(() => {
     try {
@@ -191,6 +203,7 @@ const Carte = () => {
         </span>
       </div>
 
+      <div className="grid gap-4 lg:grid-cols-[1fr_22rem] lg:items-start">
       {/* isolate + z-0 confinent le z-index élevé de Leaflet sous le header */}
       <div
         className="relative z-0 rounded-[2rem] overflow-hidden border border-slate-800 shadow-xl"
@@ -262,7 +275,48 @@ const Carte = () => {
               </Popup>
             </Marker>
           ))}
+          <FlyTo target={focus} />
         </MapContainer>
+      </div>
+
+        {/* Liste des etapes dans l'ordre du parcours : cliquer recentre la carte.
+            Sous la carte en mobile, a droite des l'ecran large. */}
+        <aside className="rounded-[2rem] border border-slate-800 bg-slate-900 overflow-hidden">
+          <p className="px-4 pt-4 pb-2 text-[11px] font-black uppercase tracking-wider text-slate-500">
+            Les {markers.length} etapes, dans l'ordre
+          </p>
+          <ol className="max-h-[22rem] lg:max-h-[calc(70vh-3.5rem)] overflow-y-auto px-2 pb-2 space-y-1">
+            {markers.map((m) => {
+              const actif = focus && focus.mapUrl === m.mapUrl;
+              return (
+                <li key={m.mapUrl}>
+                  <button
+                    type="button"
+                    onClick={() => setFocus({ coords: m.coords, mapUrl: m.mapUrl, n: Date.now() })}
+                    className={`w-full flex items-start gap-2.5 text-left px-2.5 py-2 rounded-xl transition-colors ${
+                      actif
+                        ? 'bg-blue-600 text-white'
+                        : 'text-slate-300 hover:bg-slate-800'
+                    }`}
+                  >
+                    <span
+                      className={`shrink-0 mt-px grid place-items-center w-6 h-6 rounded-full text-[11px] font-black ${
+                        actif
+                          ? 'bg-white text-blue-700'
+                          : m.visited
+                          ? 'bg-emerald-500 text-white'
+                          : 'bg-blue-500 text-white'
+                      }`}
+                    >
+                      {m.order}
+                    </span>
+                    <span className="text-xs font-bold leading-snug">{m.title}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+        </aside>
       </div>
 
       <p className="text-[11px] text-slate-500 italic px-1">
