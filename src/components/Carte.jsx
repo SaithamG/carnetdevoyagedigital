@@ -206,9 +206,8 @@ const Carte = () => {
           <TileLayer
             key={light ? 'light' : 'dark'}
             className={light ? 'carte-tuiles-chaudes' : ''}
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url={`https://{s}.basemaps.cartocdn.com/${light ? 'light_nolabels' : 'dark_nolabels'}/{z}/{x}/{y}{r}.png`}
-            subdomains="abcd"
+            attribution='Tuiles &copy; <a href="https://www.esri.com/">Esri</a>'
+            url={`https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_${light ? 'Light' : 'Dark'}_Gray_Base/MapServer/tile/{z}/{y}/{x}`}
           />
 
           {routeCoords.length > 1 && (
