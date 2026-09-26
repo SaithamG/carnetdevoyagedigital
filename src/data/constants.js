@@ -24,9 +24,16 @@ export const soldeReelDate = '17 juillet 2026';
 // à 1452 : +68 € de reliquat d'août non dépensé, entrés en épargne.
 //
 // 🎢 23 SEPTEMBRE : +12 € sur les deux scénarios (1452 → 1464, 1952 → 1964).
+// 👕 24 SEPTEMBRE : -201,50 € sur les deux (1464 → 1263, 1964 → 1763).
+// Commande Shein garde-robe hiver, 15 articles. Cette dépense n'avait jamais
+// été portée au carnet : les soldes précédents l'ignoraient.
 // USJ payé ≈148 € ta part au lieu des 160 € provisionnés en septembre.
-export const surplusPrudent = 1464;
-export const surplusGodMode = 1964;
+// 🏐 25 SEPTEMBRE : -295 € sur les deux (1263 → 968, 1763 → 1468).
+// Licence volley AUC13VB, saison FFVB 2026-2027, payée EN UNE FOIS.
+// Le 3× a été écarté : la 3e échéance tombait fin novembre, pendant le Japon.
+// Aucun arriéré des deux saisons précédentes n'est réclamé : tarif fixe, saison en cours seule.
+export const surplusPrudent = 887;
+export const surplusGodMode = 1387;
 
 // ── Dates du voyage — SOURCE DE VÉRITÉ UNIQUE ────────────────────────────────
 // Enchaînement réel : TGV Aix→Paris le 7, nuit à Villepinte (EasyHotel CDG),
