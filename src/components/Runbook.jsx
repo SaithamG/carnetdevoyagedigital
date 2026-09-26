@@ -21,7 +21,7 @@ const ReminderCard = ({ r }) => {
         <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 mb-3">
           <p className="text-xs font-bold text-slate-200">{r.reminderDate}</p>
         </div>
-        <p className={`text-xs text-slate-400 leading-relaxed ${open ? 'mb-3' : 'mb-2 line-clamp-2'}`}>{r.desc}</p>
+        <p className={`text-xs text-slate-400 leading-relaxed whitespace-pre-line ${open ? 'mb-3' : 'mb-2 line-clamp-2'}`}>{r.desc}</p>
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
